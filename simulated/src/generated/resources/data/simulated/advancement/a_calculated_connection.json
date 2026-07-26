@@ -1,0 +1,28 @@
+{
+  "parent": "simulated:opposite_attract",
+  "criteria": {
+    "0": {
+      "conditions": "simulated:a_calculated_connection_builtin",
+      "trigger": "simulated:a_calculated_connection_builtin"
+    }
+  },
+  "display": {
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.simulated.a_calculated_connection.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "simulated:docking_connector"
+    },
+    "title": {
+      "translate": "advancement.simulated.a_calculated_connection"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

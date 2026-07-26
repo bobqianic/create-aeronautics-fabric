@@ -1,0 +1,22 @@
+{
+  "type": "create:mechanical_crafting",
+  "accept_mirrored": true,
+  "key": {
+    "A": "create:brass_casing",
+    "B": "#c:plates/brass",
+    "C": "create:chute",
+    "E": "create:electron_tube",
+    "I": "#c:plates/iron",
+    "P": "minecraft:piston"
+  },
+  "pattern": [
+    "ICI",
+    " C ",
+    "PAP",
+    "BEB"
+  ],
+  "result": {
+    "count": 2,
+    "id": "simulated:docking_connector"
+  }
+}

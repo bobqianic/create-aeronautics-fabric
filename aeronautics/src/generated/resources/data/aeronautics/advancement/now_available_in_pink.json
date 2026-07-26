@@ -1,0 +1,30 @@
+{
+  "parent": "aeronautics:unidentified_floating_object",
+  "criteria": {
+    "0": {
+      "conditions": "aeronautics:now_available_in_pink_builtin",
+      "trigger": "aeronautics:now_available_in_pink_builtin"
+    }
+  },
+  "display": {
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.aeronautics.now_available_in_pink.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "aeronautics:pearlescent_levitite"
+    },
+    "title": {
+      "translate": "advancement.aeronautics.now_available_in_pink"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

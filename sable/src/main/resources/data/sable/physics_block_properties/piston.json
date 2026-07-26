@@ -1,0 +1,13 @@
+{
+  "selector": "#sable:pistons",
+
+  "properties": {
+    "sable:mass": 1.0
+  },
+
+  "overrides": {
+    "extended=true": {
+      "sable:mass": 0.5
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "simulated",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${description}",
+  "authors": ["${mod_author}"],
+  "license": "${license}",
+  "environment": "*",
+  "accessWidener": "simulated.accesswidener",
+  "entrypoints": {
+    "main": ["dev.simulated_team.simulated.fabric.SimulatedFabric"],
+    "client": ["dev.simulated_team.simulated.fabric.SimulatedFabricClient"],
+    "fabric-datagen": ["dev.simulated_team.simulated.fabric.data.SimulatedDataGenerator"],
+    "jei_mod_plugin": [
+      "dev.simulated_team.simulated.compat.jei.SimulatedJEI",
+      "dev.simulated_team.simulated.fabric.compat.jei.SimulatedFabricJEI"
+    ]
+  },
+  "mixins": ["simulated.mixins.json", "simulated-fabric.mixins.json"],
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=${java_version}",
+    "create": ">=${create_mod_version}",
+    "sable": "${sable_mod_version_range}",
+    "team_reborn_energy": ">=${energy_version}"
+  }
+}

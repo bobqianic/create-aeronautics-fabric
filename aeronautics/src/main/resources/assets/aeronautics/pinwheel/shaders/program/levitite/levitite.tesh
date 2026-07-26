@@ -1,0 +1,98 @@
+#include aeronautics:levitite_utils
+layout (quads) in;
+uniform sampler2D Noise;
+
+in vec2 texCoord0_out[];
+in vec4 vertexColor_out[];
+in float vertexDistance_out[];
+
+out vec2 texCoord0;
+out vec4 vertexColor;
+out float vertexDistance;
+out float ghostLayerFullness;
+out float ghostNoiseMagnitude;
+out float depth;
+
+uniform mat4 ProjMat;
+uniform mat4 ModelViewMat;
+uniform float time;
+uniform int onSublevel;
+uniform int layerIndex;
+uniform float gravityStrength;
+
+vec3 getNoiseFromPositionAndTime(vec4 p,vec3 noiseScale)
+{
+    //matrices divisible by 10 to allow position to tile using sufficiently high power of ten wrapping distance
+    mat2 R1 = mat2(25,3,2,15)/10;
+    mat2 R2 = mat2(15,1,2,-25)/10;
+
+    mat3 M1 = mat3(
+    10,2,-1,
+    4,10,-5,
+    -3,-2,10
+    )/10;
+
+    //linearly transform position input to avoid artificial-looking repetition
+    mat3 M2 = transpose(M1);
+    vec4 p1 = vec4(M1*p.xyz,p.w);
+    vec4 p2 = vec4(M2*p.xyz,p.w);
+
+    //each coordinate gets a positive and negative noise slice on the two other coordinates, offset by time
+    //noise textures from https://opengameart.org/content/700-noise-textures
+    vec3 noiseOutX = texture(Noise,R1*p1.zw).xyz - texture(Noise,R2*p2.yw).xyz;
+    vec3 noiseOutY = texture(Noise,R1*p1.xw).xyz - texture(Noise,R2*p2.zw).xyz;
+    vec3 noiseOutZ = texture(Noise,R1*p1.yw).xyz - texture(Noise,R2*p2.xw).xyz;
+    mat3 mat = mat3(noiseOutX,noiseOutY,noiseOutZ);
+    return transpose(mat)*noiseScale;
+}
+
+void main(void)
+{
+    //basic transfer of vertex info to the sub-vertices
+    vec4 tePosition = mix(mix(gl_in[0].gl_Position, gl_in[3].gl_Position, gl_TessCoord.y), mix(gl_in[1].gl_Position, gl_in[2].gl_Position, gl_TessCoord.y), gl_TessCoord.x);
+    texCoord0 = mix(mix(texCoord0_out[0], texCoord0_out[3], gl_TessCoord.y), mix(texCoord0_out[1], texCoord0_out[2], gl_TessCoord.y), gl_TessCoord.x);
+    vertexColor = mix(mix(vertexColor_out[0], vertexColor_out[3], gl_TessCoord.y), mix(vertexColor_out[1], vertexColor_out[2], gl_TessCoord.y), gl_TessCoord.x);
+    vertexDistance = mix(mix(vertexDistance_out[0], vertexDistance_out[3], gl_TessCoord.y), mix(vertexDistance_out[1], vertexDistance_out[2], gl_TessCoord.y), gl_TessCoord.x);
+
+    vec3 pos = tePosition.xyz;
+    vec3 localPos = getLocalPosition(pos);
+    vec3 vel = getVelocity(localPos);
+    float l = onSublevel > 0 ? length(vel) : 0;
+    float falloff = exp(-l/materialTransitionSpeed);
+    float gravityScale = 1-exp(-gravityStrength/3.0);
+    ghostLayerFullness = (1-falloff*falloff) * gravityScale;
+
+    if(layerIndex!=0)
+    {
+        vec3 p = localPos;
+        float t = time/200;
+        p/=50;
+
+        //drag vector has low speed component, complement of that, and lastly the transition spike
+        vec3 drag = getDragState(vel);
+        //these are mapped to the noise textures in the order of mid, low and high frequency
+        //such that the noise is fairly mobile at low speeds, frantic at the transition and calm at higher speeds
+        vec3 modifier = drag.yxz*vec3(0.4,0.3,0.2);
+
+        vec3 nudge = getNoiseFromPositionAndTime(vec4(p,t),modifier);
+        if(l>0.0001) //squish the noise offsets to move more along the direction of motion as the speed increases
+            nudge = mix(vel*dot(nudge,vel)/dot(vel,vel),nudge,mix(1.0,0.1,(1-falloff)*(1-falloff)));
+        nudge *= ghostLayerFullness;
+        pos += nudge;
+    }else
+    {
+        //keep slight noisy shimmer for stationary blocks, otherwise use similar scaling as the noisy vertex offsets
+        vec3 drag = onSublevel > 0 ? getDragState(vel) : vec3(1,0,0);
+        float t = time/500;
+        vec3 localNoise = getNoiseFromPositionAndTime(vec4(localPos/10,t),vec3(1,0,0)*vec3(0.7,1,1));
+        vec3 p = getGlobalPosition(localPos);
+        vec3 n = getNoiseFromPositionAndTime(vec4(p/10,t),drag.yxz*vec3(0.7,1,1));
+        n = mix(localNoise,n,gravityScale);
+        ghostNoiseMagnitude = abs(n.x+n.y+n.z)*max(0.3,ghostLayerFullness);
+    }
+
+    gl_Position = ProjMat * ModelViewMat * vec4(pos,1);
+    //slight offset towards the camera to avoid z-fighting with the stationary fallback blocks
+    gl_Position.z-=0.00001;
+    depth = gl_Position.z;
+}

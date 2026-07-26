@@ -1,0 +1,33 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "simulated:block/gimbal_sensor/gimbal_sensor",
+		"particle": "simulated:block/gimbal_sensor/gimbal_sensor"
+	},
+	"elements": [
+		{
+			"name": "needle",
+			"from": [-0.5, 0.7, -4.5],
+			"to": [0.5, 0.7, 1.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"up": {"uv": [9.5, 4.5, 10, 7.5], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "compass",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "needle",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [0]
+				}
+			]
+		}
+	]
+}

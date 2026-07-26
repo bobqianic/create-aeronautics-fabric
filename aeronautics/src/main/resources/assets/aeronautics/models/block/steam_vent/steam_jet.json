@@ -1,0 +1,79 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"3": "aeronautics:block/steam_vent/steam_anim",
+		"particle": "create:block/fluid_tank_inner"
+	},
+	"elements": [
+		{
+			"name": "jet_exterior",
+			"from": [5, 9, 5],
+			"to": [11, 25, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5, 9, 5]},
+			"faces": {
+				"north": {"uv": [2, 0, 8, 16], "texture": "#3"},
+				"east": {"uv": [7, 0, 13, 16], "texture": "#3"},
+				"south": {"uv": [2, 0, 8, 16], "texture": "#3"},
+				"west": {"uv": [8, 0, 14, 16], "texture": "#3"}
+			}
+		},
+		{
+			"name": "jet_interior",
+			"from": [11, 9, 5],
+			"to": [5, 25, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [21, 9, 5]},
+			"faces": {
+				"north": {"uv": [2, 0, 8, 16], "texture": "#3"},
+				"east": {"uv": [7, 0, 13, 16], "texture": "#3"},
+				"south": {"uv": [2, 0, 8, 16], "texture": "#3"},
+				"west": {"uv": [8, 0, 14, 16], "texture": "#3"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 225, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "steam",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "jet",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [0, 1]
+				}
+			]
+		}
+	]
+}

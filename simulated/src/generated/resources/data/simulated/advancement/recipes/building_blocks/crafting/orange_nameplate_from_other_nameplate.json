@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nameplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#simulated:nameplate_items"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "simulated:crafting/orange_nameplate_from_other_nameplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_nameplate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "simulated:crafting/orange_nameplate_from_other_nameplate"
+    ]
+  }
+}

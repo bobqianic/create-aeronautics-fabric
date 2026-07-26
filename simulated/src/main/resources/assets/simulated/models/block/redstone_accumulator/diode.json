@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"1": "simulated:block/redstone_accumulator/diode",
+		"particle": "simulated:block/redstone_accumulator/diode"
+	},
+	"elements": [
+		{
+			"name": "Diode",
+			"from": [-4, 3, -4],
+			"to": [4, 7, 4],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-8, 0, -8]},
+			"faces": {
+				"north": {"uv": [4, 11, 8, 15], "texture": "#1"},
+				"east": {"uv": [4, 11, 8, 15], "texture": "#1"},
+				"south": {"uv": [4, 11, 8, 15], "texture": "#1"},
+				"west": {"uv": [4, 11, 8, 15], "texture": "#1"},
+				"up": {"uv": [4, 4, 8, 12], "texture": "#1"}
+			}
+		}
+	]
+}

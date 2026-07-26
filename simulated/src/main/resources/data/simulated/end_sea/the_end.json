@@ -1,0 +1,7 @@
+{
+  "dimension": "minecraft:the_end",
+  "priority": 1,
+  "start_y": -40,
+  "depth_gradient": 1.0,
+  "drag": 1.0
+}

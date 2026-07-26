@@ -1,0 +1,30 @@
+{
+  "stages": [
+    {
+      "type": "veil:mask",
+      "depth": true
+    },
+    {
+      "type": "veil:blit",
+      "shader": "simulated:spread_end_sea",
+      "in": "simulated:end_sea_shadows",
+      "out": "swap",
+      "clear": false
+    },
+    {
+      "type": "veil:blit",
+      "shader": "simulated:spread_end_sea",
+      "in": "swap",
+      "out": "simulated:end_sea_shadows",
+      "clear": false
+    }
+  ],
+  "framebuffers": {
+    "swap": {
+      "depth": true,
+      "width": 1024,
+      "height": 1024,
+      "format": "RGBA8"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "minecraft:campfire",
+    "minecraft:magma_block",
+    "minecraft:torch",
+    "minecraft:wall_torch",
+    "create:lit_blaze_burner",
+    "minecraft:fire"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"steering_wheel": "simulated:block/steering_wheel",
+		"planks": "block/oak_planks",
+		"particle": "create:block/andesite_casing"
+	},
+	"loader": "neoforge:obj",
+	"flip_v": true,
+	"model": "simulated:models/block/steering_wheel/wheel.obj",
+	"display": {
+		"gui": {
+			"rotation": [ 30, 135, 90 ],
+			"translation": [ 0, 0, 0],
+			"scale":[ 0.4, 0.4, 0.4 ]
+		},
+		"fixed": {
+			"rotation": [ 90, 0, 0 ],
+			"translation": [ 0, 0, 0],
+			"scale":[ 0.45, 0.45, 0.45 ]
+		}
+	}
+}

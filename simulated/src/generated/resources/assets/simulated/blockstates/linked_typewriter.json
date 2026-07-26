@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,powered=false": {
+      "model": "simulated:block/linked_typewriter/block",
+      "y": 90
+    },
+    "facing=east,powered=true": {
+      "model": "simulated:block/linked_typewriter/block_powered",
+      "y": 90
+    },
+    "facing=north,powered=false": {
+      "model": "simulated:block/linked_typewriter/block"
+    },
+    "facing=north,powered=true": {
+      "model": "simulated:block/linked_typewriter/block_powered"
+    },
+    "facing=south,powered=false": {
+      "model": "simulated:block/linked_typewriter/block",
+      "y": 180
+    },
+    "facing=south,powered=true": {
+      "model": "simulated:block/linked_typewriter/block_powered",
+      "y": 180
+    },
+    "facing=west,powered=false": {
+      "model": "simulated:block/linked_typewriter/block",
+      "y": 270
+    },
+    "facing=west,powered=true": {
+      "model": "simulated:block/linked_typewriter/block_powered",
+      "y": 270
+    }
+  }
+}

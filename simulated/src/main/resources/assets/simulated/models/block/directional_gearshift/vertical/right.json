@@ -1,0 +1,48 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "simulated:block/directional_gearshift/differential_interior",
+		"1": "create:block/gearbox",
+		"2": "simulated:block/directional_gearshift/differential_unpowered",
+		"particle": "simulated:block/directional_gearshift/differential_interior"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 0],
+			"to": [14, 16, 2],
+			"rotation": {"angle": 0, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [8, 1, 16, 7], "rotation": 270, "texture": "#2"},
+				"east": {"uv": [16, 1, 8, 0], "rotation": 90, "texture": "#2"},
+				"south": {"uv": [8, 1, 16, 7], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [8, 1, 16, 0], "rotation": 270, "texture": "#2"},
+				"up": {"uv": [0, 9, 1, 15], "rotation": 90, "texture": "#2"},
+				"down": {"uv": [1, 9, 0, 15], "rotation": 90, "texture": "#2"}
+			}
+		},
+		{
+			"from": [2, 1, 2],
+			"to": [14, 4, 14],
+			"rotation": {"angle": 0, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [15, 1, 13.5, 7], "rotation": 90, "texture": "#2"},
+				"west": {"uv": [10.5, 1, 9, 7], "rotation": 270, "texture": "#2"},
+				"up": {"uv": [7, 9, 1, 15], "rotation": 90, "texture": "#2"},
+				"down": {"uv": [14, 2, 2, 14], "rotation": 90, "texture": "#1"}
+			}
+		},
+		{
+			"from": [2, 12, 2],
+			"to": [14, 15, 14],
+			"rotation": {"angle": 0, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [13.5, 1, 15, 7], "rotation": 90, "texture": "#2"},
+				"west": {"uv": [9, 1, 10.5, 7], "rotation": 270, "texture": "#2"},
+				"up": {"uv": [2, 2, 14, 14], "rotation": 90, "texture": "#1"},
+				"down": {"uv": [1, 9, 7, 15], "rotation": 90, "texture": "#2"}
+			}
+		}
+	]
+}

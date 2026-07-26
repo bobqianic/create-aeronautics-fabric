@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "simulated:block/swivel_bearing/bearing_plate",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "simulated:block/swivel_bearing/bearing_plate",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "simulated:block/swivel_bearing/bearing_plate",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "simulated:block/swivel_bearing/bearing_plate",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "simulated:block/swivel_bearing/bearing_plate"
+    },
+    "facing=west": {
+      "model": "simulated:block/swivel_bearing/bearing_plate",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

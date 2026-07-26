@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "handle_variants",
+  "ingredients": [
+    "simulated:iron_handle",
+    "minecraft:copper_ingot"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:copper_handle"
+  }
+}

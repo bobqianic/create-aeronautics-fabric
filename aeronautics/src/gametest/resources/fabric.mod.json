@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "aeronautics-gametest",
+  "version": "1.0.0",
+  "name": "Create Aeronautics Ponder GameTests",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-gametest": [
+      "dev.eriksonn.aeronautics.gametest.generated.GeneratedPonderGameTests",
+      "dev.eriksonn.aeronautics.gametest.FunctionalGameTests"
+    ],
+    "fabric-client-gametest": [
+      "dev.eriksonn.aeronautics.gametest.ClientBeltGameTest"
+    ]
+  },
+  "mixins": [
+    "aeronautics-gametest.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "aeronautics": "*",
+    "offroad": "*",
+    "simulated": "*"
+  }
+}

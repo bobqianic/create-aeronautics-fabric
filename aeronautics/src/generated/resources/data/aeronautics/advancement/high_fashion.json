@@ -1,0 +1,35 @@
+{
+  "parent": "aeronautics:root",
+  "criteria": {
+    "0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "aeronautics:aviators_goggles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.aeronautics.high_fashion.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "aeronautics:aviators_goggles"
+    },
+    "title": {
+      "translate": "advancement.aeronautics.high_fashion"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

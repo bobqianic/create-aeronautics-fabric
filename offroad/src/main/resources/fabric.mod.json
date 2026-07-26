@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "offroad",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${description}",
+  "authors": ["${mod_author}"],
+  "license": "${license}",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dev.ryanhcode.offroad.fabric.OffroadFabric"],
+    "client": ["dev.ryanhcode.offroad.fabric.OffroadFabricClient"]
+  },
+  "mixins": ["offroad.mixins.json", "offroad-fabric.mixins.json"],
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=${java_version}",
+    "create": ">=${create_mod_version}",
+    "sable": "${sable_mod_version_range}",
+    "simulated": "*"
+  }
+}

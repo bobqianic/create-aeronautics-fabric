@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:leaves",
+    "minecraft:bamboo",
+    "minecraft:melon",
+    "minecraft:pumpkin",
+    "minecraft:cactus",
+    "minecraft:ice",
+    "minecraft:frosted_ice",
+    "minecraft:lily_pad"
+  ]
+}

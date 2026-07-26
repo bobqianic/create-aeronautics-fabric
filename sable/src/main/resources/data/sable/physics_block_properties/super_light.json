@@ -1,0 +1,14 @@
+{
+  "priority": 1001,
+  "selector": "#sable:super_light",
+
+  "properties": {
+    "sable:mass": 0.25
+  },
+
+  "overrides": {
+    "type=double": {
+      "sable:mass": 0.5
+    }
+  }
+}

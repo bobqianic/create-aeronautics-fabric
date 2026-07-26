@@ -1,0 +1,37 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "simulated:block/tilt_sensor/tiltsensor_off"
+	},
+	"elements": [
+		{
+			"name": "rope",
+			"from": [7, 7, 8],
+			"to": [9, 11, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [44, 0, 7]},
+			"faces": {
+				"north": {"uv": [4, 11, 5, 13], "texture": "#1"},
+				"east": {"uv": [0, 0, 0, 1.33333], "texture": "#1"},
+				"south": {"uv": [4, 11, 5, 13], "texture": "#1"},
+				"west": {"uv": [0, 0, 0, 1.33333], "texture": "#1"},
+				"up": {"uv": [0, 0, 0.66667, 0], "texture": "#1"},
+				"down": {"uv": [0, 0, 0.66667, 0], "texture": "#1"}
+			}
+		},
+		{
+			"name": "pendulum",
+			"from": [6, 3, 7],
+			"to": [10, 7, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [44, 0, 7]},
+			"faces": {
+				"north": {"uv": [5, 9, 7, 11], "texture": "#1"},
+				"east": {"uv": [4.5, 9, 5.5, 11], "texture": "#1"},
+				"south": {"uv": [5, 9, 7, 11], "texture": "#1"},
+				"west": {"uv": [4.5, 9, 5.5, 11], "texture": "#1"},
+				"up": {"uv": [3, 9, 5, 10], "texture": "#1"},
+				"down": {"uv": [3, 9, 5, 10], "texture": "#1"}
+			}
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"1": "simulated:block/laser_pointer/laser_pointer_on",
+		"particle": "simulated:block/laser_pointer/laser_pointer_off"
+	},
+	"elements": [
+		{
+			"name": "crystal",
+			"from": [4.001, 4.001, 0.999],
+			"to": [12.001, 12.001, 5.999],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [6, 3.75, 4, 1.75], "rotation": 180, "texture": "#1"},
+				"east": {"uv": [4, 3.75, 6, 5], "rotation": 90, "texture": "#1"},
+				"west": {"uv": [4, 3.75, 6, 5], "rotation": 270, "texture": "#1"},
+				"up": {"uv": [4, 3.75, 6, 5], "texture": "#1"},
+				"down": {"uv": [4, 3.75, 6, 5], "rotation": 180, "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "root",
+			"origin": [8, 8.75, 8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

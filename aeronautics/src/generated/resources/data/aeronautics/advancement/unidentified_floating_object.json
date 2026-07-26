@@ -1,0 +1,28 @@
+{
+  "parent": "aeronautics:head_in_the_clouds",
+  "criteria": {
+    "0": {
+      "conditions": "aeronautics:unidentified_floating_object_builtin",
+      "trigger": "aeronautics:unidentified_floating_object_builtin"
+    }
+  },
+  "display": {
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.aeronautics.unidentified_floating_object.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "aeronautics:levitite"
+    },
+    "title": {
+      "translate": "advancement.aeronautics.unidentified_floating_object"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

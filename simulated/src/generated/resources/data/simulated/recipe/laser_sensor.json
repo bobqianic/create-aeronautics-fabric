@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "#simulated:laser_point_lens",
+    "C": "create:andesite_casing",
+    "G": "minecraft:tinted_glass"
+  },
+  "pattern": [
+    "G",
+    "A",
+    "C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:laser_sensor"
+  }
+}

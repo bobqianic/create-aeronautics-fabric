@@ -1,0 +1,27 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"4": "simulated:block/redstone_inductor/redstonebit",
+		"particle": "create:block/diodes/brass_diode_base"
+	},
+	"render_type": "minecraft:cutout",
+	"elements": [
+		{
+			"name": "Diode",
+			"from": [-5, 2.03, -7],
+			"to": [5, 2.03, 4],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 2.03, -9]},
+			"faces": {
+				"up": {"uv": [3, 12, 13, 1], "rotation": 180, "texture": "#4"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [0, 0, 16],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

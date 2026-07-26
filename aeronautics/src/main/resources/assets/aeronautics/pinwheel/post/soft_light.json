@@ -1,0 +1,21 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "aeronautics:soft_light",
+      "in": "aeronautics:soft_light",
+      "clear": false
+    }
+  ],
+  "textures": {
+    "MainSampler": {
+      "type": "framebuffer",
+      "name": "minecraft:main"
+    },
+    "MainDepthSampler": {
+      "type": "framebuffer",
+      "name": "minecraft:main:depth"
+    }
+  }
+}
+

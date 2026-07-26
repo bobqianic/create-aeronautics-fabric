@@ -1,0 +1,21 @@
+{
+  "vertex": "aeronautics:levitite/levitite",
+  "fragment": "aeronautics:levitite/levitite",
+  "tesselation_control": "aeronautics:levitite/levitite",
+  "tesselation_evaluation": "aeronautics:levitite/levitite",
+  "textures": {
+    "Noise": {
+      "type": "location",
+      "location": "aeronautics:textures/special/noise_composed.png"
+    },
+    "DiffuseDepthSampler": {
+      "type": "framebuffer",
+      "name": "minecraft:main:depth"
+    }
+  },
+  "definitions": [
+    {
+      "TESSELLATION_SHADER": 1
+    }
+  ]
+}

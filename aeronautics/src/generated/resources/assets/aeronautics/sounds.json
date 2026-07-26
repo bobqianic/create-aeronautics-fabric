@@ -1,0 +1,237 @@
+{
+  "block.envelope.break": {
+    "sounds": [
+      "aeronautics:block/envelope/place_1",
+      "aeronautics:block/envelope/place_2",
+      "aeronautics:block/envelope/place_3",
+      "aeronautics:block/envelope/place_4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.envelope.hit": {
+    "sounds": [
+      "aeronautics:block/envelope/place_1",
+      "aeronautics:block/envelope/place_2",
+      "aeronautics:block/envelope/place_3",
+      "aeronautics:block/envelope/place_4"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.envelope.place": {
+    "sounds": [
+      "aeronautics:block/envelope/place_1",
+      "aeronautics:block/envelope/place_2",
+      "aeronautics:block/envelope/place_3",
+      "aeronautics:block/envelope/place_4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.hot_air_burner.head": {
+    "sounds": [
+      "aeronautics:block/hot_air_burner/burner_heat"
+    ]
+  },
+  "block.hot_air_burner.idle": {
+    "sounds": [
+      {
+        "attenuation_distance": 8,
+        "name": "aeronautics:block/hot_air_burner/burner_idle"
+      }
+    ]
+  },
+  "block.levitite.break": {
+    "sounds": [
+      "aeronautics:block/levitite/break_1",
+      "aeronautics:block/levitite/break_2",
+      "aeronautics:block/levitite/break_3",
+      "aeronautics:block/levitite/break_4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.levitite.place": {
+    "sounds": [
+      "aeronautics:block/levitite/place_1",
+      "aeronautics:block/levitite/place_2",
+      "aeronautics:block/levitite/place_3",
+      "aeronautics:block/levitite/place_4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.propeller_bearing.large_loop": {
+    "sounds": [
+      {
+        "attenuation_distance": 48,
+        "name": "aeronautics:block/propeller_bearing/large_loop"
+      }
+    ]
+  },
+  "block.propeller_bearing.small_loop": {
+    "sounds": [
+      {
+        "attenuation_distance": 48,
+        "name": "aeronautics:block/propeller_bearing/small_loop"
+      }
+    ]
+  },
+  "block.steam_vent.close": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "create:frogport_close"
+      }
+    ],
+    "subtitle": "aeronautics.subtitle.block.steam_vent.close"
+  },
+  "block.steam_vent.head": {
+    "sounds": [
+      "aeronautics:block/steam_vent/vent_heat"
+    ]
+  },
+  "block.steam_vent.idle": {
+    "sounds": [
+      {
+        "attenuation_distance": 8,
+        "name": "aeronautics:block/steam_vent/vent_idle"
+      }
+    ]
+  },
+  "block.steam_vent.open": {
+    "sounds": [
+      "aeronautics:block/steam_vent/open_1",
+      "aeronautics:block/steam_vent/open_2",
+      "aeronautics:block/steam_vent/open_3"
+    ],
+    "subtitle": "aeronautics.subtitle.block.steam_vent.open"
+  },
+  "entity.gust": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:entity.wind_charge.wind_burst",
+        "pitch": 0.3,
+        "volume": 0.5
+      }
+    ],
+    "subtitle": "aeronautics.subtitle.entity.gust"
+  },
+  "fluid.levitite_blend.crystallize": {
+    "sounds": [
+      "aeronautics:fluid/levitite_blend/crystallize_1",
+      "aeronautics:fluid/levitite_blend/crystallize_2",
+      "aeronautics:fluid/levitite_blend/crystallize_3",
+      "aeronautics:fluid/levitite_blend/crystallize_4"
+    ],
+    "subtitle": "aeronautics.subtitle.fluid.levitite_blend.crystallize"
+  },
+  "fluid.levitite_blend.empty": {
+    "sounds": [
+      "aeronautics:fluid/levitite_blend/empty_1",
+      "aeronautics:fluid/levitite_blend/empty_2",
+      "aeronautics:fluid/levitite_blend/empty_3"
+    ],
+    "subtitle": "subtitles.item.bucket.empty"
+  },
+  "fluid.levitite_blend.fill": {
+    "sounds": [
+      "aeronautics:fluid/levitite_blend/fill_1",
+      "aeronautics:fluid/levitite_blend/fill_2",
+      "aeronautics:fluid/levitite_blend/fill_3"
+    ],
+    "subtitle": "subtitles.item.bucket.fill"
+  },
+  "item.cloud_skipper_transform": {
+    "sounds": [
+      "aeronautics:item/cloud_skipper_transform_1",
+      "aeronautics:item/cloud_skipper_transform_2",
+      "aeronautics:item/cloud_skipper_transform_3"
+    ],
+    "subtitle": "aeronautics.subtitle.item.cloud_skipper_transform"
+  },
+  "music.adrift": {
+    "sounds": [
+      {
+        "name": "aeronautics:music/windstream",
+        "stream": true
+      }
+    ]
+  },
+  "music.cirrus": {
+    "sounds": [
+      {
+        "name": "aeronautics:music/cirrus",
+        "stream": true
+      }
+    ]
+  },
+  "music.clear": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "aeronautics:music.adrift",
+        "stream": true,
+        "weight": 5
+      },
+      {
+        "type": "event",
+        "name": "aeronautics:music.cirrus",
+        "stream": true,
+        "weight": 5
+      },
+      {
+        "type": "event",
+        "name": "aeronautics:music.glide",
+        "stream": true,
+        "weight": 5
+      },
+      "minecraft:music/game/swamp/aerie",
+      "minecraft:music/game/floating_dream",
+      "minecraft:music/game/infinite_amethyst",
+      "minecraft:music/game/echo_in_the_wind",
+      "minecraft:music/game/clark",
+      "minecraft:music/game/subwoofer_lullaby",
+      "minecraft:music/game/watcher"
+    ]
+  },
+  "music.glide": {
+    "sounds": [
+      {
+        "name": "aeronautics:music/glide",
+        "stream": true
+      }
+    ]
+  },
+  "music.mammatus": {
+    "sounds": [
+      {
+        "name": "aeronautics:music/mammatus",
+        "stream": true
+      }
+    ]
+  },
+  "music.rain": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "aeronautics:music.mammatus",
+        "stream": true,
+        "weight": 5
+      },
+      {
+        "type": "event",
+        "name": "aeronautics:music.adrift",
+        "stream": true
+      },
+      "minecraft:music/game/swamp/aerie",
+      "minecraft:music/game/swamp/labyrinthine",
+      "minecraft:music/game/water/axolotl"
+    ]
+  },
+  "music_disc.cloud_skipper": {
+    "sounds": [
+      {
+        "name": "aeronautics:music/cloud_skipper",
+        "stream": true
+      }
+    ]
+  }
+}

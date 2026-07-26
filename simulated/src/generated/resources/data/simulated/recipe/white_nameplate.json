@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:paper",
+    "minecraft:stick",
+    "create:andesite_alloy"
+  ],
+  "result": {
+    "count": 4,
+    "id": "simulated:white_nameplate"
+  }
+}

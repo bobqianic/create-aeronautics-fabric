@@ -1,0 +1,65 @@
+package com.tterrag.registrate.providers;
+
+import com.tterrag.registrate.builders.Builder;
+import com.tterrag.registrate.util.nullness.NonNullSupplier;
+import com.tterrag.registrate.util.nullness.NonnullType;
+
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Value;
+import lombok.experimental.Delegate;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+
+/**
+ * A context bean passed to data generator callbacks. Contains the entry that data is being created for, and some metadata about the entry.
+ *
+ * @param <R>
+ *            Type of the registry to which the entry belongs
+ * @param <E>
+ *            Type of the object for which data is being generated
+ */
+@Value
+public class DataGenContext<R, E extends R> implements NonNullSupplier<E> {
+
+    @Getter(AccessLevel.NONE)
+    @Delegate
+    NonNullSupplier<E> entry;
+    String name;
+    ResourceLocation id;
+
+    public DataGenContext(final NonNullSupplier<E> entry, final String name, final ResourceLocation id) {
+        this.entry = entry;
+        this.name = name;
+        this.id = id;
+    }
+
+    @SuppressWarnings("null")
+    public @NonnullType E getEntry() {
+        return entry.get();
+    }
+
+    @Override
+    public @NonnullType E get() {
+        return entry.get();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ResourceLocation getId() {
+        return id;
+    }
+
+    @Deprecated
+    public static <R, E extends R> DataGenContext<R, E> from(Builder<R, E, ?, ?> builder, ResourceKey<? extends Registry<R>> type) {
+        return from(builder);
+    }
+    
+    public static <R, E extends R> DataGenContext<R, E> from(Builder<R, E, ?, ?> builder) {
+        return new DataGenContext<R, E>(() -> builder.getOwner().<R, E>get(builder.getName(), builder.getRegistryKey()).get(), builder.getName(),
+                ResourceLocation.fromNamespaceAndPath(builder.getOwner().getModid(), builder.getName()));
+    }
+}

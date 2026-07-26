@@ -1,0 +1,6 @@
+{
+  "parent": "simulated:block/handle/block_horizontal",
+  "textures": {
+    "0": "simulated:block/handle/pink_handle"
+  }
+}

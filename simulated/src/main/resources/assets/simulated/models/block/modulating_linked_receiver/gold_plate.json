@@ -1,0 +1,18 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"2": "simulated:block/modulating_directional_receiver",
+		"particle": "simulated:block/custom_break_particles/modulating_directional_receiver"
+	},
+	"elements": [
+		{
+			"name": "bottom_plate",
+			"from": [5, 4, 5],
+			"to": [11, 4, 11],
+			"faces": {
+				"up": {"uv": [13, 16, 10, 13], "texture": "#2"},
+				"down": {"uv": [16, 13, 13, 16], "texture": "#2"}
+			}
+		}
+	]
+}

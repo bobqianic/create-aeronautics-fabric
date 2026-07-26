@@ -1,0 +1,11 @@
+{
+    "type":  "create:deploying",
+    "results":  [
+                    {
+                        "count":  3,
+                        "id":  "aeronautics:orange_envelope"
+                    }
+                ],
+    "target":  "minecraft:orange_wool",
+    "ingredient":  "minecraft:stick"
+}

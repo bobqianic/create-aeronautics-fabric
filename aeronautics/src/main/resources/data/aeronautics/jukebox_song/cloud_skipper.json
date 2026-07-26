@@ -1,0 +1,8 @@
+{
+  "comparator_output": 12,
+  "description": {
+    "translate": "jukebox_song.aeronautics.cloud_skipper"
+  },
+  "length_in_seconds": 225.0,
+  "sound_event": "aeronautics:music_disc.cloud_skipper"
+}

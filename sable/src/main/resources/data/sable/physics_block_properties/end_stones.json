@@ -1,0 +1,7 @@
+{
+  "selector": "#sable:end_stones",
+
+  "properties": {
+    "sable:floating_material": "sable:end_stone"
+  }
+}

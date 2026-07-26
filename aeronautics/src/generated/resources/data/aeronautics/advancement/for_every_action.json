@@ -1,0 +1,29 @@
+{
+  "parent": "aeronautics:head_in_the_clouds",
+  "criteria": {
+    "0": {
+      "conditions": "aeronautics:for_every_action_builtin",
+      "trigger": "aeronautics:for_every_action_builtin"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.aeronautics.for_every_action.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "aeronautics:wooden_propeller"
+    },
+    "title": {
+      "translate": "advancement.aeronautics.for_every_action"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.eriksonn.aeronautics.gametest.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "GameTestBatchFactoryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

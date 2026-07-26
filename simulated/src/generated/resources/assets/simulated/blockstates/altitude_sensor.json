@@ -1,0 +1,110 @@
+{
+  "variants": {
+    "dial=linear,face=ceiling,facing=east": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 180,
+      "y": 90
+    },
+    "dial=linear,face=ceiling,facing=north": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 180
+    },
+    "dial=linear,face=ceiling,facing=south": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 180,
+      "y": 180
+    },
+    "dial=linear,face=ceiling,facing=west": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 180,
+      "y": 270
+    },
+    "dial=linear,face=floor,facing=east": {
+      "model": "simulated:block/altitude_sensor/block",
+      "y": 90
+    },
+    "dial=linear,face=floor,facing=north": {
+      "model": "simulated:block/altitude_sensor/block"
+    },
+    "dial=linear,face=floor,facing=south": {
+      "model": "simulated:block/altitude_sensor/block",
+      "y": 180
+    },
+    "dial=linear,face=floor,facing=west": {
+      "model": "simulated:block/altitude_sensor/block",
+      "y": 270
+    },
+    "dial=linear,face=wall,facing=east": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 90,
+      "y": 90
+    },
+    "dial=linear,face=wall,facing=north": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 90
+    },
+    "dial=linear,face=wall,facing=south": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 90,
+      "y": 180
+    },
+    "dial=linear,face=wall,facing=west": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 90,
+      "y": 270
+    },
+    "dial=radial,face=ceiling,facing=east": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 180,
+      "y": 90
+    },
+    "dial=radial,face=ceiling,facing=north": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 180
+    },
+    "dial=radial,face=ceiling,facing=south": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 180,
+      "y": 180
+    },
+    "dial=radial,face=ceiling,facing=west": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 180,
+      "y": 270
+    },
+    "dial=radial,face=floor,facing=east": {
+      "model": "simulated:block/altitude_sensor/block",
+      "y": 90
+    },
+    "dial=radial,face=floor,facing=north": {
+      "model": "simulated:block/altitude_sensor/block"
+    },
+    "dial=radial,face=floor,facing=south": {
+      "model": "simulated:block/altitude_sensor/block",
+      "y": 180
+    },
+    "dial=radial,face=floor,facing=west": {
+      "model": "simulated:block/altitude_sensor/block",
+      "y": 270
+    },
+    "dial=radial,face=wall,facing=east": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 90,
+      "y": 90
+    },
+    "dial=radial,face=wall,facing=north": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 90
+    },
+    "dial=radial,face=wall,facing=south": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 90,
+      "y": 180
+    },
+    "dial=radial,face=wall,facing=west": {
+      "model": "simulated:block/altitude_sensor/block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

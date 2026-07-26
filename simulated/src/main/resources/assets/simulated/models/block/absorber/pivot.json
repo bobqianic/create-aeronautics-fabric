@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"4": "simulated:block/absorber/absorber",
+		"particle": "simulated:block/absorber/absorber_base"
+	},
+	"elements": [
+		{
+			"name": "pivot",
+			"from": [0.1, -1, 7],
+			"to": [15.9, 1, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 9, 8, 10], "texture": "#4"},
+				"east": {"uv": [3.5, 9, 4.5, 10], "texture": "#4"},
+				"south": {"uv": [0, 9, 8, 10], "texture": "#4"},
+				"west": {"uv": [4.5, 9, 3.5, 10], "texture": "#4"},
+				"up": {"uv": [0, 9, 8, 10], "texture": "#4"},
+				"down": {"uv": [0, 9, 8, 10], "texture": "#4"}
+			}
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "block/air",
+  "ambientocclusion": false,
+  "textures": {
+    "wheel": "offroad:block/rockcutting_wheel"
+  },
+  "loader": "neoforge:obj",
+  "flip_v": true,
+  "model": "offroad:models/block/rockcutting_wheel/rockcutting_wheel.obj"
+}

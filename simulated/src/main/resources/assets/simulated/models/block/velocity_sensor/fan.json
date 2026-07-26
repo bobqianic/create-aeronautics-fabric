@@ -1,0 +1,50 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "simulated:block/velocity_sensor/velocity_sensor",
+		"1": "simulated:block/velocity_sensor/fan_blades",
+		"particle": "simulated:block/velocity_sensor/velocity_sensor"
+	},
+	"elements": [
+		{
+			"name": "axle",
+			"from": [6.5, 6.5, 5],
+			"to": [9.5, 9.5, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 7, 5]},
+			"faces": {
+				"east": {"uv": [1.5, 8.5, 4.5, 10], "texture": "#0"},
+				"west": {"uv": [1.5, 8.5, 4.5, 10], "texture": "#0"},
+				"up": {"uv": [1.5, 8.5, 4.5, 10], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [1.5, 8.5, 4.5, 10], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"name": "fan1",
+			"from": [1, 1, 6],
+			"to": [15, 15, 6],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 8, 6]},
+			"faces": {
+				"north": {"uv": [1, 1, 15, 15], "texture": "#1"},
+				"south": {"uv": [15, 1, 1, 15], "texture": "#1"}
+			}
+		},
+		{
+			"name": "fan2",
+			"from": [1, 1, 10],
+			"to": [15, 15, 10],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 8, 10]},
+			"faces": {
+				"north": {"uv": [1, 1, 15, 15], "rotation": 90, "texture": "#1"},
+				"south": {"uv": [15, 1, 1, 15], "rotation": 270, "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "fan",
+			"origin": [6, 7, 5],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}

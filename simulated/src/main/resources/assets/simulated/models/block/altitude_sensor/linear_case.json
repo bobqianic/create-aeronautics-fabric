@@ -1,0 +1,79 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "simulated:block/altitude_sensor/altitude_sensor",
+		"5": "simulated:block/altitude_sensor/altitude_sensor_dial_linear",
+		"particle": "create:block/andesite_casing"
+	},
+	"elements": [
+		{
+			"name": "case_exterior",
+			"from": [2, 2, 4],
+			"to": [14, 14, 9],
+			"faces": {
+				"north": {"uv": [0, 0, 6, 6], "texture": "#0"},
+				"east": {"uv": [8.5, 0, 6, 6], "texture": "#0"},
+				"south": {"uv": [0, 6, 6, 12], "texture": "#0"},
+				"west": {"uv": [6, 0, 8.5, 6], "texture": "#0"},
+				"up": {"uv": [6, 0, 8.5, 6], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [6, 0, 8.5, 6], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"name": "case_interior",
+			"from": [2.1, 2.1, 8],
+			"to": [13.9, 13.9, 4],
+			"faces": {
+				"east": {"uv": [6, 0, 8.5, 6], "texture": "#0"},
+				"west": {"uv": [6, 0, 8.5, 6], "texture": "#0"},
+				"up": {"uv": [6, 0, 8.5, 6], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [8.5, 0, 6, 6], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"name": "aneroid",
+			"from": [4, 4, 9],
+			"to": [12, 12, 13],
+			"faces": {
+				"east": {"uv": [1, 14, 5, 16], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [1, 7, 5, 11], "texture": "#0"},
+				"west": {"uv": [1, 16, 5, 14], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [1, 12, 5, 14], "texture": "#0"},
+				"down": {"uv": [1, 12, 5, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "aneroid_bracket",
+			"from": [5, 5, 8.5],
+			"to": [14, 14, 13.5],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [15, 2.5, 10.5, 0], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [10.5, 1, 15, 5.5], "texture": "#0"},
+				"up": {"uv": [13.5, 1, 16, 5.5], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"name": "face",
+			"from": [2.5, 2.5, 5],
+			"to": [13.5, 13.5, 5],
+			"faces": {
+				"north": {"uv": [1, 1, 12, 12], "texture": "#5"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "case",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		},
+		{
+			"name": "dial_linear",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [4]
+		}
+	]
+}

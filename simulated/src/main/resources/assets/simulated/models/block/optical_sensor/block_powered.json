@@ -1,0 +1,6 @@
+{
+	"parent": "simulated:block/optical_sensor/block",
+	"textures": {
+		"3": "simulated:block/optical_sensor/optical_sensor_on"
+	}
+}

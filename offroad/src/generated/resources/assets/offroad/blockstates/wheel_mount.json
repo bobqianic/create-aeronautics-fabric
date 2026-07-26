@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "offroad:block/wheel_mount/block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "offroad:block/wheel_mount/block"
+    },
+    "facing=south": {
+      "model": "offroad:block/wheel_mount/block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "offroad:block/wheel_mount/block",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"axis": "create:block/axis",
+		"axis_top": "create:block/axis_top",
+		"mecanum_wheel": "simulated:block/mecanum_wheel",
+		"particle": "create:block/dark_metal_block"
+	},
+	"loader": "neoforge:obj",
+	"flip_v": true,
+	"model": "simulated:models/block/mecanum_wheel/block_flipped.obj"
+}

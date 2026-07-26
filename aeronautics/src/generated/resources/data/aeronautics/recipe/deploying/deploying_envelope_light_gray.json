@@ -1,0 +1,11 @@
+{
+    "type":  "create:deploying",
+    "results":  [
+                    {
+                        "count":  3,
+                        "id":  "aeronautics:light_gray_envelope"
+                    }
+                ],
+    "target":  "minecraft:light_gray_wool",
+    "ingredient":  "minecraft:stick"
+}

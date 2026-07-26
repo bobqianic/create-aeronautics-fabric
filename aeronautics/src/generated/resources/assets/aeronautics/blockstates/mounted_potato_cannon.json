@@ -1,0 +1,196 @@
+{
+  "variants": {
+    "axis_along_first=false,blocked=false,facing=down,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "x": 270,
+      "y": 90
+    },
+    "axis_along_first=false,blocked=false,facing=down,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "x": 270,
+      "y": 90
+    },
+    "axis_along_first=false,blocked=false,facing=east,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "y": 270
+    },
+    "axis_along_first=false,blocked=false,facing=east,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "y": 270
+    },
+    "axis_along_first=false,blocked=false,facing=north,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical",
+      "y": 180
+    },
+    "axis_along_first=false,blocked=false,facing=north,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical_powered",
+      "y": 180
+    },
+    "axis_along_first=false,blocked=false,facing=south,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical"
+    },
+    "axis_along_first=false,blocked=false,facing=south,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical_powered"
+    },
+    "axis_along_first=false,blocked=false,facing=up,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis_along_first=false,blocked=false,facing=up,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "x": 90,
+      "y": 90
+    },
+    "axis_along_first=false,blocked=false,facing=west,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "y": 90
+    },
+    "axis_along_first=false,blocked=false,facing=west,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "y": 90
+    },
+    "axis_along_first=false,blocked=true,facing=down,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "x": 270,
+      "y": 90
+    },
+    "axis_along_first=false,blocked=true,facing=down,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "x": 270,
+      "y": 90
+    },
+    "axis_along_first=false,blocked=true,facing=east,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "y": 270
+    },
+    "axis_along_first=false,blocked=true,facing=east,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "y": 270
+    },
+    "axis_along_first=false,blocked=true,facing=north,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical",
+      "y": 180
+    },
+    "axis_along_first=false,blocked=true,facing=north,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical_powered",
+      "y": 180
+    },
+    "axis_along_first=false,blocked=true,facing=south,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical"
+    },
+    "axis_along_first=false,blocked=true,facing=south,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical_powered"
+    },
+    "axis_along_first=false,blocked=true,facing=up,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis_along_first=false,blocked=true,facing=up,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "x": 90,
+      "y": 90
+    },
+    "axis_along_first=false,blocked=true,facing=west,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "y": 90
+    },
+    "axis_along_first=false,blocked=true,facing=west,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "y": 90
+    },
+    "axis_along_first=true,blocked=false,facing=down,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "x": 270
+    },
+    "axis_along_first=true,blocked=false,facing=down,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "x": 270
+    },
+    "axis_along_first=true,blocked=false,facing=east,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical",
+      "y": 270
+    },
+    "axis_along_first=true,blocked=false,facing=east,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical_powered",
+      "y": 270
+    },
+    "axis_along_first=true,blocked=false,facing=north,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "y": 180
+    },
+    "axis_along_first=true,blocked=false,facing=north,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "y": 180
+    },
+    "axis_along_first=true,blocked=false,facing=south,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal"
+    },
+    "axis_along_first=true,blocked=false,facing=south,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered"
+    },
+    "axis_along_first=true,blocked=false,facing=up,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "x": 90
+    },
+    "axis_along_first=true,blocked=false,facing=up,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "x": 90
+    },
+    "axis_along_first=true,blocked=false,facing=west,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical",
+      "y": 90
+    },
+    "axis_along_first=true,blocked=false,facing=west,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical_powered",
+      "y": 90
+    },
+    "axis_along_first=true,blocked=true,facing=down,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "x": 270
+    },
+    "axis_along_first=true,blocked=true,facing=down,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "x": 270
+    },
+    "axis_along_first=true,blocked=true,facing=east,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical",
+      "y": 270
+    },
+    "axis_along_first=true,blocked=true,facing=east,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical_powered",
+      "y": 270
+    },
+    "axis_along_first=true,blocked=true,facing=north,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "y": 180
+    },
+    "axis_along_first=true,blocked=true,facing=north,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "y": 180
+    },
+    "axis_along_first=true,blocked=true,facing=south,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal"
+    },
+    "axis_along_first=true,blocked=true,facing=south,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered"
+    },
+    "axis_along_first=true,blocked=true,facing=up,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal",
+      "x": 90
+    },
+    "axis_along_first=true,blocked=true,facing=up,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_horizontal_powered",
+      "x": 90
+    },
+    "axis_along_first=true,blocked=true,facing=west,powered=false": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical",
+      "y": 90
+    },
+    "axis_along_first=true,blocked=true,facing=west,powered=true": {
+      "model": "aeronautics:block/mounted_potato_cannon/block_vertical_powered",
+      "y": 90
+    }
+  }
+}

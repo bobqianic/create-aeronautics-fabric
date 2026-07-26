@@ -1,0 +1,32 @@
+{
+  "values": [
+    "simulated:physics_assembler",
+    "simulated:swivel_bearing",
+    "simulated:swivel_bearing_link_block",
+    "simulated:rope_winch",
+    "simulated:rope_connector",
+    "simulated:torsion_spring",
+    "simulated:white_portable_engine",
+    "simulated:orange_portable_engine",
+    "simulated:magenta_portable_engine",
+    "simulated:light_blue_portable_engine",
+    "simulated:yellow_portable_engine",
+    "simulated:lime_portable_engine",
+    "simulated:pink_portable_engine",
+    "simulated:gray_portable_engine",
+    "simulated:light_gray_portable_engine",
+    "simulated:cyan_portable_engine",
+    "simulated:purple_portable_engine",
+    "simulated:blue_portable_engine",
+    "simulated:brown_portable_engine",
+    "simulated:green_portable_engine",
+    "simulated:red_portable_engine",
+    "simulated:black_portable_engine",
+    "simulated:laser_pointer",
+    "simulated:laser_sensor",
+    "simulated:gimbal_sensor",
+    "simulated:optical_sensor",
+    "simulated:analog_transmission",
+    "#simulated:handles"
+  ]
+}

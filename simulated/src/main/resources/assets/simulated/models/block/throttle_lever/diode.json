@@ -1,0 +1,35 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "simulated:block/throttle_lever/throttle_lever_1"
+	},
+	"elements": [
+		{
+			"from": [6, 1, 3],
+			"to": [10, 3, 4],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 1, 3]},
+			"faces": {
+				"north": {"uv": [2, 0, 4, 4], "rotation": 90, "texture": "#particle"},
+				"up": {"uv": [2, 0, 3, 4], "rotation": 90, "texture": "#particle"}
+			}
+		},
+		{
+			"from": [6, 1, 12],
+			"to": [10, 3, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2, 12.5]},
+			"faces": {
+				"south": {"uv": [2, 0, 4, 4], "rotation": 90, "texture": "#particle"},
+				"up": {"uv": [2, 0, 3, 4], "rotation": 270, "texture": "#particle"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "redstone",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

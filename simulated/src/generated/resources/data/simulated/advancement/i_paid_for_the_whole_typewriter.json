@@ -1,0 +1,30 @@
+{
+  "parent": "simulated:get_a_grip",
+  "criteria": {
+    "0": {
+      "conditions": "simulated:i_paid_for_the_whole_typewriter_builtin",
+      "trigger": "simulated:i_paid_for_the_whole_typewriter_builtin"
+    }
+  },
+  "display": {
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.simulated.i_paid_for_the_whole_typewriter.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "simulated:linked_typewriter"
+    },
+    "title": {
+      "translate": "advancement.simulated.i_paid_for_the_whole_typewriter"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

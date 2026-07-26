@@ -1,0 +1,1540 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "north",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left_powered",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right_powered",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left_powered",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right_powered",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "east",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right"
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "south",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left_powered",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right_powered",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left_powered",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right_powered",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "west",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "x": 90
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "up",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "x": 270
+      },
+      "when": {
+        "axis_along_first": "true",
+        "facing": "down",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left_powered",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right_powered",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left_powered",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right_powered",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right",
+        "y": 180
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "north",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "y": 270
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "east",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left_powered"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right_powered"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left_powered"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right_powered"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/middle"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/left"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/vertical/right"
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "south",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "west",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "up",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left_powered",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down",
+        "left_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down",
+        "right_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right_powered",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down",
+        "right_powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/middle",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/left",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down",
+        "left_powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/directional_gearshift/horizontal/right",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "axis_along_first": "false",
+        "facing": "down",
+        "right_powered": "false"
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,on_floor=false,waterlogged=false": {
+      "model": "simulated:block/steering_wheel/block_up",
+      "y": 90
+    },
+    "facing=east,on_floor=false,waterlogged=true": {
+      "model": "simulated:block/steering_wheel/block_up",
+      "y": 90
+    },
+    "facing=east,on_floor=true,waterlogged=false": {
+      "model": "simulated:block/steering_wheel/block",
+      "y": 90
+    },
+    "facing=east,on_floor=true,waterlogged=true": {
+      "model": "simulated:block/steering_wheel/block",
+      "y": 90
+    },
+    "facing=north,on_floor=false,waterlogged=false": {
+      "model": "simulated:block/steering_wheel/block_up"
+    },
+    "facing=north,on_floor=false,waterlogged=true": {
+      "model": "simulated:block/steering_wheel/block_up"
+    },
+    "facing=north,on_floor=true,waterlogged=false": {
+      "model": "simulated:block/steering_wheel/block"
+    },
+    "facing=north,on_floor=true,waterlogged=true": {
+      "model": "simulated:block/steering_wheel/block"
+    },
+    "facing=south,on_floor=false,waterlogged=false": {
+      "model": "simulated:block/steering_wheel/block_up",
+      "y": 180
+    },
+    "facing=south,on_floor=false,waterlogged=true": {
+      "model": "simulated:block/steering_wheel/block_up",
+      "y": 180
+    },
+    "facing=south,on_floor=true,waterlogged=false": {
+      "model": "simulated:block/steering_wheel/block",
+      "y": 180
+    },
+    "facing=south,on_floor=true,waterlogged=true": {
+      "model": "simulated:block/steering_wheel/block",
+      "y": 180
+    },
+    "facing=west,on_floor=false,waterlogged=false": {
+      "model": "simulated:block/steering_wheel/block_up",
+      "y": 270
+    },
+    "facing=west,on_floor=false,waterlogged=true": {
+      "model": "simulated:block/steering_wheel/block_up",
+      "y": 270
+    },
+    "facing=west,on_floor=true,waterlogged=false": {
+      "model": "simulated:block/steering_wheel/block",
+      "y": 270
+    },
+    "facing=west,on_floor=true,waterlogged=true": {
+      "model": "simulated:block/steering_wheel/block",
+      "y": 270
+    }
+  }
+}

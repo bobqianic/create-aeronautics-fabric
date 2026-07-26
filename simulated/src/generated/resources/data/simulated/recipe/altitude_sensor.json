@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "create:andesite_casing",
+    "P": "minecraft:paper",
+    "S": "create:iron_sheet"
+  },
+  "pattern": [
+    "P",
+    "S",
+    "A"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:altitude_sensor"
+  }
+}

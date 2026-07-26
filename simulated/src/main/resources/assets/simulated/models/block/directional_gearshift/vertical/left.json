@@ -1,0 +1,24 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"3": "simulated:block/directional_gearshift/differential_interior",
+		"5": "simulated:block/directional_gearshift/differential_unpowered"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 14],
+			"to": [14, 16, 16],
+			"rotation": {"angle": 0, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [8, 9, 16, 15], "rotation": 90, "texture": "#3"},
+				"east": {"uv": [8, 8, 16, 9], "rotation": 90, "texture": "#5"},
+				"south": {"uv": [8, 9, 16, 15], "rotation": 270, "texture": "#5"},
+				"west": {"uv": [8, 8, 16, 9], "rotation": 270, "texture": "#5"},
+				"up": {"uv": [8, 9, 7, 15], "rotation": 270, "texture": "#5"},
+				"down": {"uv": [7, 9, 8, 15], "rotation": 270, "texture": "#5"}
+			}
+		}
+	]
+}

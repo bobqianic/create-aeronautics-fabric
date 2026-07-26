@@ -1,0 +1,55 @@
+{
+  "item.offroad.tire.placement_error": "Must be placed on the front of a Wheel Mount!",
+
+  "block.offroad.wheel_mount.tooltip": {
+    "summary": "Mounts _wheel-like_ items to allow for ground travel.",
+    "condition1": "When Powered From Top",
+    "behaviour1": "_Brakes_ the attached wheel, _increasing friction_.",
+    "condition2": "When Powered From Side",
+    "behaviour2": "_Steers_ the wheel toward the _side the signal is from_."
+  },
+
+  "item.offroad.small_tire.tooltip": {
+    "summary": "A _small-terrain wheel._",
+    "condition1": "When R-Clicked on Wheel Mount",
+    "behaviour1": "_Places_ the tire on the mount."
+  },
+
+  "item.offroad.tire.tooltip": {
+    "summary": "A standard _all-terrain wheel._",
+    "condition1": "When R-Clicked on Wheel Mount",
+    "behaviour1": "_Places_ the tire on the mount."
+  },
+
+  "item.offroad.large_tire.tooltip": {
+    "summary": "A large _all-terrain wheel._",
+    "condition1": "When R-Clicked on Wheel Mount",
+    "behaviour1": "_Places_ the tire on the mount."
+  },
+
+  "item.offroad.monstrous_tire.tooltip": {
+    "summary": "A monstrously large _all-terrain wheel._",
+    "condition1": "When R-Clicked on Wheel Mount",
+    "behaviour1": "_Places_ the tire on the mount."
+  },
+
+  "offroad": {
+    "simulated_section.offroad": "Offroad",
+    "tooltip.borehead_bearing_stress" : "Rock Cutting Wheels",
+
+    "scroll_option": {
+      "suspension_strength": "Suspension Strength",
+      "suspension_strength_label": "Strength"
+    },
+
+    "exceptions": {
+      "borehead_bearing" : {
+        "insuffecient_rockcutting_wheels": "Attached structure does not include any _Rock Cutting_ _Wheels_:\nA minimum of _one_ is required.",
+        "insuffecient_inventory_blocks": "Attached structure does not include any _inventory_ blocks.",
+
+        "too_many_items" : "This contraption is unable to excavate.",
+        "too_many_items_description" : "There is _insufficient_ _storage_ to gather more blocks. _Remove_ excess items in order to continue excavating."
+      }
+    }
+  }
+}

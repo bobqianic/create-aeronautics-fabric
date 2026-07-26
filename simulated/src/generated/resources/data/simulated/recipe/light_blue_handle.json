@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "handle_variants",
+  "ingredients": [
+    "simulated:iron_handle",
+    "minecraft:light_blue_dye"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:light_blue_handle"
+  }
+}

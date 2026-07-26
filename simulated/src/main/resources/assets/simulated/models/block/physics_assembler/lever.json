@@ -1,0 +1,76 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"4": "simulated:block/physics_assembler",
+		"particle": "create:block/andesite_casing"
+	},
+	"elements": [
+		{
+			"name": "knob",
+			"from": [6.5, 15, 6.5],
+			"to": [9.5, 18, 9.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7, 8]},
+			"faces": {
+				"north": {"uv": [12, 1.5, 13.5, 3], "texture": "#4"},
+				"east": {"uv": [12, 1.5, 13.5, 3], "texture": "#4"},
+				"south": {"uv": [12, 1.5, 13.5, 3], "texture": "#4"},
+				"west": {"uv": [12, 1.5, 13.5, 3], "texture": "#4"},
+				"up": {"uv": [12, 0, 13.5, 1.5], "texture": "#4"},
+				"down": {"uv": [12, 0, 13.5, 1.5], "texture": "#4"}
+			}
+		},
+		{
+			"name": "lever",
+			"from": [7, 8, 7],
+			"to": [9, 15, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7, 8]},
+			"faces": {
+				"north": {"uv": [12, 3, 13, 6.5], "texture": "#4"},
+				"east": {"uv": [12, 3, 13, 6.5], "texture": "#4"},
+				"south": {"uv": [12, 3, 13, 6.5], "texture": "#4"},
+				"west": {"uv": [12, 3, 13, 6.5], "texture": "#4"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -135, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "lever",
+			"origin": [7, 6, 6.5],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "#c:end_stones",
+    "minecraft:end_stone_bricks",
+    "minecraft:end_stone_brick_stairs",
+    "minecraft:end_stone_brick_wall",
+    
+    { "id": "supplementaries:end_stone_lamp", "required": false },
+    
+    { "id": "architects_palette:choral_end_stone_bricks", "required": false },
+    { "id": "architects_palette:cracked_end_stone_bricks", "required": false },
+    { "id": "architects_palette:chiseled_end_stone_bricks", "required": false },
+    { "id": "architects_palette:heavy_end_stone_bricks", "required": false },
+    { "id": "architects_palette:heavy_cracked_end_stone_bricks", "required": false }
+  ]
+}

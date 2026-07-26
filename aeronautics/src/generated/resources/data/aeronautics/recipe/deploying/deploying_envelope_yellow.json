@@ -1,0 +1,11 @@
+{
+    "type":  "create:deploying",
+    "results":  [
+                    {
+                        "count":  3,
+                        "id":  "aeronautics:yellow_envelope"
+                    }
+                ],
+    "target":  "minecraft:yellow_wool",
+    "ingredient":  "minecraft:stick"
+}

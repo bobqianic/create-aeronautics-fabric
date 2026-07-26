@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:slabs",
+    "#minecraft:stairs",
+    
+    { "id": "decorative_blocks:chain", "required": false },
+    { "id": "#decorative_blocks:palisades", "required": false },
+    
+    { "id": "quark:feeding_trough", "required": false },
+    { "id": "#quark:vertical_slabs", "required": false },
+    { "id": "#quark:hedges", "required": false },
+    
+    { "id": "supplementaries:blackboard", "required": false },
+    { "id": "supplementaries:jar", "required": false },
+    
+    { "id": "#storagedrawers:half_drawers", "required": false },
+    
+    { "id": "#another_furniture:seats", "required": false }
+    
+  ]
+}

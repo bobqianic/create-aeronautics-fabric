@@ -1,0 +1,13 @@
+{
+  "vertex": "simulated:end_sea",
+  "fragment": "simulated:end_sea",
+  "textures": {
+    "SkySampler": {
+      "type": "location",
+      "location": "textures/entity/end_portal.png",
+      "filter": {
+        "blur": false
+      }
+    }
+  }
+}

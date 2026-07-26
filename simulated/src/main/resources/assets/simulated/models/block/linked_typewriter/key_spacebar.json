@@ -1,0 +1,42 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"1": "simulated:block/linked_typewriter/linked_typewriter",
+		"particle": "create:block/brass_casing"
+	},
+	"elements": [
+		{
+			"name": "14",
+			"from": [-5, 0, -1],
+			"to": [5, 1, 1],
+			"faces": {
+				"north": {"uv": [9.5, 12, 14.5, 12.5], "texture": "#1"},
+				"east": {"uv": [8, 12, 8.5, 11], "rotation": 90, "texture": "#1"},
+				"south": {"uv": [9.5, 12, 14.5, 12.5], "texture": "#1"},
+				"west": {"uv": [8, 12, 8.5, 11], "rotation": 90, "texture": "#1"},
+				"up": {"uv": [9.5, 11, 14.5, 12], "texture": "#1"},
+				"down": {"uv": [9, 7.5, 9.5, 8], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "Antenna",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": []
+		},
+		{
+			"name": "Body",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": []
+		},
+		{
+			"name": "Keys",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

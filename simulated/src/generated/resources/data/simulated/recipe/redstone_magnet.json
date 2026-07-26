@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:redstone",
+    "create:copper_sheet",
+    "create:industrial_iron_block"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:redstone_magnet"
+  }
+}

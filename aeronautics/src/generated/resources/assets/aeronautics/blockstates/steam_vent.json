@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,powered=false,variant=gold,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 90
+    },
+    "facing=east,powered=false,variant=gold,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 90
+    },
+    "facing=east,powered=false,variant=iron,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 90
+    },
+    "facing=east,powered=false,variant=iron,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 90
+    },
+    "facing=east,powered=true,variant=gold,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 90
+    },
+    "facing=east,powered=true,variant=gold,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 90
+    },
+    "facing=east,powered=true,variant=iron,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 90
+    },
+    "facing=east,powered=true,variant=iron,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 90
+    },
+    "facing=north,powered=false,variant=gold,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_gold"
+    },
+    "facing=north,powered=false,variant=gold,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_gold"
+    },
+    "facing=north,powered=false,variant=iron,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_iron"
+    },
+    "facing=north,powered=false,variant=iron,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_iron"
+    },
+    "facing=north,powered=true,variant=gold,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_gold"
+    },
+    "facing=north,powered=true,variant=gold,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_gold"
+    },
+    "facing=north,powered=true,variant=iron,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_iron"
+    },
+    "facing=north,powered=true,variant=iron,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_iron"
+    },
+    "facing=south,powered=false,variant=gold,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 180
+    },
+    "facing=south,powered=false,variant=gold,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 180
+    },
+    "facing=south,powered=false,variant=iron,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 180
+    },
+    "facing=south,powered=false,variant=iron,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 180
+    },
+    "facing=south,powered=true,variant=gold,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 180
+    },
+    "facing=south,powered=true,variant=gold,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 180
+    },
+    "facing=south,powered=true,variant=iron,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 180
+    },
+    "facing=south,powered=true,variant=iron,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 180
+    },
+    "facing=west,powered=false,variant=gold,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 270
+    },
+    "facing=west,powered=false,variant=gold,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 270
+    },
+    "facing=west,powered=false,variant=iron,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 270
+    },
+    "facing=west,powered=false,variant=iron,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 270
+    },
+    "facing=west,powered=true,variant=gold,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 270
+    },
+    "facing=west,powered=true,variant=gold,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_gold",
+      "y": 270
+    },
+    "facing=west,powered=true,variant=iron,waterlogged=false": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 270
+    },
+    "facing=west,powered=true,variant=iron,waterlogged=true": {
+      "model": "aeronautics:block/steam_vent/block_iron",
+      "y": 270
+    }
+  }
+}

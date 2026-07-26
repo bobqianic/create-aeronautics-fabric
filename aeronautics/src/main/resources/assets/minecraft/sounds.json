@@ -1,0 +1,11 @@
+{
+	"music.menu": {
+		"sounds": [
+			{
+				"name": "aeronautics:music.mammatus",
+				"type": "event",
+				"stream": true
+			}
+		]
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "fragment": "aeronautics:burner_flame",
+  "vertex": "aeronautics:burner_flame",
+  "textures": {
+    "FirePalette": "aeronautics:textures/effects/fire_palette.png"
+  }
+}

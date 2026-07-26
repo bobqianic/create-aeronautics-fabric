@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "dev.simulated_team.simulated.fabric.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "laser.LevelRendererMixin",
+    "physics_staff.GameRendererMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

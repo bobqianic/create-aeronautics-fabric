@@ -1,0 +1,45 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "simulated:block/gimbal_sensor/gimbal_sensor",
+		"particle": "simulated:block/gimbal_sensor/gimbal_sensor"
+	},
+	"render_type": "minecraft:cutout",
+	"elements": [
+		{
+			"name": "compass_exterior",
+			"from": [-5.5, -2.5, -5.5],
+			"to": [5.5, 1.5, 5.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [10, 5.5, 15.5, 7.5], "texture": "#0"},
+				"east": {"uv": [10, 5.5, 15.5, 7.5], "texture": "#0"},
+				"south": {"uv": [10, 5.5, 15.5, 7.5], "texture": "#0"},
+				"west": {"uv": [10, 5.5, 15.5, 7.5], "texture": "#0"},
+				"up": {"uv": [10, 0, 15.5, 5.5], "texture": "#0"},
+				"down": {"uv": [10, 7, 10.5, 7.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "compass_interior",
+			"from": [-4.55, 1.5, -4.55],
+			"to": [4.55, 0.5, 4.55],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [15.5, 0.5, 16, 5], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [15.5, 0.5, 16, 5], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [15.5, 0.5, 16, 5], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [15.5, 0.5, 16, 5], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [5.5, 0, 10, 4.5], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "compass",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

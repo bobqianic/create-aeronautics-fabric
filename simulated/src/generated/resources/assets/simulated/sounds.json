@@ -1,0 +1,218 @@
+{
+  "block.absorber.eats": {
+    "sounds": [
+      "simulated:block/absorber/foulbeast_1",
+      "simulated:block/absorber/foulbeast_2"
+    ],
+    "subtitle": "simulated.subtitle.block.absorber.eats"
+  },
+  "block.auger_shaft.encase": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.netherite_block.hit"
+      }
+    ],
+    "subtitle": "simulated.subtitle.block.auger_shaft.encase"
+  },
+  "block.docking_connector.dock": {
+    "sounds": [
+      "simulated:block/docking_connector/dock_1",
+      "simulated:block/docking_connector/dock_2",
+      "simulated:block/docking_connector/dock_3",
+      "simulated:block/docking_connector/dock_4"
+    ],
+    "subtitle": "simulated.subtitle.block.docking_connector.dock"
+  },
+  "block.docking_connector.extend": {
+    "sounds": [
+      "simulated:block/docking_connector/retract"
+    ],
+    "subtitle": "simulated.subtitle.block.docking_connector.extend"
+  },
+  "block.docking_connector.retract": {
+    "sounds": [
+      "simulated:block/docking_connector/retract"
+    ],
+    "subtitle": "simulated.subtitle.block.docking_connector.retract"
+  },
+  "block.linked_typewriter.ding": {
+    "sounds": [
+      "simulated:block/linked_typewriter/ding"
+    ]
+  },
+  "block.linked_typewriter.tap": {
+    "sounds": [
+      "simulated:block/linked_typewriter/tap_1",
+      "simulated:block/linked_typewriter/tap_2",
+      "simulated:block/linked_typewriter/tap_3",
+      "simulated:block/linked_typewriter/tap_4",
+      "simulated:block/linked_typewriter/tap_5"
+    ],
+    "subtitle": "simulated.subtitle.block.linked_typewriter.tap"
+  },
+  "block.linked_typewriter.untap": {
+    "sounds": [
+      "simulated:block/linked_typewriter/untap"
+    ]
+  },
+  "block.physics_assembler.assemble": {
+    "sounds": [
+      "simulated:block/physics_assembler/assemble_1",
+      "simulated:block/physics_assembler/assemble_2",
+      "simulated:block/physics_assembler/assemble_3",
+      "simulated:block/physics_assembler/assemble_4",
+      "simulated:block/physics_assembler/assemble_5"
+    ],
+    "subtitle": "simulated.subtitle.block.physics_assembler.assemble"
+  },
+  "block.physics_assembler.disassemble": {
+    "sounds": [
+      "simulated:block/physics_assembler/disassemble"
+    ],
+    "subtitle": "simulated.subtitle.block.physics_assembler.disassemble"
+  },
+  "block.physics_assembler.fail": {
+    "sounds": [
+      "simulated:block/physics_assembler/fail_1",
+      "simulated:block/physics_assembler/fail_2",
+      "simulated:block/physics_assembler/fail_3"
+    ],
+    "subtitle": "simulated.subtitle.block.physics_assembler.fail"
+  },
+  "block.physics_assembler.shift": {
+    "sounds": [
+      "simulated:block/physics_assembler/shift"
+    ]
+  },
+  "block.physics_assembler.tick": {
+    "sounds": [
+      "simulated:block/physics_assembler/tick_1",
+      "simulated:block/physics_assembler/tick_2",
+      "simulated:block/physics_assembler/tick_3",
+      "simulated:block/physics_assembler/tick_4"
+    ],
+    "subtitle": "simulated.subtitle.block.physics_assembler.tick"
+  },
+  "block.plunger.place": {
+    "sounds": [
+      "simulated:block/plunger/place_1",
+      "simulated:block/plunger/place_2",
+      "simulated:block/plunger/place_3"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.portable_engine.activate": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:item.firecharge.use"
+      }
+    ],
+    "subtitle": "simulated.subtitle.block.portable_engine.activate"
+  },
+  "block.portable_engine.ambient": {
+    "sounds": [
+      "simulated:block/portable_engine/ambient_1",
+      "simulated:block/portable_engine/ambient_2",
+      "simulated:block/portable_engine/ambient_3",
+      "simulated:block/portable_engine/ambient_4",
+      "simulated:block/portable_engine/ambient_5"
+    ],
+    "subtitle": "simulated.subtitle.block.portable_engine.ambient"
+  },
+  "block.portable_engine.puff": {
+    "sounds": [
+      "simulated:block/portable_engine/puff_1",
+      "simulated:block/portable_engine/puff_2",
+      "simulated:block/portable_engine/puff_3",
+      "simulated:block/portable_engine/puff_4",
+      "simulated:block/portable_engine/puff_5"
+    ]
+  },
+  "block.rope_winch.stretch": {
+    "sounds": [
+      "simulated:block/rope_winch/rope_stretch_1",
+      "simulated:block/rope_winch/rope_stretch_2",
+      "simulated:block/rope_winch/rope_stretch_3"
+    ],
+    "subtitle": "simulated.subtitle.block.rope_winch.stretch"
+  },
+  "gui.contraption_diagram.check": {
+    "sounds": [
+      "simulated:gui/contraption_diagram/check"
+    ]
+  },
+  "gui.contraption_diagram.erase": {
+    "sounds": [
+      "simulated:gui/contraption_diagram/erase"
+    ]
+  },
+  "gui.contraption_diagram.tap": {
+    "sounds": [
+      "simulated:gui/contraption_diagram/tap_1",
+      "simulated:gui/contraption_diagram/tap_2"
+    ]
+  },
+  "item.honey_glue.use": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.honey_block.place"
+      }
+    ],
+    "subtitle": "simulated.subtitle.item.honey_glue.use"
+  },
+  "item.physics_staff.extinguish": {
+    "sounds": [
+      "simulated:item/physics_staff/extinguish_1",
+      "simulated:item/physics_staff/extinguish_2",
+      "simulated:item/physics_staff/extinguish_3"
+    ],
+    "subtitle": "simulated.subtitle.item.physics_staff.extinguish"
+  },
+  "item.physics_staff.idle": {
+    "sounds": [
+      "simulated:item/physics_staff/idle"
+    ]
+  },
+  "item.physics_staff.ignite": {
+    "sounds": [
+      "simulated:item/physics_staff/ignite_1",
+      "simulated:item/physics_staff/ignite_2",
+      "simulated:item/physics_staff/ignite_3"
+    ],
+    "subtitle": "simulated.subtitle.item.physics_staff.ignite"
+  },
+  "item.physics_staff.lock": {
+    "sounds": [
+      "simulated:item/physics_staff/lock_1",
+      "simulated:item/physics_staff/lock_2",
+      "simulated:item/physics_staff/lock_3"
+    ],
+    "subtitle": "simulated.subtitle.item.physics_staff.lock"
+  },
+  "item.physics_staff.unlock": {
+    "sounds": [
+      "simulated:item/physics_staff/lock_1",
+      "simulated:item/physics_staff/lock_2",
+      "simulated:item/physics_staff/lock_3"
+    ],
+    "subtitle": "simulated.subtitle.item.physics_staff.unlock"
+  },
+  "item.plunger_launcher.fwoomp": {
+    "sounds": [
+      "simulated:item/plunger_launcher/fwoomp"
+    ],
+    "subtitle": "simulated.subtitle.item.plunger_launcher.fwoomp"
+  },
+  "item.plunger_launcher.release": {
+    "sounds": [
+      "simulated:block/plunger/break_1",
+      "simulated:block/plunger/break_2",
+      "simulated:block/plunger/break_3",
+      "simulated:block/plunger/break_4"
+    ],
+    "subtitle": "simulated.subtitle.item.plunger_launcher.release"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "create:mechanical_crafting",
+  "accept_mirrored": true,
+  "key": {
+    "B": "#minecraft:buttons",
+    "G": "#c:plates/gold",
+    "P": "create:precision_mechanism",
+    "T": "create:transmitter"
+  },
+  "pattern": [
+    "BBBBT",
+    "BBBBB",
+    " GPG "
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:linked_typewriter"
+  }
+}

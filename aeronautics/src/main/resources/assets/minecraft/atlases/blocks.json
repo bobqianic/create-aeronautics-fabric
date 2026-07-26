@@ -1,0 +1,12 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "aeronautics:fluid/levitite_blend_still"
+    },
+    {
+      "type": "single",
+      "resource": "aeronautics:fluid/levitite_blend_flow"
+    }
+  ]
+}

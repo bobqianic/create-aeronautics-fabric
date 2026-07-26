@@ -1,0 +1,21 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "simulated:block/portable_engine/heated_overlay"
+	},
+	"elements": [
+		{
+			"name": "upper_mouth",
+			"from": [4.5, 6.24, 1],
+			"to": [11.5, 9, 4],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 9, 1]},
+			"faces": {
+				"north": {"uv": [0, 0, 3.5, 1.5], "texture": "#1"},
+				"east": {"uv": [3.5, 0, 4, 1.5], "texture": "#1"},
+				"west": {"uv": [5, 0, 3.5, 1.5], "texture": "#1"}
+			}
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+  "selector": "minecraft:end_stone_brick_slab",
+
+  "properties": {
+    "sable:floating_material": "sable:end_stone",
+    "sable:floating_scale": 0.5
+  },
+  "overrides": {
+    "type=double": {
+      "sable:floating_scale": 1.0
+    }
+  }
+}

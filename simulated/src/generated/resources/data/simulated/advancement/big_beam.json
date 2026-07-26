@@ -1,0 +1,29 @@
+{
+  "parent": "simulated:no_pressure",
+  "criteria": {
+    "0": {
+      "conditions": "simulated:big_beam_builtin",
+      "trigger": "simulated:big_beam_builtin"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.simulated.big_beam.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "simulated:laser_pointer"
+    },
+    "title": {
+      "translate": "advancement.simulated.big_beam"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

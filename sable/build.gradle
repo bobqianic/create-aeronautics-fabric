@@ -1,0 +1,138 @@
+plugins {
+    id 'java-library'
+    id 'net.fabricmc.fabric-loom-remap'
+}
+
+base {
+    archivesName = "sable-fabric-${minecraft_version}"
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(java_version)
+    withSourcesJar()
+}
+
+sourceSets {
+    main {
+        java {
+            exclude 'dev/ryanhcode/sable/fabric/mixin/compatibility/sodiumextras/**'
+            exclude 'dev/ryanhcode/sable/fabric/mixin/dynamic_directional_shading/**'
+            exclude 'dev/ryanhcode/sable/mixin/debug_render/DebugRendererMixin.java'
+            exclude 'dev/ryanhcode/sable/mixin/debug_render/DebugScreenOverlayMixin.java'
+            exclude 'dev/ryanhcode/sable/mixin/water_occlusion/**'
+            exclude 'dev/ryanhcode/sable/mixinhelpers/compatibility/shouldersurfing/**'
+            exclude 'dev/ryanhcode/sable/render/region/SimpleCulledRenderRegion.java'
+            exclude 'dev/ryanhcode/sable/sublevel/render/staging/DSAStagingBuffer.java'
+            exclude 'dev/ryanhcode/sable/sublevel/render/vanilla/SingleBlockSubLevelWrapper.java'
+            exclude 'dev/ryanhcode/sable/mixin/plot/lighting/BlockAndLightGetterMixin.java'
+            exclude 'dev/ryanhcode/sable/mixinhelpers/loaded_chunk_debug/SableChunkDebugRenderer.java'
+            exclude 'dev/ryanhcode/sable/mixinhelpers/block_outline_render/**'
+            exclude '**/mixinhelpers/block_outline_render/**'
+            exclude 'dev/ryanhcode/sable/mixin/loaded_chunk_debug/**'
+            exclude 'dev/ryanhcode/sable/mixin/udp/**'
+            exclude 'dev/ryanhcode/sable/mixin/particle/TerrainParticleMixin.java'
+            exclude 'dev/ryanhcode/sable/mixin/plot/container/**'
+            exclude 'dev/ryanhcode/sable/mixin/stop_lightning/**'
+            exclude 'dev/ryanhcode/sable/mixin/player_freezing/LocalPlayerMixin.java'
+            exclude '**/mixin/loaded_chunk_debug/**'
+            exclude '**/mixin/udp/**'
+        }
+    }
+}
+
+configurations {
+    sableCompanionRuntimeCompat
+}
+
+configurations.configureEach {
+    resolutionStrategy.capabilitiesResolution.withCapability('org.lz4:lz4-java') {
+        select('at.yawk.lz4:lz4-java:1.11.0')
+    }
+}
+
+loom {
+    mixin {
+        useLegacyMixinAp = true
+        defaultRefmapName = 'sable.refmap.json'
+    }
+    accessWidenerPath = file('src/main/resources/sable.accesswidener')
+    mods {
+        sable { sourceSet sourceSets.main }
+    }
+    runs {
+        client {
+            client()
+            name = 'Sable Fabric Client'
+            runDir = 'runs/client'
+        }
+        server {
+            server()
+            name = 'Sable Fabric Server'
+            runDir = 'runs/server'
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.layered { officialMojangMappings() }
+
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    modCompileOnly "maven.modrinth:sodium:${sodium_version}"
+    modCompileOnly("maven.modrinth:scalablelux:${scalablelux_version}") {
+        transitive = false
+    }
+    if (project.findProperty('scalablelux_runtime') == 'true') {
+        modLocalRuntime("maven.modrinth:scalablelux:${scalablelux_version}") {
+            transitive = false
+        }
+    }
+
+    include(implementation('org.apache.maven:maven-artifact:3.8.5'))
+    include(implementation('at.yawk.lz4:lz4-java:1.11.0'))
+    compileOnly("dev.ryanhcode.sable-companion:sable-companion-common-1.21.1:${sable_companion_version}")
+    localRuntime("dev.ryanhcode.sable-companion:sable-companion-common-1.21.1:${sable_companion_version}") {
+        transitive = false
+    }
+    sableCompanionRuntimeCompat("dev.ryanhcode.sable-companion:sable-companion-common-1.21.1:${sable_companion_version}") {
+        transitive = false
+    }
+    include(modImplementation("fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${forgeconfigapiport_version}"))
+}
+
+processResources {
+    def properties = [
+            version                  : project.version,
+            mod_id                   : mod_id,
+            mod_name                 : mod_name,
+            mod_author               : mod_author,
+            description              : project.description,
+            issues                   : issues,
+            license                  : license,
+            java_version             : java_version,
+            minecraft_version        : minecraft_version,
+            fabric_loader_version    : fabric_loader_version,
+            fabric_version           : fabric_version,
+            sodium_version           : sodium_mod_version,
+            sable_companion_version  : sable_companion_version
+    ]
+
+    filesMatching(['fabric.mod.json', '*.mixins.json']) { expand properties }
+    inputs.properties(properties)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = java_version as int
+}
+
+jar {
+    from(rootProject.file('LICENSE.md')) { rename { 'LICENSE-aeronautics.md' } }
+    from(project.file('LICENSE.md')) { rename { 'LICENSE-sable.md' } }
+    from({ configurations.sableCompanionRuntimeCompat.collect { zipTree(it) } }) {
+        exclude 'META-INF/MANIFEST.MF'
+        exclude 'META-INF/*.mods.toml'
+        exclude 'META-INF/services/dev.ryanhcode.sable.companion.SableCompanion'
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

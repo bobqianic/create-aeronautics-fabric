@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "create:transmitter",
+    "B": "create:iron_sheet",
+    "C": "create:brass_casing"
+  },
+  "pattern": [
+    "A",
+    "B",
+    "C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:directional_linked_receiver"
+  }
+}

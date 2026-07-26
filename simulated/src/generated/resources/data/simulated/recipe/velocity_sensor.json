@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "create:andesite_casing",
+    "B": "minecraft:barrel",
+    "P": "create:propeller"
+  },
+  "pattern": [
+    "P",
+    "B",
+    "A"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:velocity_sensor"
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "simulated:block/linked_typewriter/block",
+	"textures": {
+		"1": "simulated:block/linked_typewriter/linked_typewriter_powered",
+		"redstone_antenna": "create:block/redstone_antenna_powered"
+	}
+}

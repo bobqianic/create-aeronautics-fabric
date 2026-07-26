@@ -1,0 +1,29 @@
+{
+  "parent": "aeronautics:heavier_artillery",
+  "criteria": {
+    "0": {
+      "conditions": "aeronautics:ghostbuster_builtin",
+      "trigger": "aeronautics:ghostbuster_builtin"
+    }
+  },
+  "display": {
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.aeronautics.ghostbuster.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:phantom_membrane"
+    },
+    "title": {
+      "translate": "advancement.aeronautics.ghostbuster"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

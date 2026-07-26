@@ -1,0 +1,110 @@
+{
+  "variants": {
+    "face=ceiling,facing=east,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 180,
+      "y": 270
+    },
+    "face=ceiling,facing=east,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 180,
+      "y": 270
+    },
+    "face=ceiling,facing=north,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 180,
+      "y": 180
+    },
+    "face=ceiling,facing=north,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 180,
+      "y": 180
+    },
+    "face=ceiling,facing=south,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 180
+    },
+    "face=ceiling,facing=south,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 180
+    },
+    "face=ceiling,facing=west,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 180,
+      "y": 90
+    },
+    "face=ceiling,facing=west,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 180,
+      "y": 90
+    },
+    "face=floor,facing=east,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "y": 90
+    },
+    "face=floor,facing=east,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "y": 90
+    },
+    "face=floor,facing=north,inverted=false": {
+      "model": "simulated:block/throttle_lever/block"
+    },
+    "face=floor,facing=north,inverted=true": {
+      "model": "simulated:block/throttle_lever/block"
+    },
+    "face=floor,facing=south,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "y": 180
+    },
+    "face=floor,facing=south,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "y": 180
+    },
+    "face=floor,facing=west,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "y": 270
+    },
+    "face=floor,facing=west,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "y": 270
+    },
+    "face=wall,facing=east,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 90,
+      "y": 90
+    },
+    "face=wall,facing=east,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 90,
+      "y": 90
+    },
+    "face=wall,facing=north,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 90
+    },
+    "face=wall,facing=north,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 90
+    },
+    "face=wall,facing=south,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 90,
+      "y": 180
+    },
+    "face=wall,facing=south,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 90,
+      "y": 180
+    },
+    "face=wall,facing=west,inverted=false": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 90,
+      "y": 270
+    },
+    "face=wall,facing=west,inverted=true": {
+      "model": "simulated:block/throttle_lever/block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

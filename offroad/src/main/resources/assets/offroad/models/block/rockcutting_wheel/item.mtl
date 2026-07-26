@@ -1,0 +1,6 @@
+# Made in Blockbench 5.0.7
+newmtl m_1d882d80-931c-3cff-9b10-fd97a0e92559
+map_Kd #base
+newmtl m_be477b56-3215-5b27-cbe8-315a46db41f6
+map_Kd #wheel
+newmtl none

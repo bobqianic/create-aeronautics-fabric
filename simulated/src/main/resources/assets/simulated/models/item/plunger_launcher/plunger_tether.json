@@ -1,0 +1,88 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"5": "simulated:item/plungerlauncher"
+	},
+	"elements": [
+		{
+			"from": [-1.5, -1.5, -2],
+			"to": [1.5, 1.5, 0],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-3, -3, -2]},
+			"faces": {
+				"north": {"uv": [14.5, 4, 16, 5.5], "texture": "#5"},
+				"east": {"uv": [13.25, 4, 14.25, 5.5], "rotation": 180, "texture": "#5"},
+				"south": {"uv": [14.5, 4, 16, 5.5], "texture": "#5"},
+				"west": {"uv": [13.25, 4, 14.25, 5.5], "texture": "#5"},
+				"up": {"uv": [13.25, 4, 14.25, 5.5], "rotation": 90, "texture": "#5"},
+				"down": {"uv": [13.25, 4, 14.25, 5.5], "rotation": 270, "texture": "#5"}
+			}
+		},
+		{
+			"from": [-0.5, -0.5, -0.5],
+			"to": [0.5, 0.5, 0.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.5, 0, 1.5]},
+			"faces": {
+				"north": {"uv": [15.5, 7.5, 16, 8], "rotation": 90, "texture": "#5"},
+				"east": {"uv": [15.5, 7.5, 16, 8], "rotation": 270, "texture": "#5"},
+				"south": {"uv": [15.5, 7.5, 16, 8], "rotation": 270, "texture": "#5"},
+				"west": {"uv": [15.5, 7.5, 16, 8], "rotation": 90, "texture": "#5"},
+				"up": {"uv": [15.5, 8, 16, 7.5], "texture": "#5"},
+				"down": {"uv": [15.5, 7.5, 16, 8], "texture": "#5"}
+			}
+		},
+		{
+			"from": [-2, -2, -3],
+			"to": [2, 2, -2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-3, -3, -4]},
+			"faces": {
+				"north": {"uv": [14, 1.75, 16, 3.75], "texture": "#5"},
+				"east": {"uv": [13.75, 1.75, 13.25, 3.75], "texture": "#5"},
+				"south": {"uv": [14, 1.75, 16, 3.75], "texture": "#5"},
+				"west": {"uv": [13.25, 1.75, 13.75, 3.75], "texture": "#5"},
+				"up": {"uv": [13.25, 1.75, 13.75, 3.75], "rotation": 90, "texture": "#5"},
+				"down": {"uv": [13.75, 1.75, 13.25, 3.75], "rotation": 90, "texture": "#5"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3, -4.5]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3, -4.5]
+		},
+		"firstperson_righthand": {
+			"translation": [1.13, 3.2, 1.13]
+		},
+		"firstperson_lefthand": {
+			"translation": [1.13, 3.2, 1.13]
+		},
+		"ground": {
+			"rotation": [0, 0, 90],
+			"translation": [-3, 0, 0]
+		},
+		"gui": {
+			"rotation": [44, 43, -22],
+			"translation": [1.25, 1.75, 0]
+		},
+		"head": {
+			"rotation": [9, 0, 0],
+			"translation": [0, 10, 2]
+		},
+		"fixed": {
+			"rotation": [0, -90, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [1.2, 1.2, 1.2]
+		}
+	},
+	"groups": [
+		{
+			"name": "tether",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}

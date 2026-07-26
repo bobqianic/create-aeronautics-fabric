@@ -1,0 +1,7 @@
+{
+	"parent": "simulated:block/laser_pointer/block",
+	"textures": {
+		"2": "simulated:block/laser_pointer/laser_pointer_on",
+		"particle": "create:block/andesite_casing"
+	}
+}

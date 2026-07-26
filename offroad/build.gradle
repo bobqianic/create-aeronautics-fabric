@@ -1,0 +1,11 @@
+plugins {
+    id 'java-library'
+    id 'net.fabricmc.fabric-loom-remap'
+}
+
+apply from: rootProject.file('gradle/fabric-module.gradle')
+
+dependencies {
+    implementation project(path: ':sable', configuration: 'namedElements')
+    implementation project(path: ':simulated', configuration: 'namedElements')
+}

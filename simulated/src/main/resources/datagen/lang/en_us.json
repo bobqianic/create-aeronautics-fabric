@@ -1,0 +1,400 @@
+{
+  "itemGroup.simulated.group": "Create Simulated",
+
+  "simulated": {
+    "simulated_section.simulated": "Simulated",
+
+    "prevent_disassembly": "Disassembly from non-primary Physics Assembler prevented",
+
+    "generic": {
+      "pull_when_clockwise": "Pull air when clockwise",
+      "push_when_clockwise": "Push air when clockwise",
+      "swivel_default_always_locked": "Always Locked",
+      "swivel_default_always_unlocked": "Always Unlocked",
+      "swivel_default_unlocked": "Powered -> Locked",
+      "swivel_default_locked": "Unpowered -> Locked"
+    },
+
+    "key": {
+      "alt": "Alt"
+    },
+
+    "scroll_option": {
+      "swivel_default_locked": "Redstone Locking Behavior"
+    },
+
+    "linked_typewriter": {
+      "title": "Linked Typewriter",
+      "start_controlling": "Now controlling %s",
+      "stop_controlling": "Stopped controlling %s",
+      "bind_mode": "Bind mode active",
+      "press_keybind": "Press any key to bind this Remote's frequencies to the Linked Typewriter",
+      "key_bound": "Frequency bound to %1$s",
+      "bound": "Frequency bound",
+      "controller_bound": "Controller frequencies bound",
+      "confirm_delete_all": "This will delete all current keybinds. Click again to confirm.",
+      "bind_screen_title": "Editing Keybinds",
+      "bind_screen_description": "Input bound to:",
+      "bind_screen_prompt": "Press key...",
+      "bind_item": "Press any key to bind this frequency to the respective key",
+      "bind_success": "Frequency bound to %s",
+      "delete.key": "Confirm deletion?",
+      "bind_new_key": "Bind new key",
+      "linked_controller_copy": "Added Linked Controller keys",
+      "key_count": "%1$s configured keys"
+    },
+
+    "contraption_diagram": {
+      "total_mass": "Total mass: ",
+      "mass": "%s kpg",
+      "cannot_use": "This Diagram must be on a Simulated Contraption to be inspected...",
+      "toggle_paper": "Configure Diagram",
+      "shown": "Shown",
+      "hidden": "Hidden",
+      "center_of_mass": "Center of Mass: ",
+      "merged": "Merged",
+      "unmerged": "Separate",
+      "merge_forces": "Force Arrows: ",
+
+      "force_arrow": "%s force of %s",
+      "merged_force_arrow": "%s %s forces totalling %s",
+      "merging_numeral": "%s",
+      "force_arrow_magnitude": "%s pN"
+    },
+
+    "analog_transmission": {
+      "too_fast": "Too Fast",
+      "too_fast_error": "It appears that this _Analog Transmission_ is attempting to exceed the _maximum rotation speed_. Reduce or remove its _Redstone Signal_ to slow it down."
+    },
+
+    "swivel_bearing": {
+      "too_fast": "Too Fast",
+      "too_fast_error": "It appears that this _Swivel Bearing_ is rotating _too fast_."
+    },
+
+    "auger_shaft": {
+      "information": "Auger Shaft Information",
+      "item_flow": "-> Moving %1$s stacks / second",
+      "actor_items": "Contains %1$s items from actors",
+      "update_progress": "Item Progress:"
+    },
+
+    "portable_engine": {
+      "tooltip_name": "Portable Engine",
+      "superheated": "Superheated",
+      "superheated_time": "Superheated (%s)",
+      "infinite": "Infinite",
+      "time": "Burn time: %s",
+      "fuel": "Fuel: %s",
+      "none": "None",
+      "byproduct": "Byproduct: %s"
+    },
+
+    "velocity_sensor": {
+      "description": "Max Speed",
+      "selection": {
+        "away": "Away",
+        "towards": "Towards"
+      }
+    },
+
+    "optical_sensor.max_length": "Max Detection Distance",
+    "laser_pointer.max_length": "Max Casting Distance",
+    "torsion_spring.angle_limit": "Max Angle",
+    "nameplate": {
+      "edit": "Edit Name",
+      "target.unwaxed": "Nameplate is not waxed"
+    },
+
+    "gui": {
+      "assembly.exception": {
+        "couldNotAlign": "Could not align Simulated Contraption to disassemble!",
+        "outOfWorld": "Cannot disassemble out of the world!",
+        "tooFarFromGround": "Too far from the ground to disassemble!",
+        "tooFast": "Moving too fast to disassemble!",
+        "sameSubLevel": "Cannot disassemble onto the same Simulated Contraption!"
+      },
+
+      "hold_tip": {
+        "hold_to_assemble": "Hold and drag to assemble",
+        "hold_to_disassemble": "Hold and drag to disassemble",
+        "hold_to_adjust": "Hold and drag to adjust",
+        "hold_to_rotate": "Hold and drag to rotate"
+      },
+
+      "altitude_sensor.title": "Configure Signal Range",
+
+      "modulating_linked_receiver": {
+        "title": "Modulating Linked Receiver",
+        "minimum_range": "Minimum Range",
+        "maximum_range": "Maximum Range",
+        "min": "Min",
+        "max": "Max"
+      },
+
+      "threshold_switch.rope_winch_length": "%1$s Blocks"
+    },
+
+    "zipline": {
+      "too_far": "Rope is too far!",
+      "too_steep": "Rope is too steep!"
+    },
+
+    "extra_kinetics": {
+      "default": "Extra Kinetics",
+      "information": "Information for: %s",
+      "extra_cogwheel": "Rotation Cogwheel",
+      "torsion_output": "Output Shaft"
+    },
+
+    "plunger_launcher": {
+      "clear_plungers": "Cleared launched plungers!"
+    },
+
+    "spring": {
+      "out_of_range": "Out of range!",
+      "same_block": "Same block position!",
+      "block_exists": "A block exists here!",
+      "not_enough_support": "This face does not have enough support!",
+      "connection_terminated": "Selection discarded",
+      "new_length": "Length set to %sm",
+      "min_length": "Length at minimum (%sm)",
+      "max_length": "Length at maximum (%sm)",
+      "too_compressed": "Too compressed!",
+      "too_stretched": "Too stretched!"
+    },
+
+    "altitude_sensor": {
+      "height": "Height: %s",
+      "air_pressure": "Air Pressure: %s"
+    },
+
+    "gimbal_sensor": {
+      "x_angle": "X Angle: %s",
+      "z_angle": "Z Angle: %s"
+    },
+
+    "merging_glue": {
+      "out_of_range": "Out of range!",
+      "same_block": "Same block position!",
+      "block_exists": "A block exists here!",
+      "invalid_directions": {
+        "horizontal_vertical": "Cannot glue horizontal and vertical faces together!",
+        "up_up": "Cannot glue two upwards faces together!",
+        "down_down": "Cannot glue two downwards faces together!"
+      },
+      "only_between_sub_levels": "Can only glue between Simulated Contraptions!",
+      "same_sub_level": "Cannot glue on the same Simulated Contraption!",
+      "not_enough_support": "This face does not have enough support!",
+      "connection_terminated": "Selection discarded"
+    },
+
+    "unit": {
+      "mass": "%s kpg",
+      "restitution": "%s%%",
+      "friction": "%s μ",
+      "floating": "%s kpg",
+
+      "length_blocks": "Blocks"
+    },
+
+    "tooltip": {
+      "dynamic_stress_impact": "Dynamic",
+
+      "properties": "Properties:",
+      "mass": {
+        "none": "Weightless",
+        "super_light": "Super Light",
+        "light": "Light",
+        "heavy": "Heavy",
+        "super_heavy": "Super Heavy",
+        "absurdly_heavy": "Absurdly Heavy"
+      },
+      "friction": {
+        "slippery": "Slippery",
+        "sticky": "Sticky"
+      },
+      "bouncy": "Bouncy",
+      "fragile": "Fragile",
+      "airtight": "Airtight",
+      "floating": "Floating",
+
+      "new_ponder": "(New!)"
+    },
+
+    "display_source": {
+      "optical_sensor": {
+        "data": "Optical Sensor Data",
+        "detected_block": "Detected Block",
+        "block_distance": "Block Distance"
+      },
+
+      "laser_sensor": {
+        "data": "Laser Sensor Data",
+        "laser_distance": "Laser Distance"
+      },
+
+      "velocity_sensor": {
+        "data": "Velocity Sensor Data",
+        "speed": "Relative Speed",
+        "description": "Max Speed and Output Direction",
+        "towards": "Towards",
+        "away": "Away"
+      },
+
+      "altitude_sensor": {
+        "data": "Altitude Sensor Data",
+        "height": "Height",
+        "air_pressure": "Air Pressure"
+      },
+
+      "gimbal_sensor": {
+        "data": "Gimbal Sensor Data",
+        "x_angle": "X Angle",
+        "z_angle": "Z Angle"
+      },
+
+      "portable_engine": {
+        "data": "Portable Engine Data",
+        "current_burn": "Current Burn Time",
+        "total_burn": "Total Burn Time"
+      },
+
+      "navigation_table": {
+        "data": "Navigation Table Data",
+        "distance": "Target Distance",
+        "eta_real": "Target ETA"
+      },
+
+      "typewriter": {
+        "typed_text": "Typed Text"
+      },
+
+      "item_throughput": "Item Throughput",
+      "sublevel_name": "Contraption Name"
+    }
+  },
+
+  "generator.simulated": {
+    "airship_ready": "Airship Ready",
+    "airship_ready.info": "A Superflat world at y=63 to simulate normal air pressure conditions.",
+    "end_sea": "End Sea"
+  },
+
+  "block.simulated": {
+    "handle.tooltip": {
+      "summary": "Attach to a block to easily _grab_ onto it.",
+      "condition1": "Hold R-Click",
+      "behaviour1": "_Grabs_ the handle, moving yourself around it.",
+      "condition2": "Hold R-Click while Sneaking",
+      "behaviour2": "_Grabs_ the handle, moving only the _Simulated Contraption_ the handle is on.",
+      "condition3": "Scroll while holding R-Click",
+      "behaviour3": "Adjusts the _distance_, moving the handle closer or further away"
+    },
+
+    "linked_typewriter.tooltip": {
+      "summary": "Grants convenient control over many _Redstone Link_ frequencies assigned to its _keys_.",
+      "condition1": "When R-Clicked",
+      "behaviour1": "_Toggles_ the Linked Typewriter. _Movement controls_ and any _assigned keys_ are taken over while it's active.",
+      "condition2": "When R-Clicked while Sneaking",
+      "behaviour2": "Opens the manual _Configuration Interface_.",
+      "condition3": "R-Click with Linked Controller",
+      "behaviour3": "Binds the _Linked Controller's_ frequencies to the typewriter.",
+      "condition4": "R-Click Item on Redstone Link Receiver",
+      "behaviour4": "Enables _Bind Mode_, press _any key_ to bind it to the _Link's Frequency_. (Frequencies are _saved_ when the Linked Typewriter is _broken_)"
+    },
+
+    "absorber.tooltip": {
+      "summary": "§c[Placeholder] INCOMPLETE. DOES NOT §cWORK."
+    },
+
+    "nameplate.tooltip": {
+      "summary": "_Declare the name_ of your _Simulated Contraption_!",
+      "condition1": "When R-Clicked",
+      "behaviour1": "_Edit_ the displayed _name_ on the Nameplate",
+      "condition2": "When R-Clicked with Dye",
+      "behaviour2": "_Changes the color_ of the name on the Nameplate",
+      "condition3": "When R-Clicked with Honeycomb",
+      "behaviour3": "_Locks_ the name displayed on the Nameplate",
+      "condition4": "When used on a Simulated Contraption",
+      "behaviour4": "All Nameplates will _share and set_ the name of the _Simulated Contraption_"
+    },
+
+    "redstone_inductor": {
+      "copy": "Copy",
+      "invert": "Invert"
+    },
+
+    "redstone_accumulator": {
+      "input_delay": "Input Delay"
+    }
+  },
+
+  "item.simulated": {
+    "plunger_launcher.tooltip": {
+      "summary": "Slomhp! Move _Simulated Contraptions_ with the power of suction. Can be powered with _Air_ _Pressure_ from a _Backtank_.",
+      "condition1": "When R-Clicked",
+      "behaviour1": "_Fires_ a rope-attached _Plunger_. Two fired Plungers will _connect_ and _pull attached blocks together_.",
+      "condition2": "When Shift R-Clicked",
+      "behaviour2": "_Removes_ all rope-attached _Plungers_.",
+      "condition3": "While wearing Backtank",
+      "behaviour3": "_No_ _Durability_ will be used. Instead, _Air_ _pressure_ is drained from the Tank"
+    },
+
+    "spring.tooltip": {
+      "summary": "Boing! _Connects_ two blocks with a _spring._",
+      "condition1": "When R-Clicked with Wrench",
+      "behaviour1": "Adjusts the _strength_ of the spring",
+      "condition2": "When R-Clicked with Spring",
+      "behaviour2": "_Increases_ the resting length",
+      "condition3": "When Shift R-Clicked with Spring",
+      "behaviour3": "_Reduces_ the resting length"
+    },
+
+    "creative_physics_staff.tooltip": {
+      "summary": "_Creative mode_ tool for moving _Simulated Contraptions_.",
+      "condition1": "L-Click at Simulated Contraption",
+      "behaviour1": "The _Targeted Contraption_ will become _locked in place_.",
+      "condition2": "R-Click at Simulated Contraption",
+      "behaviour2": "_Toggle dragging_ the _Targeted Contraption_ around with the staff.",
+      "condition3": "Hold Tab while Dragging",
+      "behaviour3": "Rotate the _Targeted Contraption_ with the staff.",
+      "condition4": "Scroll while Dragging",
+      "behaviour4": "Adjusts _how far away_ you are _dragging_ the _Targeted Contraption_"
+    },
+
+    "contraption_diagram.tooltip": {
+      "summary": "A _visual diagram_ with detailed information about a _Simulated Contraption_.",
+      "condition1": "When R-Clicked on Simulated Contraption",
+      "behaviour1": "_Visualize forces_ acting on the _Simulated Contraption_"
+    }
+  },
+
+  "commands.simulated.lock.success": "Updated lock for %s sub-level%s",
+
+  "create": {
+    "item_attributes": {
+      "block_mass": "mass is %s kpg",
+      "block_mass.inverted": "mass is not %s kpg",
+      "block_friction": "friction is %s μ",
+      "block_friction.inverted": "friction is not %s μ",
+      "block_bounciness": "bounciness is %s",
+      "block_bounciness.inverted": "bounciness is not %s"
+    }
+  },
+
+  "stat.simulated": {
+    "format": {
+      "meals": "%s Meals",
+      "short_stories": "%s Short Stories"
+    },
+
+    "interact_with_assembler": "Interactions with Assembler",
+    "interact_with_contraption_diagram": "Interactions with Contraption Diagram",
+    "interact_with_handle": "Interactions with Handle",
+    "interact_with_steering_wheel": "Interactions with Steering Wheel",
+    "portable_engines_fed": "Portable Engines Fed",
+    "simulated_contraptions_named": "Simulated Contraptions Named",
+    "typewriter_key_presses": "Typewriter Keystrokes"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "simulated:no_pressure",
+  "criteria": {
+    "0": {
+      "conditions": {
+        "location": [
+          {
+            "block": "simulated:navigation_table",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.simulated.thataway.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "simulated:navigation_table"
+    },
+    "title": {
+      "translate": "advancement.simulated.thataway"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

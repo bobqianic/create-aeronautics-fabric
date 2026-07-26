@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,reversed=false": {
+      "model": "aeronautics:block/wooden_propeller/block",
+      "x": 180
+    },
+    "facing=down,reversed=true": {
+      "model": "aeronautics:block/wooden_propeller/block",
+      "x": 180
+    },
+    "facing=east,reversed=false": {
+      "model": "aeronautics:block/wooden_propeller/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,reversed=true": {
+      "model": "aeronautics:block/wooden_propeller/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,reversed=false": {
+      "model": "aeronautics:block/wooden_propeller/block",
+      "x": 90
+    },
+    "facing=north,reversed=true": {
+      "model": "aeronautics:block/wooden_propeller/block",
+      "x": 90
+    },
+    "facing=south,reversed=false": {
+      "model": "aeronautics:block/wooden_propeller/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,reversed=true": {
+      "model": "aeronautics:block/wooden_propeller/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,reversed=false": {
+      "model": "aeronautics:block/wooden_propeller/block"
+    },
+    "facing=up,reversed=true": {
+      "model": "aeronautics:block/wooden_propeller/block"
+    },
+    "facing=west,reversed=false": {
+      "model": "aeronautics:block/wooden_propeller/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,reversed=true": {
+      "model": "aeronautics:block/wooden_propeller/block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

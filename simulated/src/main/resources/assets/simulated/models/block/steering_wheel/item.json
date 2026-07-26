@@ -1,0 +1,59 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"steering_wheel": "simulated:block/steering_wheel",
+		"spruce_planks": "block/spruce_planks",
+		"particle": "create:block/andesite_casing"
+	},
+	"loader": "neoforge:obj",
+	"flip_v": true,
+	"model": "simulated:models/block/steering_wheel/item.obj",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [3.5, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, -1.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"translation": [4, 0, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 45, 0],
+			"translation": [0, 0, 4],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [2, 3, 2],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"translation": [-8, -1, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"head": {
+			"translation": [6, -3.75, 4.25],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"fixed": {
+			"translation": [4, -2, 4],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "casing",
+			"origin": [-10, 13, -27],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5]
+		}
+	]
+}

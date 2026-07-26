@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:soul_sand",
+    "minecraft:soul_soil",
+    "minecraft:honey_block",
+    "minecraft:cactus",
+
+    { "id": "create:belt", "required": false },
+
+    { "id": "architects_palette:tread_plate", "required": false },
+    { "id": "architects_palette:tread_plate_slab", "required": false },
+    { "id": "architects_palette:tread_plate_stairs", "required": false },
+    { "id": "architects_palette:tread_plate_wall", "required": false }
+  ]
+}

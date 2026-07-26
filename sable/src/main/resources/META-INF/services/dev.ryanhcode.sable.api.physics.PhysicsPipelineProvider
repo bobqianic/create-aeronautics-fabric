@@ -1,0 +1,2 @@
+dev.ryanhcode.sable.physics.impl.rapier.RapierPhysicsPipelineProvider
+dev.ryanhcode.sable.physics.impl.none.StaticPhysicsPipelineProvider

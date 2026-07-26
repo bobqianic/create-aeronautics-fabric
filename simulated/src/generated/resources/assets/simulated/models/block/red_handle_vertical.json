@@ -1,0 +1,6 @@
+{
+  "parent": "simulated:block/handle/block_vertical",
+  "textures": {
+    "0": "simulated:block/handle/red_handle"
+  }
+}

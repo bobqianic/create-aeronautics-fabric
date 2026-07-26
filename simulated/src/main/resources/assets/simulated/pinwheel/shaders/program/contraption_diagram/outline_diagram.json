@@ -1,0 +1,8 @@
+{
+  "vertex": "simulated:contraption_diagram/outline_diagram",
+  "fragment": "simulated:contraption_diagram/outline_diagram",
+  "textures": {
+    "Palette": "simulated:textures/effects/diagram_palette.png",
+    "Dither": "simulated:textures/effects/dither.png"
+  }
+}

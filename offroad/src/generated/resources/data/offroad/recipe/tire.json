@@ -1,0 +1,17 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "category":  "misc",
+    "key":  {
+                "K":  "minecraft:dried_kelp",
+                "S":  "create:shaft"
+            },
+    "pattern":  [
+                    " K ",
+                    "KSK",
+                    " K "
+                ],
+    "result":  {
+                   "count":  1,
+                   "id":  "offroad:tire"
+               }
+}

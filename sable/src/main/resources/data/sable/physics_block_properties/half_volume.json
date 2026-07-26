@@ -1,0 +1,13 @@
+{
+  "selector": "#sable:half_volume",
+
+  "properties": {
+    "sable:volume": 0.5
+  },
+
+  "overrides": {
+    "type=double": {
+      "sable:volume": 1.0
+    }
+  }
+}

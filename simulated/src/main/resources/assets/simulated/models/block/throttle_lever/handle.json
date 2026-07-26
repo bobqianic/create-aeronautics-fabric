@@ -1,0 +1,65 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "simulated:block/throttle_lever/throttle_lever_1",
+		"particle": "simulated:block/throttle_lever/throttle_lever_1"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 5],
+			"to": [9, 6, 11],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 3, 8]},
+			"faces": {
+				"north": {"uv": [9, 0, 7, 6], "texture": "#0"},
+				"east": {"uv": [8, 0, 14, 6], "texture": "#0"},
+				"south": {"uv": [7, 0, 9, 6], "texture": "#0"},
+				"west": {"uv": [8, 0, 14, 6], "texture": "#0"},
+				"up": {"uv": [7, 0, 9, 6], "texture": "#0"},
+				"down": {"uv": [7, 0, 9, 6], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7, 6, 7],
+			"to": [9, 15, 9],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 3, 8]},
+			"faces": {
+				"north": {"uv": [14, 6, 16, 15], "texture": "#0"},
+				"east": {"uv": [14, 6, 16, 15], "texture": "#0"},
+				"south": {"uv": [14, 6, 16, 15], "texture": "#0"},
+				"west": {"uv": [16, 6, 14, 15], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6.8, 15, 6.8],
+			"to": [9.2, 21.4, 9.2],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 3, 8]},
+			"faces": {
+				"north": {"uv": [14, 0, 16, 6], "texture": "#0"},
+				"east": {"uv": [16, 0, 14, 6], "texture": "#0"},
+				"south": {"uv": [14, 0, 16, 6], "texture": "#0"},
+				"west": {"uv": [16, 0, 14, 6], "texture": "#0"},
+				"up": {"uv": [4, 0, 6, 2], "texture": "#0"},
+				"down": {"uv": [14, 5, 15, 6], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "arm",
+			"origin": [20, 18.2, 0],
+			"color": 0,
+			"children": [
+				0,
+				1,
+				{
+					"name": "clutch",
+					"origin": [8, 3, 8],
+					"color": 0,
+					"children": []
+				},
+				2
+			]
+		}
+	]
+}

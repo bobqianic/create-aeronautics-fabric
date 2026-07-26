@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#c:dyes/brown",
+    "#simulated:nameplate_items"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:brown_nameplate"
+  }
+}

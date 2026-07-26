@@ -1,0 +1,22 @@
+{
+  "values": [
+    "simulated:iron_handle",
+    "simulated:copper_handle",
+    "simulated:white_handle",
+    "simulated:orange_handle",
+    "simulated:magenta_handle",
+    "simulated:light_blue_handle",
+    "simulated:yellow_handle",
+    "simulated:lime_handle",
+    "simulated:pink_handle",
+    "simulated:gray_handle",
+    "simulated:light_gray_handle",
+    "simulated:cyan_handle",
+    "simulated:purple_handle",
+    "simulated:blue_handle",
+    "simulated:brown_handle",
+    "simulated:green_handle",
+    "simulated:red_handle",
+    "simulated:black_handle"
+  ]
+}

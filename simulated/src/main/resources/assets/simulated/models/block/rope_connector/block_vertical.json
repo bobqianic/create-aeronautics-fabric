@@ -1,0 +1,87 @@
+{
+	"parent": "minecraft:block/block",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "simulated:block/rope_winch/winch",
+		"particle": "create:block/industrial_iron_block"
+	},
+	"elements": [
+		{
+			"name": "base",
+			"from": [2.99, 9.99, -1.01],
+			"to": [13.01, 13.01, 2.01],
+			"faces": {
+				"north": {"uv": [0, 12.5, 5, 14], "rotation": 180, "texture": "#1"},
+				"east": {"uv": [0, 13.5, 0.5, 15], "rotation": 90, "texture": "#1"},
+				"south": {"uv": [0, 12.5, 5, 14], "texture": "#1"},
+				"west": {"uv": [0, 13.5, 0.5, 15], "rotation": 90, "texture": "#1"},
+				"up": {"uv": [0, 15, 5, 13.5], "texture": "#1"},
+				"down": {"uv": [0, 13.5, 5, 15], "texture": "#1"}
+			}
+		},
+		{
+			"name": "base",
+			"from": [2.99, 2.99, -1.01],
+			"to": [13.01, 6.01, 2.01],
+			"faces": {
+				"north": {"uv": [0, 12.5, 5, 14], "rotation": 180, "texture": "#1"},
+				"east": {"uv": [0, 13.5, 0.5, 15], "rotation": 90, "texture": "#1"},
+				"south": {"uv": [0, 12.5, 5, 14], "texture": "#1"},
+				"west": {"uv": [0, 13.5, 0.5, 15], "rotation": 90, "texture": "#1"},
+				"up": {"uv": [0, 15, 5, 13.5], "texture": "#1"},
+				"down": {"uv": [0, 13.5, 5, 15], "texture": "#1"}
+			}
+		},
+		{
+			"name": "base",
+			"from": [2.01, 2.01, -2.99],
+			"to": [13.99, 13.99, -1.01],
+			"faces": {
+				"north": {"uv": [8, 6, 14, 12], "rotation": 90, "texture": "#1"},
+				"east": {"uv": [8, 12.5, 14, 11.5], "rotation": 90, "texture": "#1"},
+				"south": {"uv": [8, 6, 14, 12], "rotation": 270, "texture": "#1"},
+				"west": {"uv": [8, 12.5, 14, 11.5], "rotation": 270, "texture": "#1"},
+				"up": {"uv": [8, 12.5, 14, 11.5], "texture": "#1"},
+				"down": {"uv": [8, 11.5, 14, 12.5], "texture": "#1"}
+			}
+		},
+		{
+			"from": [6, 6, 2],
+			"to": [10, 10, 6],
+			"faces": {
+				"north": {"uv": [8.5, 14, 9, 16], "texture": "#1"},
+				"east": {"uv": [7, 14, 9, 16], "texture": "#1"},
+				"south": {"uv": [5, 14, 7, 16], "texture": "#1"},
+				"west": {"uv": [7, 14, 9, 16], "rotation": 180, "texture": "#1"}
+			}
+		},
+		{
+			"from": [6, 10, 2],
+			"to": [10, 13, 6],
+			"faces": {
+				"east": {"uv": [6, 12.5, 8, 14], "texture": "#1"},
+				"south": {"uv": [5, 12.5, 7, 14], "texture": "#1"},
+				"west": {"uv": [6, 12.5, 8, 14], "rotation": 180, "texture": "#1"},
+				"up": {"uv": [9, 14, 11, 16], "rotation": 180, "texture": "#1"}
+			}
+		},
+		{
+			"from": [6, 3, 2],
+			"to": [10, 6, 6],
+			"faces": {
+				"east": {"uv": [6, 12.5, 8, 14], "texture": "#1"},
+				"south": {"uv": [5, 12.5, 7, 14], "texture": "#1"},
+				"west": {"uv": [6, 12.5, 8, 14], "rotation": 180, "texture": "#1"},
+				"down": {"uv": [9, 14, 11, 16], "rotation": 180, "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "rope_connector2",
+			"origin": [-1, -16, -8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5]
+		}
+	]
+}

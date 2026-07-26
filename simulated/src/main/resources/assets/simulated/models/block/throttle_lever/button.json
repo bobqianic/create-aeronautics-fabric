@@ -1,0 +1,28 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"0": "simulated:block/throttle_lever/throttle_lever_1",
+		"particle": "simulated:block/throttle_lever/throttle_lever_1"
+	},
+	"elements": [
+		{
+			"from": [8, 14, 9],
+			"to": [8, 21.4, 12],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 3, 8]},
+			"faces": {
+				"east": {"uv": [10, 8, 13, 15], "texture": "#0"},
+				"west": {"uv": [13, 8, 10, 15], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "clutch",
+			"origin": [8, 3, 8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

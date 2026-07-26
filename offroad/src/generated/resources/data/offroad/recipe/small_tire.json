@@ -1,0 +1,12 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "misc",
+    "ingredients":  [
+                        "create:shaft",
+                        "minecraft:dried_kelp"
+                    ],
+    "result":  {
+                   "count":  1,
+                   "id":  "offroad:small_tire"
+               }
+}

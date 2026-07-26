@@ -1,0 +1,17 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "category":  "misc",
+    "key":  {
+                "B":  "create:belt_connector",
+                "S":  "create:shaft"
+            },
+    "pattern":  [
+                    " B ",
+                    "BSB",
+                    " B "
+                ],
+    "result":  {
+                   "count":  1,
+                   "id":  "offroad:large_tire"
+               }
+}

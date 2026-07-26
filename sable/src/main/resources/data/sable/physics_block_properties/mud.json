@@ -1,0 +1,7 @@
+{
+  "selector": "minecraft:mud",
+
+  "properties": {
+    "sable:friction": 0.25
+  }
+}

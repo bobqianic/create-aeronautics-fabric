@@ -1,0 +1,184 @@
+plugins {
+    id 'java-library'
+    id 'net.fabricmc.fabric-loom-remap'
+}
+
+apply from: rootProject.file('gradle/fabric-module.gradle')
+
+loom {
+    runs {
+        datagen {
+            inherit server
+            name = 'Simulated Fabric Data Generation'
+            runDir = 'runs/datagen'
+            vmArg '-Dfabric-api.datagen'
+            vmArg "-Dfabric-api.datagen.output-dir=${file('src/generated/resources').absolutePath}"
+            vmArg '-Dfabric-api.datagen.modid=simulated'
+        }
+    }
+}
+
+def unpackPortingLibCompat = tasks.register('unpackPortingLibCompat', Sync) {
+    def classReplacements = [
+            'net/minecraft/client/renderer/block/model/ItemTransform':
+                    'com/tterrag/registrate/providers/RegistrateItemTransform',
+            'net/minecraft/class_2753': 'net/minecraft/world/level/block/state/properties/EnumProperty',
+            'method_11898': 'getPossibleValues',
+            'field_12481': 'HORIZONTAL_FACING',
+            'field_12525': 'FACING',
+            'field_11177': 'FACING',
+            'field_10938': 'FACING',
+            'field_11571': 'FACING'
+    ]
+    inputs.property('classReplacements', classReplacements)
+    from({
+        configurations.compileClasspath
+                .findAll { it.name ==~ /^(models|data|conditions)-.*\.jar$/ }
+                .collect { zipTree(it) }
+    }) {
+        include 'io/github/fabricators_of_create/porting_lib/models/generators/**'
+        include 'io/github/fabricators_of_create/porting_lib/data/**'
+        include 'io/github/fabricators_of_create/porting_lib/conditions/**'
+    }
+    into layout.buildDirectory.dir('classes/portingLibCompat')
+
+    doLast {
+        fileTree(destinationDir).matching { include '**/*.class' }.files.each { classFile ->
+            def input = new DataInputStream(new ByteArrayInputStream(classFile.bytes))
+            def bytes = new ByteArrayOutputStream()
+            def output = new DataOutputStream(bytes)
+            output.writeInt(input.readInt())
+            output.writeShort(input.readUnsignedShort())
+            output.writeShort(input.readUnsignedShort())
+            int constantPoolCount = input.readUnsignedShort()
+            output.writeShort(constantPoolCount)
+            for (int index = 1; index < constantPoolCount; index++) {
+                int tag = input.readUnsignedByte()
+                output.writeByte(tag)
+                switch (tag) {
+                    case 1:
+                        String value = input.readUTF()
+                        classReplacements.each { oldName, newName -> value = value.replace(oldName, newName) }
+                        output.writeUTF(value)
+                        break
+                    case 3:
+                    case 4:
+                        output.writeInt(input.readInt())
+                        break
+                    case 5:
+                    case 6:
+                        output.writeLong(input.readLong())
+                        index++
+                        break
+                    case 7:
+                    case 8:
+                    case 16:
+                    case 19:
+                    case 20:
+                        output.writeShort(input.readUnsignedShort())
+                        break
+                    case 9:
+                    case 10:
+                    case 11:
+                    case 12:
+                    case 17:
+                    case 18:
+                        output.writeInt(input.readInt())
+                        break
+                    case 15:
+                        output.writeByte(input.readUnsignedByte())
+                        output.writeShort(input.readUnsignedShort())
+                        break
+                    default:
+                        throw new GradleException("Unknown class-file constant tag ${tag} in ${classFile}")
+                }
+            }
+            output.write(input.readAllBytes())
+            output.close()
+            def reader = new org.objectweb.asm.ClassReader(bytes.toByteArray())
+            def writer = new org.objectweb.asm.ClassWriter(org.objectweb.asm.ClassWriter.COMPUTE_MAXS)
+            def visitor = new org.objectweb.asm.ClassVisitor(org.objectweb.asm.Opcodes.ASM9, writer) {
+                String className
+
+                @Override
+                void visit(int version, int access, String name, String signature, String superName,
+                           String[] interfaces) {
+                    className = name
+                    super.visit(version, access, name, signature, superName, interfaces)
+                }
+
+                @Override
+                org.objectweb.asm.MethodVisitor visitMethod(int access, String name, String descriptor,
+                                                             String signature, String[] exceptions) {
+                    def delegate = super.visitMethod(access, name, descriptor, signature, exceptions)
+                    if (className == 'io/github/fabricators_of_create/porting_lib/models/generators/ConfiguredModel'
+                            && name == 'checkRotation' && descriptor == '(II)V') {
+                        return new org.objectweb.asm.MethodVisitor(org.objectweb.asm.Opcodes.ASM9) {
+                            @Override
+                            void visitEnd() {
+                                def invalid = new org.objectweb.asm.Label()
+                                delegate.visitCode()
+                                delegate.visitVarInsn(org.objectweb.asm.Opcodes.ILOAD, 0)
+                                delegate.visitIntInsn(org.objectweb.asm.Opcodes.BIPUSH, 90)
+                                delegate.visitInsn(org.objectweb.asm.Opcodes.IREM)
+                                delegate.visitJumpInsn(org.objectweb.asm.Opcodes.IFNE, invalid)
+                                delegate.visitVarInsn(org.objectweb.asm.Opcodes.ILOAD, 1)
+                                delegate.visitIntInsn(org.objectweb.asm.Opcodes.BIPUSH, 90)
+                                delegate.visitInsn(org.objectweb.asm.Opcodes.IREM)
+                                delegate.visitJumpInsn(org.objectweb.asm.Opcodes.IFNE, invalid)
+                                delegate.visitInsn(org.objectweb.asm.Opcodes.RETURN)
+                                delegate.visitLabel(invalid)
+                                delegate.visitFrame(org.objectweb.asm.Opcodes.F_SAME, 0, null, 0, null)
+                                delegate.visitTypeInsn(org.objectweb.asm.Opcodes.NEW, 'java/lang/IllegalArgumentException')
+                                delegate.visitInsn(org.objectweb.asm.Opcodes.DUP)
+                                delegate.visitLdcInsn('Model rotations must be multiples of 90 degrees')
+                                delegate.visitMethodInsn(org.objectweb.asm.Opcodes.INVOKESPECIAL,
+                                        'java/lang/IllegalArgumentException', '<init>', '(Ljava/lang/String;)V', false)
+                                delegate.visitInsn(org.objectweb.asm.Opcodes.ATHROW)
+                                delegate.visitMaxs(0, 0)
+                                delegate.visitEnd()
+                            }
+                        }
+                    }
+                    return new org.objectweb.asm.MethodVisitor(org.objectweb.asm.Opcodes.ASM9, delegate) {
+                        @Override
+                        void visitMethodInsn(int opcode, String owner, String methodName,
+                                             String methodDescriptor, boolean isInterface) {
+                            if (owner == 'net/minecraft/world/level/block/state/properties/Property'
+                                    && methodName == 'getPossibleValues'
+                                    && methodDescriptor == '()Ljava/util/Collection;') {
+                                methodDescriptor = '()Ljava/util/List;'
+                            }
+                            super.visitMethodInsn(opcode, owner, methodName, methodDescriptor, isInterface)
+                        }
+                    }
+                }
+            }
+            reader.accept(visitor, 0)
+            classFile.bytes = writer.toByteArray()
+        }
+    }
+}
+
+sourceSets.main.output.dir(unpackPortingLibCompat)
+
+dependencies {
+    implementation(project(path: ':sable', configuration: 'namedElements')) {
+        transitive = false
+    }
+    runtimeOnly("dev.ryanhcode.sable-companion:sable-companion-common-1.21.1:${sable_companion_version}") {
+        transitive = false
+    }
+    include(modImplementation("teamreborn:energy:${energy_version}"))
+}
+
+tasks.named('jar', Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    doFirst {
+        def refmap = layout.buildDirectory.file("classes/java/main/${mod_id}.refmap.json").get().asFile
+        if (!refmap.isFile()) {
+            throw new GradleException("Missing generated mixin refmap: ${refmap}")
+        }
+    }
+}

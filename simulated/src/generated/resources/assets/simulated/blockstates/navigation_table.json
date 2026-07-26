@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "simulated:block/navigation_table/block",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "simulated:block/navigation_table/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "simulated:block/navigation_table/block",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "simulated:block/navigation_table/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "simulated:block/navigation_table/block"
+    },
+    "facing=west": {
+      "model": "simulated:block/navigation_table/block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

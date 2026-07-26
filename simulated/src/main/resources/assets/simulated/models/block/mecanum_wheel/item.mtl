@@ -1,0 +1,8 @@
+# Made in Blockbench 4.9.1
+newmtl m_2defddca-013f-57d4-6b4a-6f1e7db0421f
+map_Kd #mecanum_wheel
+newmtl m_0b1c70f7-e48d-721a-5d12-4d3db1b6c569
+map_Kd #axis
+newmtl m_eb0a53e1-053e-3152-0920-b6feed492c30
+map_Kd #axis_top
+newmtl none

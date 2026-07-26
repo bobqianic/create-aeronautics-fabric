@@ -1,0 +1,8 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "simulated:block/redstone_magnet/block",
+	"textures": {
+		"0": "simulated:block/redstone_magnet/redstone_magnet_powered",
+		"particle": "simulated:block/redstone_magnet/redstone_magnet_particle"
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"2": "simulated:block/gimbal_sensor/redstone_panel",
+		"particle": "create:block/tunnel/brass_tunnel_top"
+	},
+	"elements": [
+		{
+			"name": "exterior_north",
+			"from": [-1.01, 0, 0],
+			"to": [1.01, 6, 1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 3, 0.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 6], "texture": "#2"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "casing",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

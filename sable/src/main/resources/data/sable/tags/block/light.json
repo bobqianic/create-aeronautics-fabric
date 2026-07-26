@@ -1,0 +1,73 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:planks",
+    "#minecraft:logs",
+    "#minecraft:slabs",
+    "#minecraft:stairs",
+    "minecraft:piston_head",
+    "minecraft:barrel",
+    "minecraft:chest",
+    "#minecraft:bamboo_blocks",
+    "#c:clusters",
+    "#c:chests/wooden",
+    { "id": "create:belt", "required": false },
+    { "id": "create:track", "required": false },
+    { "id": "create:nixie_tube", "required": false },
+    { "id": "create:desk_bell", "required": false },
+    { "id": "create:piston_extension_pole", "required": false },
+    { "id": "create:turntable", "required": false },
+    { "id": "create:andesite_funnel", "required": false },
+    { "id": "create:brass_funnel", "required": false },
+    { "id": "create:factory_gauge", "required": false },
+    { "id": "create:display_link", "required": false },
+    { "id": "create:stock_link", "required": false },
+    { "id": "create:cardboard_block", "required": false },
+    { "id": "create:bound_cardboard_block", "required": false },
+
+    { "id": "create:andesite_encased_shaft", "required": false },
+    { "id": "create:andesite_encased_cogwheel", "required": false },
+    { "id": "create:andesite_encased_large_cogwheel", "required": false },
+
+    { "id": "create:brass_encased_shaft", "required": false },
+    { "id": "create:brass_encased_cogwheel", "required": false },
+    { "id": "create:brass_encased_large_cogwheel", "required": false },
+
+    { "id": "create:shaft", "required": false },
+    { "id": "create:cogwheel", "required": false },
+    { "id": "create:large_cogwheel", "required": false },
+
+    { "id": "create:hand_crank", "required": false },
+    { "id": "#create:valve_handles", "required": false },
+    { "id": "#create:seats", "required": false },
+
+    { "id": "farmersdelight:skillet", "required": false },
+    { "id": "farmersdelight:cooking_pot", "required": false },
+
+    { "id": "decorative_blocks:chain", "required": false },
+    { "id": "#decorative_blocks:beams", "required": false },
+
+    { "id": "#woodworks:wooden_boards", "required": false },
+
+    { "id": "#quark:vertical_slabs", "required": false },
+    { "id": "#quark:hollow_logs", "required": false },
+
+    { "id": "supplementaries:blackboard", "required": false },
+    { "id": "supplementaries:crystal_display", "required": false },
+    { "id": "#supplementaries:presents", "required": false },
+    { "id": "#supplementaries:trapped_presents", "required": false },
+
+    { "id": "#architects_palette:boards", "required": false },
+
+    { "id": "#storagedrawers:full_drawers", "required": false },
+    { "id": "#storagedrawers:trim", "required": false },
+
+    { "id": "#another_furniture:drawers", "required": false }
+  ],
+  "remove": [
+    "#minecraft:wooden_slabs",
+    "#minecraft:wooden_stairs",
+    "#quark:wooden_vertical_slabs",
+    "#sable:normal_slabs"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "#sable:create_contraption",
+    "#sable:super_glue",
+    "#sable:wall_entities",
+    { "id": "create:seat", "required": false },
+    { "id": "blockbox:seat", "required": false },
+    { "id": "botania:mana_burst", "required": false },
+    { "id": "botania:corporea_burst", "required": false },
+    { "id": "botania:spark", "required": false },
+    { "id": "exposure:camera_stand", "required": false },
+    { "id": "another_furniture:seat", "required": false },
+    { "id": "sleep_tight:bed_entity", "required": false },
+    "minecraft:snow_golem",
+    "minecraft:armor_stand",
+    "minecraft:minecart",
+    "minecraft:hopper_minecart",
+    "minecraft:chest_minecart",
+    "minecraft:furnace_minecart",
+    "minecraft:tnt_minecart",
+    "minecraft:command_block_minecart",
+    "minecraft:block_display",
+    "minecraft:item_display",
+    "minecraft:text_display",
+    "minecraft:marker",
+    "minecraft:leash_knot"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+	"parent": "block/air",
+	"ambientocclusion": false,
+	"textures": {
+		"axis": "create:block/axis",
+		"axis_top": "create:block/axis_top",
+		"tire_0": "offroad:block/tire/tire_0",
+		"particle": "offroad:block/custom_break_particles/wheel"
+	},
+	"loader": "neoforge:obj",
+	"flip_v": true,
+	"model": "offroad:models/item/small_tire/block.obj",
+	"display": {
+		"gui": {
+			"rotation": [ 30, 135, 90 ],
+			"translation": [ 0, 0, 0],
+			"scale":[ 0.4, 0.4, 0.4 ]
+		},
+		"fixed": {
+			"rotation": [ 90, 0, 0 ],
+			"translation": [ 0, 0, 0],
+			"scale":[ 0.45, 0.45, 0.45 ]
+		}
+	}
+}

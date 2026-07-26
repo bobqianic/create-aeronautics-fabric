@@ -1,0 +1,30 @@
+{
+  "dimensions": {
+    "minecraft:overworld": {
+      "type": "minecraft:overworld",
+      "generator": {
+        "type": "minecraft:flat",
+        "settings": {
+          "biome": "minecraft:plains",
+          "lakes": false,
+          "features": false,
+          "layers": [],
+          "structure_overrides": []
+        }
+      }
+    },
+    "minecraft:the_end": {
+      "type": "minecraft:the_end",
+      "generator": {
+        "type": "minecraft:flat",
+        "settings": {
+          "biome": "minecraft:the_end",
+          "lakes": false,
+          "features": false,
+          "layers": [],
+          "structure_overrides": []
+        }
+      }
+    }
+  }
+}

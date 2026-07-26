@@ -1,0 +1,29 @@
+{
+  "parent": "simulated:big_beam",
+  "criteria": {
+    "0": {
+      "conditions": "simulated:my_eye_builtin",
+      "trigger": "simulated:my_eye_builtin"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.simulated.my_eye.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "simulated:laser_sensor"
+    },
+    "title": {
+      "translate": "advancement.simulated.my_eye"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

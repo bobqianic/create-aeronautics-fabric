@@ -1,0 +1,29 @@
+{
+  "parent": "simulated:not_gonna_sugarcoat_it",
+  "criteria": {
+    "0": {
+      "conditions": "simulated:measure_once_build_twice_builtin",
+      "trigger": "simulated:measure_once_build_twice_builtin"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.simulated.measure_once_build_twice.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "simulated:contraption_diagram"
+    },
+    "title": {
+      "translate": "advancement.simulated.measure_once_build_twice"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

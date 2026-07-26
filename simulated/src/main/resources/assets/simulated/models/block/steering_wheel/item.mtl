@@ -1,0 +1,7 @@
+# Made in Blockbench 5.0.6
+
+newmtl steering_wheel
+map_Kd #steering_wheel
+
+newmtl spruce_planks
+map_Kd #spruce_planks

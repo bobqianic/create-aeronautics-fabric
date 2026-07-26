@@ -1,0 +1,57 @@
+{
+  "variants": {
+    "face=ceiling,facing=east": {
+      "model": "simulated:block/physics_assembler/block",
+      "x": 180,
+      "y": 270
+    },
+    "face=ceiling,facing=north": {
+      "model": "simulated:block/physics_assembler/block",
+      "x": 180,
+      "y": 180
+    },
+    "face=ceiling,facing=south": {
+      "model": "simulated:block/physics_assembler/block",
+      "x": 180
+    },
+    "face=ceiling,facing=west": {
+      "model": "simulated:block/physics_assembler/block",
+      "x": 180,
+      "y": 90
+    },
+    "face=floor,facing=east": {
+      "model": "simulated:block/physics_assembler/block",
+      "y": 90
+    },
+    "face=floor,facing=north": {
+      "model": "simulated:block/physics_assembler/block"
+    },
+    "face=floor,facing=south": {
+      "model": "simulated:block/physics_assembler/block",
+      "y": 180
+    },
+    "face=floor,facing=west": {
+      "model": "simulated:block/physics_assembler/block",
+      "y": 270
+    },
+    "face=wall,facing=east": {
+      "model": "simulated:block/physics_assembler/block",
+      "x": 90,
+      "y": 90
+    },
+    "face=wall,facing=north": {
+      "model": "simulated:block/physics_assembler/block",
+      "x": 90
+    },
+    "face=wall,facing=south": {
+      "model": "simulated:block/physics_assembler/block",
+      "x": 90,
+      "y": 180
+    },
+    "face=wall,facing=west": {
+      "model": "simulated:block/physics_assembler/block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

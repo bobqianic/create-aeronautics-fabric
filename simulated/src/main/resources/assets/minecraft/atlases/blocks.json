@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "simulated:entity/diagram_large"
+    },
+    {
+      "type": "single",
+      "resource": "simulated:entity/diagram_medium"
+    },
+    {
+      "type": "single",
+      "resource": "simulated:entity/diagram_small"
+    }
+  ]
+}

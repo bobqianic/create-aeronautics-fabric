@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create:super_glue",
+    "simulated:honey_glue"
+  ]
+}

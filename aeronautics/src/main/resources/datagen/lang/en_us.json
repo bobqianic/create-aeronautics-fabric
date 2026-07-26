@@ -1,0 +1,86 @@
+{
+  "item.aeronautics.aviators_goggles.tooltip": {
+    "behaviour1": "_Kinetic components_ show added _Stress Impact_ or _Capacity_. _Stressometers_ show statistics of their _attached kinetic network_. Some other blocks reveal information such as item and fluid content.",
+    "condition1": "When looking at blocks",
+    "summary": "Augments your HUD with _miscellaneous information_ about placed components."
+  },
+
+  "jukebox_song.aeronautics.cloud_skipper": "Starlotte - Cloud Skipper",
+
+  "aeronautics": {
+    "simulated_section.aeronautics": "Aeronautics",
+
+    "unit": {
+      "kpg": "%s kpg",
+      "mpg": "%s Mpg",
+      "gpg": "%s Gpg",
+      "pn": "%s pN",
+      "kpn": "%s kpN",
+      "mpn": "%s MpN",
+      "gpn": "%s GpN",
+      "meter_cubed": "%s m³",
+      "meters_per_second": "%s m/s"
+    },
+    "tooltip": {
+      "capacity_used": "Kinetic Stress Used:"
+    },
+    "scroll_option": {
+      "hot_air_amount": "Max Hot Air Output",
+      "thrust_direction": "Thrust Direction"
+    },
+    "generic": {
+      "pull_when_clockwise": "Pull air when clockwise",
+      "push_when_clockwise": "Push air when clockwise",
+      "hot_air": "Hot Air"
+    },
+    "display_source": {
+      "propeller": {
+        "data": "Propeller Data",
+        "thrust": "Thrust",
+        "airflow": "Airflow"
+      },
+      "lifting_gas": {
+        "data": "Lifting Gas Data",
+        "volume": "Volume",
+        "total_lift": "Total Lift"
+      }
+    },
+    "propeller": {
+      "thrust": "Thrust: %s",
+      "airflow": "Airflow: %s",
+      "can_lift": "Can lift: %s",
+      "sails": "Sails"
+    },
+    "potato_cannon": {
+      "ammo": "Ammo: %s x%s",
+      "attack_damage": "Attack damage: %s",
+      "knockback": "Knockback: %s",
+      "reload_ticks": "Reload ticks: %s"
+    },
+    "boiler": {
+      "via_one_vent": "via 1 vent",
+      "via_vents": "via %1$s vents"
+    },
+    "lifting_gas": {
+      "default": "Gas",
+      "steam": "Steam",
+
+      "gas_output": "%s output: %s",
+      "balloon": "Balloon: ",
+      "fill": "Fill... %s",
+      "total_lift": "Total lift: %s",
+      "balloon_volume": "Balloon volume: %s",
+      "no_suitable_balloon": "No suitable balloon found"
+    }
+  },
+
+  "block": {
+    "aeronautics": {
+      "smart_propeller.tooltip": {
+        "summary": "_Generates thrust_ when spun. _Pitches the propeller_ along one axis to _attempt to face upwards._",
+        "condition1": "When R-Clicked with Wrench",
+        "behaviour1": "_Reverses_ the direction the Propeller provides thrust."
+      }
+    }
+  }
+}

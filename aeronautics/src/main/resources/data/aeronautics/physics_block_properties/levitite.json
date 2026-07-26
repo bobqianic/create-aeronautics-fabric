@@ -1,0 +1,6 @@
+{
+  "selector": "#aeronautics:levitite",
+  "properties": {
+    "sable:floating_material": "aeronautics:levitite"
+  }
+}

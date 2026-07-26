@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "axis_along_first=false,facing=down": {
+      "model": "simulated:block/purple_handle_horizontal",
+      "x": 270,
+      "y": 90
+    },
+    "axis_along_first=false,facing=east": {
+      "model": "simulated:block/purple_handle_horizontal",
+      "y": 270
+    },
+    "axis_along_first=false,facing=north": {
+      "model": "simulated:block/purple_handle_vertical",
+      "y": 180
+    },
+    "axis_along_first=false,facing=south": {
+      "model": "simulated:block/purple_handle_vertical"
+    },
+    "axis_along_first=false,facing=up": {
+      "model": "simulated:block/purple_handle_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis_along_first=false,facing=west": {
+      "model": "simulated:block/purple_handle_horizontal",
+      "y": 90
+    },
+    "axis_along_first=true,facing=down": {
+      "model": "simulated:block/purple_handle_horizontal",
+      "x": 270
+    },
+    "axis_along_first=true,facing=east": {
+      "model": "simulated:block/purple_handle_vertical",
+      "y": 270
+    },
+    "axis_along_first=true,facing=north": {
+      "model": "simulated:block/purple_handle_horizontal",
+      "y": 180
+    },
+    "axis_along_first=true,facing=south": {
+      "model": "simulated:block/purple_handle_horizontal"
+    },
+    "axis_along_first=true,facing=up": {
+      "model": "simulated:block/purple_handle_horizontal",
+      "x": 90
+    },
+    "axis_along_first=true,facing=west": {
+      "model": "simulated:block/purple_handle_vertical",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"axis": "create:block/axis",
+		"axis_top": "create:block/axis_top",
+		"plunger_wheel": "simulated:block/plunger_wheel",
+		"particle": "simulated:block/plunger_wheel"
+	},
+	"loader": "neoforge:obj",
+	"flip_v": true,
+	"model": "simulated:models/block/plunger_wheel/item.obj",
+	"display": {
+		"gui": {
+			"rotation": [ 30, 225, 0 ],
+			"translation": [ 0, 0, 0],
+			"scale":[ 0.4, 0.4, 0.4 ]
+		},
+		"fixed": {
+			"rotation": [ 90, 0, 0 ],
+			"translation": [ 0, 0, 0],
+			"scale":[ 0.45, 0.45, 0.45 ]
+		}
+	}
+}

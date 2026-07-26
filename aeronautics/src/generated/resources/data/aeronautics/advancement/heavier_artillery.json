@@ -1,0 +1,29 @@
+{
+  "parent": "aeronautics:root",
+  "criteria": {
+    "0": {
+      "conditions": "aeronautics:heavier_artillery_builtin",
+      "trigger": "aeronautics:heavier_artillery_builtin"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.aeronautics.heavier_artillery.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "aeronautics:mounted_potato_cannon"
+    },
+    "title": {
+      "translate": "advancement.aeronautics.heavier_artillery"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

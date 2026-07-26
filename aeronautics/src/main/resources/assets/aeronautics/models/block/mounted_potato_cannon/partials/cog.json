@@ -1,0 +1,127 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"4": "aeronautics:block/mounted_potato_cannon/mounted_potato_cannon_1"
+	},
+	"elements": [
+		{
+			"name": "Gear",
+			"from": [1, 6.5, 12],
+			"to": [15, 9.5, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 5.5]},
+			"faces": {
+				"north": {"uv": [7, 14.5, 14, 16], "texture": "#4"},
+				"east": {"uv": [12.5, 12.5, 14, 14.5], "rotation": 270, "texture": "#4"},
+				"south": {"uv": [7, 14.5, 14, 16], "rotation": 180, "texture": "#4"},
+				"west": {"uv": [12.5, 12.5, 14, 14.5], "rotation": 90, "texture": "#4"},
+				"up": {"uv": [0, 14, 7, 16], "rotation": 180, "texture": "#4"},
+				"down": {"uv": [0, 14, 7, 16], "texture": "#4"}
+			}
+		},
+		{
+			"name": "Gear",
+			"from": [6.5, 1, 12],
+			"to": [9.5, 15, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 5.5]},
+			"faces": {
+				"north": {"uv": [7, 14.5, 14, 16], "rotation": 270, "texture": "#4"},
+				"east": {"uv": [0, 14, 7, 16], "rotation": 270, "texture": "#4"},
+				"south": {"uv": [7, 14.5, 14, 16], "rotation": 270, "texture": "#4"},
+				"west": {"uv": [0, 14, 7, 16], "rotation": 90, "texture": "#4"},
+				"up": {"uv": [12.5, 12.5, 14, 14.5], "rotation": 180, "texture": "#4"},
+				"down": {"uv": [12.5, 12.5, 14, 14.5], "texture": "#4"}
+			}
+		},
+		{
+			"name": "Gear",
+			"from": [6.5, 1, 12],
+			"to": [9.5, 15, 16],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 8, 5.5]},
+			"faces": {
+				"north": {"uv": [7, 14.5, 14, 16], "rotation": 270, "texture": "#4"},
+				"east": {"uv": [0, 14, 7, 16], "rotation": 270, "texture": "#4"},
+				"south": {"uv": [7, 14.5, 14, 16], "rotation": 270, "texture": "#4"},
+				"west": {"uv": [0, 14, 7, 16], "rotation": 90, "texture": "#4"},
+				"up": {"uv": [12.5, 12.5, 14, 14.5], "rotation": 180, "texture": "#4"},
+				"down": {"uv": [12.5, 12.5, 14, 14.5], "texture": "#4"}
+			}
+		},
+		{
+			"name": "Gear",
+			"from": [6.5, 1, 12],
+			"to": [9.5, 15, 16],
+			"rotation": {"angle": -45, "axis": "z", "origin": [8, 8, 5.5]},
+			"faces": {
+				"north": {"uv": [7, 14.5, 14, 16], "rotation": 270, "texture": "#4"},
+				"east": {"uv": [0, 14, 7, 16], "rotation": 270, "texture": "#4"},
+				"south": {"uv": [7, 14.5, 14, 16], "rotation": 270, "texture": "#4"},
+				"west": {"uv": [0, 14, 7, 16], "rotation": 90, "texture": "#4"},
+				"up": {"uv": [12.5, 12.5, 14, 14.5], "rotation": 180, "texture": "#4"},
+				"down": {"uv": [12.5, 12.5, 14, 14.5], "texture": "#4"}
+			}
+		},
+		{
+			"name": "GearCaseOuter",
+			"from": [4, 4, 12.01],
+			"to": [12, 12, 15.99],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5.5, 8.5, 6]},
+			"faces": {
+				"north": {"uv": [15.5, 15.5, 16, 16], "texture": "#4"},
+				"east": {"uv": [14, 12, 16, 16], "rotation": 180, "texture": "#4"},
+				"south": {"uv": [15.5, 15.5, 16, 16], "rotation": 90, "texture": "#4"},
+				"west": {"uv": [14, 12, 16, 16], "texture": "#4"},
+				"up": {"uv": [14, 12, 16, 16], "rotation": 90, "texture": "#4"},
+				"down": {"uv": [14, 12, 16, 16], "rotation": 270, "texture": "#4"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, -145, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, -145, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -145, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -145, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 45, 0],
+			"translation": [-1.5, 0, 0],
+			"scale": [0.53, 0.53, 0.53]
+		},
+		"head": {
+			"rotation": [-180, 0, 0],
+			"translation": [0, 0, -3.75]
+		},
+		"fixed": {
+			"rotation": [0, -90, 0],
+			"translation": [3, 0, 0],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "group",
+			"origin": [8, 8, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1, 2, 3, 4]
+		}
+	]
+}

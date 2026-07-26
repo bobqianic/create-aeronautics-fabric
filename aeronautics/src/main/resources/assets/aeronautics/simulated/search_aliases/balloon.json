@@ -1,0 +1,8 @@
+{
+  "term": ["balloon", "hot air"],
+  "results": [
+    "aeronautics:adjustable_burner",
+    "aeronautics:steam_vent",
+    "#aeronautics:shaftless_envelope"
+  ]
+}

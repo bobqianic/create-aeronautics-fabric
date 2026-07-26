@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,inverted=false,powered=false": {
+      "model": "simulated:block/redstone_inductor/block",
+      "y": 90
+    },
+    "facing=east,inverted=false,powered=true": {
+      "model": "simulated:block/redstone_inductor/block_powered",
+      "y": 90
+    },
+    "facing=east,inverted=true,powered=false": {
+      "model": "simulated:block/redstone_inductor/block_inverted",
+      "y": 90
+    },
+    "facing=east,inverted=true,powered=true": {
+      "model": "simulated:block/redstone_inductor/block_inverted_powered",
+      "y": 90
+    },
+    "facing=north,inverted=false,powered=false": {
+      "model": "simulated:block/redstone_inductor/block"
+    },
+    "facing=north,inverted=false,powered=true": {
+      "model": "simulated:block/redstone_inductor/block_powered"
+    },
+    "facing=north,inverted=true,powered=false": {
+      "model": "simulated:block/redstone_inductor/block_inverted"
+    },
+    "facing=north,inverted=true,powered=true": {
+      "model": "simulated:block/redstone_inductor/block_inverted_powered"
+    },
+    "facing=south,inverted=false,powered=false": {
+      "model": "simulated:block/redstone_inductor/block",
+      "y": 180
+    },
+    "facing=south,inverted=false,powered=true": {
+      "model": "simulated:block/redstone_inductor/block_powered",
+      "y": 180
+    },
+    "facing=south,inverted=true,powered=false": {
+      "model": "simulated:block/redstone_inductor/block_inverted",
+      "y": 180
+    },
+    "facing=south,inverted=true,powered=true": {
+      "model": "simulated:block/redstone_inductor/block_inverted_powered",
+      "y": 180
+    },
+    "facing=west,inverted=false,powered=false": {
+      "model": "simulated:block/redstone_inductor/block",
+      "y": 270
+    },
+    "facing=west,inverted=false,powered=true": {
+      "model": "simulated:block/redstone_inductor/block_powered",
+      "y": 270
+    },
+    "facing=west,inverted=true,powered=false": {
+      "model": "simulated:block/redstone_inductor/block_inverted",
+      "y": 270
+    },
+    "facing=west,inverted=true,powered=true": {
+      "model": "simulated:block/redstone_inductor/block_inverted_powered",
+      "y": 270
+    }
+  }
+}

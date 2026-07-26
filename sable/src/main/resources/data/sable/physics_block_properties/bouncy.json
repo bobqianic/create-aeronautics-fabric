@@ -1,0 +1,7 @@
+{
+  "selector": "#sable:bouncy",
+
+  "properties": {
+    "sable:restitution": 0.5
+  }
+}

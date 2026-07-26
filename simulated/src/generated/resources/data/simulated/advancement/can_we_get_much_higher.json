@@ -1,0 +1,30 @@
+{
+  "parent": "simulated:no_pressure",
+  "criteria": {
+    "0": {
+      "conditions": "simulated:can_we_get_much_higher_builtin",
+      "trigger": "simulated:can_we_get_much_higher_builtin"
+    }
+  },
+  "display": {
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.simulated.can_we_get_much_higher.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "simulated:altitude_sensor"
+    },
+    "title": {
+      "translate": "advancement.simulated.can_we_get_much_higher"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

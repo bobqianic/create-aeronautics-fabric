@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "axis=x,ceiling=false,reversed=false": {
+      "model": "aeronautics:block/smart_propeller/block",
+      "y": 90
+    },
+    "axis=x,ceiling=false,reversed=true": {
+      "model": "aeronautics:block/smart_propeller/block",
+      "y": 90
+    },
+    "axis=x,ceiling=true,reversed=false": {
+      "model": "aeronautics:block/smart_propeller/block",
+      "x": 180,
+      "y": 90
+    },
+    "axis=x,ceiling=true,reversed=true": {
+      "model": "aeronautics:block/smart_propeller/block",
+      "x": 180,
+      "y": 90
+    },
+    "axis=z,ceiling=false,reversed=false": {
+      "model": "aeronautics:block/smart_propeller/block"
+    },
+    "axis=z,ceiling=false,reversed=true": {
+      "model": "aeronautics:block/smart_propeller/block"
+    },
+    "axis=z,ceiling=true,reversed=false": {
+      "model": "aeronautics:block/smart_propeller/block",
+      "x": 180
+    },
+    "axis=z,ceiling=true,reversed=true": {
+      "model": "aeronautics:block/smart_propeller/block",
+      "x": 180
+    }
+  }
+}

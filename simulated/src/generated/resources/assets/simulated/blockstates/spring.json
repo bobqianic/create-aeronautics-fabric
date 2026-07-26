@@ -1,0 +1,82 @@
+{
+  "variants": {
+    "facing=down,size=large": {
+      "model": "simulated:block/spring/large_block",
+      "x": 180
+    },
+    "facing=down,size=medium": {
+      "model": "simulated:block/spring/block",
+      "x": 180
+    },
+    "facing=down,size=small": {
+      "model": "simulated:block/spring/small_block",
+      "x": 180
+    },
+    "facing=east,size=large": {
+      "model": "simulated:block/spring/large_block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,size=medium": {
+      "model": "simulated:block/spring/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,size=small": {
+      "model": "simulated:block/spring/small_block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,size=large": {
+      "model": "simulated:block/spring/large_block",
+      "x": 90
+    },
+    "facing=north,size=medium": {
+      "model": "simulated:block/spring/block",
+      "x": 90
+    },
+    "facing=north,size=small": {
+      "model": "simulated:block/spring/small_block",
+      "x": 90
+    },
+    "facing=south,size=large": {
+      "model": "simulated:block/spring/large_block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,size=medium": {
+      "model": "simulated:block/spring/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,size=small": {
+      "model": "simulated:block/spring/small_block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,size=large": {
+      "model": "simulated:block/spring/large_block"
+    },
+    "facing=up,size=medium": {
+      "model": "simulated:block/spring/block"
+    },
+    "facing=up,size=small": {
+      "model": "simulated:block/spring/small_block"
+    },
+    "facing=west,size=large": {
+      "model": "simulated:block/spring/large_block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,size=medium": {
+      "model": "simulated:block/spring/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,size=small": {
+      "model": "simulated:block/spring/small_block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

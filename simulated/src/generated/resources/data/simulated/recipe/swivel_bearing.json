@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "#minecraft:wooden_slabs",
+    "B": "create:industrial_iron_block",
+    "C": "create:cogwheel"
+  },
+  "pattern": [
+    " A ",
+    " B ",
+    " C "
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:swivel_bearing"
+  }
+}

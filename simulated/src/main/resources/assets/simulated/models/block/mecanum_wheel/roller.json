@@ -1,0 +1,31 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "simulated:block/mecanum_wheel",
+		"particle": "create:block/dark_metal_block"
+	},
+	"elements": [
+		{
+			"from": [-10, 3, 5],
+			"to": [-4, 13, 11],
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [2.5, 11, 5.5, 16], "texture": "#0"},
+				"east": {"uv": [0, 11, 3, 16], "texture": "#0"},
+				"south": {"uv": [2.5, 11, 5.5, 16], "texture": "#0"},
+				"west": {"uv": [0, 11, 3, 16], "texture": "#0"},
+				"up": {"uv": [5.5, 13, 8.5, 16], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [5.5, 13, 8.5, 16], "rotation": 270, "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "roll",
+			"origin": [0, 8, 0],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

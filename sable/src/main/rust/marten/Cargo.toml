@@ -1,0 +1,11 @@
+[package]
+name = "marten"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+jni.workspace = true
+log.workspace = true
+fern.workspace = true
+humantime.workspace = true
+colored.workspace = true

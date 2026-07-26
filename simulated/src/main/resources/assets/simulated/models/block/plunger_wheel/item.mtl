@@ -1,0 +1,8 @@
+# Made in Blockbench 4.9.2
+newmtl m_c446a1f0-e941-393d-3dee-d42c64f0ddf2
+map_Kd #plunger_wheel
+newmtl m_18974745-7cb0-c249-b33a-b77f6823e820
+map_Kd #axis
+newmtl m_cf2d13fb-205d-00bd-d7f9-6ca795f0a04f
+map_Kd #axis_top
+newmtl none

@@ -1,0 +1,9 @@
+{
+  "values": [
+    "simulated:rope_connector",
+    "simulated:directional_linked_receiver",
+    "simulated:modulating_linked_receiver",
+    "#simulated:nameplate_blocks",
+    "#simulated:handles"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "parent": "simulated:get_a_grip",
+  "criteria": {
+    "0": {
+      "conditions": "simulated:got_a_grip_builtin",
+      "trigger": "simulated:got_a_grip_builtin"
+    }
+  },
+  "display": {
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.simulated.got_a_grip.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "simulated:iron_handle"
+    },
+    "title": {
+      "translate": "advancement.simulated.got_a_grip"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

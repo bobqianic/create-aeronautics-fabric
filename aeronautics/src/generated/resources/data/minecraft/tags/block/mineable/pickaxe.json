@@ -1,0 +1,14 @@
+{
+  "values": [
+    "aeronautics:adjustable_burner",
+    "aeronautics:steam_vent",
+    "aeronautics:propeller_bearing",
+    "aeronautics:gyroscopic_propeller_bearing",
+    "aeronautics:smart_propeller",
+    "aeronautics:andesite_propeller",
+    "aeronautics:wooden_propeller",
+    "aeronautics:mounted_potato_cannon",
+    "aeronautics:levitite",
+    "aeronautics:pearlescent_levitite"
+  ]
+}

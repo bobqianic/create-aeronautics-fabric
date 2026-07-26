@@ -1,0 +1,8 @@
+{
+  "selector": "simulated:paired_docking_connector",
+
+  "properties": {
+    "sable:mass": 0.5,
+    "sable:volume": 0.5
+  }
+}

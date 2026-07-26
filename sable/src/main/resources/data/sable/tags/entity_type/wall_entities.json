@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:painting",
+    "minecraft:item_frame",
+    "minecraft:glow_item_frame",
+    { "id": "create:crafting_blueprint", "required": false },
+    { "id": "exposure:glass_photograph_frame", "required": false },
+    { "id": "exposure:photograph_frame", "required": false },
+    { "id": "labels:label", "required": false },
+    { "id": "immersive_paintings:painting", "required": false },
+    { "id": "immersive_paintings:glow_painting", "required": false },
+    { "id": "immersive_paintings:graffiti", "required": false },
+    { "id": "immersive_paintings:glow_graffiti", "required": false }
+  ]
+}

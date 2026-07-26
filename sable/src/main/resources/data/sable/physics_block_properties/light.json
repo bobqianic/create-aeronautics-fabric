@@ -1,0 +1,13 @@
+{
+  "selector": "#sable:light",
+
+  "properties": {
+    "sable:mass": 0.5
+  },
+
+  "overrides": {
+    "type=double": {
+      "sable:mass": 1.0
+    }
+  }
+}

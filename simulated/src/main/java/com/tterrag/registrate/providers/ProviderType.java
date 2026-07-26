@@ -1,0 +1,202 @@
+package com.tterrag.registrate.providers;
+
+import java.util.Map;
+
+import com.tterrag.registrate.AbstractRegistrate;
+import com.tterrag.registrate.providers.loot.RegistrateLootTableProvider;
+import com.tterrag.registrate.util.nullness.FieldsAreNonnullByDefault;
+import com.tterrag.registrate.util.nullness.NonNullBiFunction;
+import com.tterrag.registrate.util.nullness.NonNullFunction;
+import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
+import io.github.fabricators_of_create.porting_lib.data.ExistingFileHelper;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
+
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nonnull;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Function;
+
+/**
+ * Represents a type of data that can be generated, and specifies a factory for the provider.
+ * <p>
+ * Used as a key for data generator callbacks.
+ * <p>
+ * This file also defines the built-in provider types, but third-party types can be created with {@link #register(String, ProviderType)}.
+ *
+ * @param <T> The type of the provider
+ */
+@FunctionalInterface
+@SuppressWarnings("deprecation")
+@FieldsAreNonnullByDefault
+//@ParametersAreNonnullByDefault
+public interface ProviderType<T extends RegistrateProvider> {
+
+    // SERVER DATA
+    ProviderType<RegistrateRecipeProvider> RECIPE = registerServerData("recipe", RegistrateRecipeProvider::new);
+    ProviderType<RegistrateAdvancementProvider> ADVANCEMENT = registerServerData("advancement", RegistrateAdvancementProvider::new);
+    ProviderType<RegistrateLootTableProvider> LOOT = registerServerData("loot", RegistrateLootTableProvider::new);
+    ProviderType<RegistrateTagsProvider.IntrinsicImpl<Block>> BLOCK_TAGS = registerIntrinsicTag("tags/block", "blocks", Registries.BLOCK, block -> block.builtInRegistryHolder().key());
+    ProviderType<RegistrateItemTagsProvider> ITEM_TAGS = registerTag("tags/item", Registries.ITEM, c -> new RegistrateItemTagsProvider(c.parent(), c.type(), "items", c.output(), c.provider(), c.get(BLOCK_TAGS).contentsGetter(), c.fileHelper()));
+    ProviderType<RegistrateTagsProvider.IntrinsicImpl<Fluid>> FLUID_TAGS = registerIntrinsicTag("tags/fluid", "fluids", Registries.FLUID, fluid -> fluid.builtInRegistryHolder().key());
+    ProviderType<RegistrateTagsProvider.IntrinsicImpl<EntityType<?>>> ENTITY_TAGS = registerIntrinsicTag("tags/entity", "entity_types", Registries.ENTITY_TYPE, entityType -> entityType.builtInRegistryHolder().key());
+    ProviderType<RegistrateGenericProvider> GENERIC_SERVER = registerProvider("registrate_generic_server_provider",  c -> new RegistrateGenericProvider(c.parent(), c.info(), EnvType.SERVER, c.type()));
+
+    // CLIENT DATA
+    ProviderType<RegistrateBlockstateProvider> BLOCKSTATE = registerLazyProvider("blockstate", ProviderType::createBlockstateProvider);
+    ProviderType<RegistrateItemModelProvider> ITEM_MODEL = registerLazyProvider("item_model", ProviderType::createItemModelProvider);
+    ProviderType<RegistrateLangProvider> LANG = registerProvider("lang", c -> new RegistrateLangProvider(c.parent(), c.output(), c.info().registriesLookup()));
+    ProviderType<RegistrateGenericProvider> GENERIC_CLIENT = registerProvider("registrate_generic_client_provider", c -> new RegistrateGenericProvider(c.parent(), c.info(), EnvType.CLIENT, c.type()));
+
+    record Context<T extends RegistrateProvider>(ProviderType<T> type, AbstractRegistrate<?> parent,
+                                                 RegistrateDataProvider.DataInfo info,
+                                                 Map<ProviderType<?>, RegistrateProvider> existing,
+                                                 FabricDataOutput output, ExistingFileHelper fileHelper,
+                                                 CompletableFuture<HolderLookup.Provider> provider) {
+
+        public <R extends RegistrateProvider> R get(ProviderType<R> other) {
+            return (R) existing().get(other);
+        }
+
+    }
+
+    default T create(Context<T> context) {
+        return create(context.parent(), context.info(), context.existing());
+    }
+
+    @Deprecated
+    T create(AbstractRegistrate<?> parent, RegistrateDataProvider.DataInfo info, Map<ProviderType<?>, RegistrateProvider> existing);
+
+    interface DependencyAwareProviderType<T extends RegistrateProvider> extends ProviderType<T> {
+
+        @Override
+        default T create(AbstractRegistrate<?> parent, RegistrateDataProvider.DataInfo info, Map<ProviderType<?>, RegistrateProvider> existing) {
+            return create(new Context<>(this, parent, info, existing,info.output(), info.helper(), info.registriesLookup()));
+        }
+
+        @Override
+        T create(Context<T> context);
+
+    }
+
+    interface SimpleServerDataFactory<T extends RegistrateProvider> extends DependencyAwareProviderType<T> {
+
+        T create(AbstractRegistrate<?> parent, FabricDataOutput output, CompletableFuture<HolderLookup.Provider> provider);
+
+        @Override
+        default T create(Context<T> context) {
+            return create(context.parent(), context.output(), context.provider());
+        }
+
+        default ProviderType<T> asProvider() {
+            return this;
+        }
+
+    }
+
+    // TODO this is clunky af
+    @Deprecated
+    @Nonnull
+    static <T extends RegistrateProvider> ProviderType<T> registerDelegate(String name, NonNullUnaryOperator<ProviderType<T>> type) {
+        ProviderType<T> ret = new ProviderType<T>() {
+
+            @Override
+            public T create(@NotNull AbstractRegistrate<?> parent, RegistrateDataProvider.DataInfo info, Map<ProviderType<?>, RegistrateProvider> existing) {
+                return type.apply(this).create(parent, info, existing);
+            }
+        };
+        return register(name, ret);
+    }
+
+    @Deprecated
+    @Nonnull
+    static <T extends RegistrateProvider> ProviderType<T> register(String name, NonNullFunction<ProviderType<T>, NonNullBiFunction<AbstractRegistrate<?>, RegistrateDataProvider.DataInfo, T>> type) {
+        ProviderType<T> ret = new ProviderType<T>() {
+
+            @Override
+            public T create(@NotNull AbstractRegistrate<?> parent, RegistrateDataProvider.DataInfo info, Map<ProviderType<?>, RegistrateProvider> existing) {
+                return type.apply(this).apply(parent, info);
+            }
+        };
+        return register(name, ret);
+    }
+
+    @Deprecated
+    @Nonnull
+    static <T extends RegistrateProvider> ProviderType<T> register(String name, NonNullBiFunction<AbstractRegistrate<?>, RegistrateDataProvider.DataInfo, T> type) {
+        ProviderType<T> ret = new ProviderType<T>() {
+
+            @Override
+            public T create(AbstractRegistrate<?> parent, RegistrateDataProvider.DataInfo info, Map<ProviderType<?>, RegistrateProvider> existing) {
+                return type.apply(parent, info);
+            }
+        };
+        return register(name, ret);
+    }
+
+    @Deprecated
+    @Nonnull
+    static <T extends RegistrateProvider> ProviderType<T> register(String name, ProviderType<T> type) {
+        RegistrateDataProvider.TYPES.put(name, type);
+        return type;
+    }
+
+    @Nonnull
+    static <T extends RegistrateProvider> ProviderType<T> registerServerData(String name, SimpleServerDataFactory<T> factory) {
+        return register(name, factory.asProvider());
+    }
+
+    @Nonnull
+    static <T extends RegistrateProvider> ProviderType<T> registerProvider(String name, DependencyAwareProviderType<T> type) {
+        RegistrateDataProvider.TYPES.put(name, type);
+        return type;
+    }
+
+    @Nonnull
+    static <T, R extends RegistrateTagsProvider<T>> ProviderType<R> registerTag(String name, ResourceKey<? extends Registry<T>> key, DependencyAwareProviderType<R> type) {
+        if (RegistrateDataProvider.TAG_TYPES.containsKey(key)) {
+            return (ProviderType<R>) RegistrateDataProvider.TAG_TYPES.get(key);
+        }
+        RegistrateDataProvider.TAG_TYPES.put(key, type);
+        RegistrateDataProvider.TYPES.put(name, type);
+        return type;
+    }
+
+    @Nonnull
+    static <T> ProviderType<RegistrateTagsProvider.IntrinsicImpl<T>> registerIntrinsicTag(String providerName, String typeName, ResourceKey<? extends Registry<T>> registry, Function<T, ResourceKey<T>> keyExtractor) {
+        return registerTag(providerName, registry, c -> new RegistrateTagsProvider.IntrinsicImpl<>(c.parent(), c.type(), typeName, c.output(), registry, c.provider(), keyExtractor));
+    }
+
+    static <T extends RegistrateProvider> T create(ProviderType<T> type, AbstractRegistrate<?> parent, RegistrateDataProvider.DataInfo info, Map<ProviderType<?>, RegistrateProvider> existing, CompletableFuture<HolderLookup.Provider> provider) {
+        return type.create(new Context<>(type, parent, info, existing, info.output(), info.helper(), provider));
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    static <T extends RegistrateProvider> ProviderType<T> registerLazyProvider(
+            final String name, final Function<Context<RegistrateProvider>, RegistrateProvider> factory) {
+        final DependencyAwareProviderType<RegistrateProvider> type = factory::apply;
+        return (ProviderType<T>) registerProvider(name, type);
+    }
+
+    static RegistrateProvider createBlockstateProvider(final Context<RegistrateProvider> context) {
+        return new RegistrateBlockstateProvider(context.parent(), context.output(), context.fileHelper());
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    static RegistrateProvider createItemModelProvider(final Context<RegistrateProvider> context) {
+        final RegistrateBlockstateProvider blockstates =
+                (RegistrateBlockstateProvider) context.get((ProviderType) BLOCKSTATE);
+        return new RegistrateItemModelProvider(
+                context.parent(), context.output(), blockstates.getExistingFileHelper());
+    }
+
+}

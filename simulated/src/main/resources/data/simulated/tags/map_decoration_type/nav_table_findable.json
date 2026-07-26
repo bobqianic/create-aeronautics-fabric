@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:village_desert",
+    "minecraft:village_plains",
+    "minecraft:village_savanna",
+    "minecraft:village_snowy",
+    "minecraft:village_taiga",
+    "minecraft:jungle_temple",
+    "minecraft:swamp_hut",
+    "minecraft:trial_chambers",
+    "minecraft:mansion",
+    "minecraft:monument",
+    "minecraft:red_x"
+  ]
+}

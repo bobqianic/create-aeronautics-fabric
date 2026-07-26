@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "computercraft:monitor_normal", "required": false },
+    { "id": "computercraft:monitor_advanced", "required": false },
+
+    { "id": "computercraft:turtle_normal", "required": false },
+    { "id": "computercraft:turtle_advanced", "required": false },
+
+    { "id": "computercraft:computer_normal", "required": false },
+    { "id": "computercraft:computer_advanced", "required": false },
+    { "id": "computercraft:computer_command", "required": false }
+  ]
+}

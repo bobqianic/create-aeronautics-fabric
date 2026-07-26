@@ -1,0 +1,49 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"wheel": "offroad:block/rockcutting_wheel",
+		"base": "offroad:block/rockcutting_base"
+	},
+	"loader": "neoforge:obj",
+	"flip_v": true,
+	"model": "offroad:models/block/rockcutting_wheel/item.obj",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [3.5, 2.5, 0],
+			"scale": [0.35, 0.35, 0.35]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, -1.5, 0],
+			"scale": [0.35, 0.35, 0.35]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"translation": [4, 0, 0],
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 45, 0],
+			"translation": [0, 0, 4],
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"ground": {
+			"translation": [2, 3, 2],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"translation": [-5.25, -2, 0],
+			"scale": [0.45, 0.45, 0.45]
+		},
+		"head": {
+			"translation": [6, -3.75, 4.25],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"fixed": {
+			"translation": [4, -2, 4],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}

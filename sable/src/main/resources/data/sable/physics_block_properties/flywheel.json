@@ -1,0 +1,19 @@
+{
+	"selector": "create:flywheel",
+	
+	"properties": {
+		"sable:mass":4.0
+	},
+
+	"overrides":{
+		"axis=x": {
+			"sable:inertia": [2.25,1.125,1.125]
+		},
+		"axis=y": {
+			"sable:inertia": [1.125,2.25,1.125]
+		},
+		"axis=z": {
+			"sable:inertia": [1.125,1.125,2.25]
+		}
+	}
+}

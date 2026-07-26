@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "simulated:item/directional_linked_receiver"
+  }
+}

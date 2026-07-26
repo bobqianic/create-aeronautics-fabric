@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#sable:super_glue",
+    { "id": "create:seat", "required": false },
+    "#sable:create_contraption"
+  ]
+}

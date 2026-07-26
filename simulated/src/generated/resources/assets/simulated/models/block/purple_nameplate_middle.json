@@ -1,0 +1,7 @@
+{
+  "parent": "simulated:block/nameplate/block_middle",
+  "textures": {
+    "0": "simulated:block/nameplate/purple_nameplate",
+    "particle": "simulated:block/nameplate/purple_nameplate"
+  }
+}

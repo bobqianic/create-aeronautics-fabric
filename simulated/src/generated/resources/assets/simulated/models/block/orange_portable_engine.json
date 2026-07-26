@@ -1,0 +1,7 @@
+{
+  "parent": "simulated:block/portable_engine/block",
+  "textures": {
+    "0": "simulated:block/portable_engine/orange",
+    "particle": "simulated:block/portable_engine/orange"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "create:brass_casing",
+    "C": "minecraft:compass",
+    "G": "simulated:gyroscopic_mechanism"
+  },
+  "pattern": [
+    "C",
+    "G",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:gimbal_sensor"
+  }
+}

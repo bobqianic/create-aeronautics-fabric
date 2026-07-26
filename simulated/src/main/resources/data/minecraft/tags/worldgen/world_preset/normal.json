@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "simulated:airship_ready",
+    "simulated:end_sea"
+  ]
+}

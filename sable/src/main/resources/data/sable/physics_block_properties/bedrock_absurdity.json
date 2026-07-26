@@ -1,0 +1,7 @@
+{
+  "selector": "minecraft:bedrock",
+
+  "properties": {
+    "sable:mass": 1000.0
+  }
+}

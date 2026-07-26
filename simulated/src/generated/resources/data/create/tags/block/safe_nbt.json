@@ -1,0 +1,21 @@
+{
+  "values": [
+    "simulated:swivel_bearing",
+    "simulated:laser_pointer",
+    "simulated:velocity_sensor",
+    "simulated:altitude_sensor",
+    "simulated:gimbal_sensor",
+    "simulated:navigation_table",
+    "simulated:optical_sensor",
+    "simulated:analog_transmission",
+    "simulated:steering_wheel",
+    "simulated:throttle_lever",
+    "simulated:linked_typewriter",
+    "simulated:directional_linked_receiver",
+    "simulated:modulating_linked_receiver",
+    "simulated:redstone_accumulator",
+    "simulated:redstone_inductor",
+    "simulated:spring",
+    "#simulated:nameplate_blocks"
+  ]
+}

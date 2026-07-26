@@ -1,0 +1,10 @@
+{
+  "term": "wheel",
+  "results": [
+    "offroad:small_tire",
+    "offroad:tire",
+    "offroad:large_tire",
+    "offroad:monstrous_tire",
+    "create:mechanical_roller"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+    "type":  "create:crushing",
+    "processing_time":  250,
+    "results":  [
+                    {
+                        "chance":  0.5,
+                        "id":  "minecraft:end_stone"
+                    },
+                    {
+                        "id":  "aeronautics:end_stone_powder"
+                    }
+                ],
+    "ingredient":  "minecraft:end_stone"
+}

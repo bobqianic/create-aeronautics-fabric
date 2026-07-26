@@ -1,0 +1,10 @@
+# Made in Blockbench 4.12.3
+newmtl m_a1d214aa-4686-fcc5-38a2-843244d2a2c7
+map_Kd #axis
+newmtl m_78ff129f-9b38-331d-019a-bfc61b1025ca
+map_Kd #axis_top
+newmtl m_5d8092af-af1d-b74c-1246-cf7d356d5c8d
+map_Kd #tire_0
+newmtl m_66b42373-6fa5-66fb-133a-e1bd18f349d8
+map_Kd #tire_1
+newmtl none

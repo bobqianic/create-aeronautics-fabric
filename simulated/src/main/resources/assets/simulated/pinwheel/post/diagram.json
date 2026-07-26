@@ -1,0 +1,11 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "simulated:contraption_diagram/outline_diagram",
+      "in": "simulated:diagram",
+      "out": "simulated:diagram_final",
+      "clear": false
+    }
+  ]
+}

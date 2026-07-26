@@ -1,0 +1,148 @@
+{
+  "variants": {
+    "axis_along_first=false,facing=down,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 270,
+      "y": 90
+    },
+    "axis_along_first=false,facing=down,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 270,
+      "y": 90
+    },
+    "axis_along_first=false,facing=down,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 270,
+      "y": 90
+    },
+    "axis_along_first=false,facing=east,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "y": 270
+    },
+    "axis_along_first=false,facing=east,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "y": 270
+    },
+    "axis_along_first=false,facing=east,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "y": 270
+    },
+    "axis_along_first=false,facing=north,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_vertical",
+      "y": 180
+    },
+    "axis_along_first=false,facing=north,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_vertical",
+      "y": 180
+    },
+    "axis_along_first=false,facing=north,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_vertical",
+      "y": 180
+    },
+    "axis_along_first=false,facing=south,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_vertical"
+    },
+    "axis_along_first=false,facing=south,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_vertical"
+    },
+    "axis_along_first=false,facing=south,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_vertical"
+    },
+    "axis_along_first=false,facing=up,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis_along_first=false,facing=up,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis_along_first=false,facing=up,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis_along_first=false,facing=west,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "y": 90
+    },
+    "axis_along_first=false,facing=west,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "y": 90
+    },
+    "axis_along_first=false,facing=west,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "y": 90
+    },
+    "axis_along_first=true,facing=down,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 270
+    },
+    "axis_along_first=true,facing=down,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 270
+    },
+    "axis_along_first=true,facing=down,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 270
+    },
+    "axis_along_first=true,facing=east,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_vertical",
+      "y": 270
+    },
+    "axis_along_first=true,facing=east,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_vertical",
+      "y": 270
+    },
+    "axis_along_first=true,facing=east,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_vertical",
+      "y": 270
+    },
+    "axis_along_first=true,facing=north,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "y": 180
+    },
+    "axis_along_first=true,facing=north,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "y": 180
+    },
+    "axis_along_first=true,facing=north,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "y": 180
+    },
+    "axis_along_first=true,facing=south,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_horizontal"
+    },
+    "axis_along_first=true,facing=south,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_horizontal"
+    },
+    "axis_along_first=true,facing=south,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_horizontal"
+    },
+    "axis_along_first=true,facing=up,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 90
+    },
+    "axis_along_first=true,facing=up,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 90
+    },
+    "axis_along_first=true,facing=up,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_horizontal",
+      "x": 90
+    },
+    "axis_along_first=true,facing=west,powered=0": {
+      "model": "simulated:block/velocity_sensor/block_vertical",
+      "y": 90
+    },
+    "axis_along_first=true,facing=west,powered=1": {
+      "model": "simulated:block/velocity_sensor/block_vertical",
+      "y": 90
+    },
+    "axis_along_first=true,facing=west,powered=2": {
+      "model": "simulated:block/velocity_sensor/block_vertical",
+      "y": 90
+    }
+  }
+}

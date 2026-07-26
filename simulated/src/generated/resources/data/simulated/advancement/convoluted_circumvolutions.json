@@ -1,0 +1,34 @@
+{
+  "parent": "simulated:no_pressure",
+  "criteria": {
+    "0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "simulated:gyroscopic_mechanism"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.simulated.convoluted_circumvolutions.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "simulated:gyroscopic_mechanism"
+    },
+    "title": {
+      "translate": "advancement.simulated.convoluted_circumvolutions"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

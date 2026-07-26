@@ -1,0 +1,11 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "misc",
+    "ingredients":  [
+                        "aeronautics:andesite_propeller"
+                    ],
+    "result":  {
+                   "count":  1,
+                   "id":  "aeronautics:wooden_propeller"
+               }
+}

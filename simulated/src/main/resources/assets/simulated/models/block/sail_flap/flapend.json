@@ -1,0 +1,29 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "simulated:block/sail_flaps/white_sail_flap",
+		"particle": "simulated:block/sail_flaps/white_sail_flap"
+	},
+	"elements": [
+		{
+			"from": [4, 8, 0],
+			"to": [12, 8, 14],
+			"faces": {
+				"north": {"uv": [0, 0, 12, 2], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 0, 0, 2], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [8, 2, 16, 16], "texture": "#0"},
+				"down": {"uv": [16, 2, 8, 16], "rotation": 180, "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

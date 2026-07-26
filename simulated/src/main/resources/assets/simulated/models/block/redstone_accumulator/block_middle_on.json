@@ -1,0 +1,6 @@
+{
+	"parent": "simulated:block/redstone_accumulator/block_middle_off",
+	"textures": {
+		"top": "simulated:block/redstone_accumulator/block_powered"
+	}
+}

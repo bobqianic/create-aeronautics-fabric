@@ -1,0 +1,198 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/axis_y",
+        "x": -90,
+        "y": 90
+      },
+      "when": {
+        "axis": "x",
+        "encased": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/axis_y_encased",
+        "x": -90,
+        "y": 90
+      },
+      "when": {
+        "axis": "x",
+        "encased": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/connection_top",
+        "x": -90,
+        "y": 90
+      },
+      "when": {
+        "axis": "x",
+        "encased": "false",
+        "section": "end|single"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/connection_top",
+        "x": -90,
+        "y": 270
+      },
+      "when": {
+        "axis": "x",
+        "encased": "false",
+        "section": "front|single"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/axis_y",
+        "x": 180
+      },
+      "when": {
+        "axis": "y",
+        "encased": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/axis_y_encased",
+        "x": 180
+      },
+      "when": {
+        "axis": "y",
+        "encased": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/connection_top",
+        "x": 180
+      },
+      "when": {
+        "axis": "y",
+        "encased": "false",
+        "section": "end|single"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/connection_top"
+      },
+      "when": {
+        "axis": "y",
+        "encased": "false",
+        "section": "front|single"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/axis_y",
+        "x": -90,
+        "y": 180
+      },
+      "when": {
+        "axis": "z",
+        "encased": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/axis_y_encased",
+        "x": -90,
+        "y": 180
+      },
+      "when": {
+        "axis": "z",
+        "encased": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/connection_top",
+        "x": -90,
+        "y": 180
+      },
+      "when": {
+        "axis": "z",
+        "encased": "false",
+        "section": "end|single"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/connection_top",
+        "x": -90
+      },
+      "when": {
+        "axis": "z",
+        "encased": "false",
+        "section": "front|single"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/bracket_top_y",
+        "x": 180
+      },
+      "when": {
+        "down": "true",
+        "encased": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/bracket_top_y"
+      },
+      "when": {
+        "encased": "false",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/bracket_top_z",
+        "x": -90,
+        "y": 180
+      },
+      "when": {
+        "encased": "false",
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/bracket_top_z",
+        "x": -90
+      },
+      "when": {
+        "encased": "false",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/bracket_top_x",
+        "x": -90,
+        "y": 90
+      },
+      "when": {
+        "encased": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "simulated:block/auger_shaft/bracket_top_x",
+        "x": -90,
+        "y": 270
+      },
+      "when": {
+        "east": "true",
+        "encased": "false"
+      }
+    }
+  ]
+}

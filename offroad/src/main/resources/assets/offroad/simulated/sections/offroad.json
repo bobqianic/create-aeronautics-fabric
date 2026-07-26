@@ -1,0 +1,11 @@
+{
+  "priority": 2000,
+  "title": {
+    "text": { "translate": "offroad.simulated_section.offroad" },
+    "background": "#aa324136",
+    "color": "#ffe5dcd0",
+    "secondary_color": "#ffc0b9ae"
+  },
+  "sprite": "offroad:banner",
+  "only_animate_on_hover": true
+}

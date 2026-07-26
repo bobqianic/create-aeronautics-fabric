@@ -1,0 +1,105 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "simulated:item/plungerlauncher",
+		"particle": "simulated:item/plungerlauncher"
+	},
+	"elements": [
+		{
+			"from": [7, 8, -6],
+			"to": [9, 10, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 9, 8]},
+			"faces": {
+				"north": {"uv": [0.5, 8, 0, 8.5], "texture": "#0"},
+				"east": {"uv": [0, 12, 0.5, 8], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0.5, 8, 0, 8.5], "texture": "#0"},
+				"west": {"uv": [0.5, 12, 0, 8], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 8, 0.5, 12], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [0.5, 12, 0, 8], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [6, 7, 10],
+			"to": [10, 11, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 9, 8]},
+			"faces": {
+				"north": {"uv": [3, 15, 2, 16], "texture": "#0"},
+				"east": {"uv": [2, 14.25, 3, 14.75], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [3, 15, 2, 16], "texture": "#0"},
+				"west": {"uv": [2, 14.75, 3, 14.25], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [2, 14.75, 3, 14.25], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [2, 14.25, 3, 14.75], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 5, 12],
+			"to": [12, 13, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 9, 8]},
+			"faces": {
+				"north": {"uv": [0, 14, 2, 12], "texture": "#0"},
+				"east": {"uv": [2, 13, 4, 14], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [2, 14, 0, 16], "texture": "#0"},
+				"west": {"uv": [4, 14, 2, 13], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [4, 14, 2, 13], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [2, 13, 4, 14], "rotation": 180, "texture": "#0"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 1.5, 2],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 1.5, 2],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"firstperson_righthand": {
+			"rotation": [-120, 0, 0],
+			"translation": [1.25, 4.25, 2.25],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-120, 0, 0],
+			"translation": [1.25, 4.25, 2.25],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"ground": {
+			"scale": [0.35, 0.35, 0.35]
+		},
+		"gui": {
+			"rotation": [30, 45, 0],
+			"translation": [0.5, -0.5, 0],
+			"scale": [0.73, 0.73, 0.73]
+		},
+		"head": {
+			"rotation": [90, 0, 0],
+			"translation": [0, 15.25, -1.25],
+			"scale": [1.25, 1.25, 1.25]
+		},
+		"fixed": {
+			"rotation": [-90, -45, 0],
+			"translation": [-1, 1, 0],
+			"scale": [0.6, 0.6, 0.6]
+		}
+	},
+	"groups": [
+		{
+			"name": "item",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "plunger",
+					"origin": [-3, 4, -2],
+					"color": 0,
+					"children": [0, 1, 2]
+				}
+			]
+		}
+	]
+}

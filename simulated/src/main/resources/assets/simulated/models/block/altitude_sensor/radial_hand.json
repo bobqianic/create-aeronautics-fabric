@@ -1,0 +1,18 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"6": "simulated:block/altitude_sensor/altitude_sensor_dial_radial",
+		"particle": "create:block/andesite_casing"
+	},
+	"elements": [
+		{
+			"name": "hand",
+			"from": [7.5, 2.5, 4.5],
+			"to": [8.5, 13.5, 4.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 4.5]},
+			"faces": {
+				"north": {"uv": [1, 13, 12, 14], "rotation": 270, "texture": "#6"}
+			}
+		}
+	]
+}
