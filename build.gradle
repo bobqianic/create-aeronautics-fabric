@@ -1,0 +1,106 @@
+plugins {
+    id 'base'
+    id 'net.fabricmc.fabric-loom-remap' version "${loom_version}" apply false
+}
+
+group = 'dev.simulated_team'
+version = mod_version
+
+allprojects {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url = 'https://maven.fabricmc.net/' }
+        maven { url = 'https://maven.ryanhcode.dev/releases' }
+        maven { url = 'https://maven.ryanhcode.dev/snapshots' }
+        maven { url = 'https://maven.createmod.net' }
+        maven { url = 'https://mvn.devos.one/snapshots' }
+        maven { url = 'https://raw.githubusercontent.com/Fuzss/modresources/main/maven/' }
+        maven { url = 'https://maven.blamejared.com/' }
+        maven { url = 'https://oss.zurrtum.com' }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = 'Modrinth'
+                    url = 'https://api.modrinth.com/maven'
+                }
+            }
+            filter { includeGroup 'maven.modrinth' }
+        }
+    }
+}
+
+def configureModProject(Project project, String modName) {
+    def modProps = new Properties()
+    file("${rootProject.projectDir}/${modName}/gradle.properties").withInputStream { modProps.load(it) }
+
+    modProps.each { key, value -> project.ext.set(key.toString(), value) }
+    project.version = modProps.getProperty('mod_version') ?: modProps.getProperty('version') ?: rootProject.findProperty('mod_version')
+    project.group = modProps.group
+    project.description = modProps.description
+}
+
+configureModProject(project(':sable'), 'sable')
+configureModProject(project(':simulated'), 'simulated')
+configureModProject(project(':offroad'), 'offroad')
+configureModProject(project(':aeronautics'), 'aeronautics')
+
+def bundledModuleNames = ['sable', 'simulated', 'offroad']
+def aeronauticsMetadata = project(':aeronautics').layout.buildDirectory.file('resources/main/fabric.mod.json')
+def bundledMetadata = layout.buildDirectory.file('generated/4in1/fabric.mod.json')
+
+def generate4In1Metadata = tasks.register('generate4In1Metadata') {
+    group = 'build'
+    description = 'Generates Fabric metadata for the optional four-mod bundle.'
+    dependsOn ':aeronautics:processResources'
+    inputs.file(aeronauticsMetadata)
+    inputs.property('nestedModules', bundledModuleNames)
+    outputs.file(bundledMetadata)
+
+    doLast {
+        def metadata = new groovy.json.JsonSlurper().parse(aeronauticsMetadata.get().asFile)
+        def nestedJars = bundledModuleNames.collect { moduleName ->
+            [file: "META-INF/jars/${moduleName}.jar"]
+        }
+        metadata.jars = (metadata.jars ?: []) + nestedJars
+
+        def outputFile = bundledMetadata.get().asFile
+        outputFile.parentFile.mkdirs()
+        outputFile.setText(
+                groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(metadata))
+                        + System.lineSeparator(),
+                'UTF-8'
+        )
+    }
+}
+
+tasks.register('build4In1Jar', Jar) {
+    group = 'build'
+    description = 'Builds one Fabric JAR containing Sable, Simulated, Offroad, and Aeronautics.'
+    dependsOn generate4In1Metadata
+    dependsOn ':sable:remapJar', ':simulated:remapJar', ':offroad:remapJar', ':aeronautics:remapJar'
+
+    archiveFileName = "create-aeronautics-4in1-fabric-${minecraft_version}-${mod_version}.jar"
+    destinationDirectory = layout.buildDirectory.dir('libs')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+
+    from({
+        zipTree(project(':aeronautics').tasks.named('remapJar').get().archiveFile.get().asFile)
+    }) {
+        exclude 'fabric.mod.json'
+        exclude 'META-INF/*.SF', 'META-INF/*.RSA', 'META-INF/*.DSA'
+    }
+    from(bundledMetadata)
+
+    bundledModuleNames.each { moduleName ->
+        from({
+            project(":${moduleName}").tasks.named('remapJar').get().archiveFile.get().asFile
+        }) {
+            into 'META-INF/jars'
+            rename { "${moduleName}.jar" }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+preserve_hierarchy: true
+
+files:
+  - source: /simulated/src/generated/resources/assets/simulated/lang/en_us.json
+    translation: /simulated/src/main/resources/assets/simulated/lang/%locale_with_underscore%.json
+  - source: /aeronautics/src/generated/resources/assets/aeronautics/lang/en_us.json
+    translation: /aeronautics/src/main/resources/assets/aeronautics/lang/%locale_with_underscore%.json
+  - source: /offroad/src/generated/resources/assets/offroad/lang/en_us.json
+    translation: /offroad/src/main/resources/assets/offroad/lang/%locale_with_underscore%.json
