@@ -1,0 +1,33 @@
+tasks.named('processResources').configure {
+    doLast {
+        def assetsDirectory = new File(destinationDir, 'assets')
+        if (!assetsDirectory.isDirectory()) {
+            return
+        }
+
+        assetsDirectory.eachDir { namespaceDirectory ->
+            def legacyItemModels = new File(namespaceDirectory, 'models/item')
+            if (!legacyItemModels.isDirectory()) {
+                return
+            }
+
+            def itemDefinitions = new File(namespaceDirectory, 'items')
+            legacyItemModels.eachFileMatch(~/.*\.json/) { modelFile ->
+                def itemDefinition = new File(itemDefinitions, modelFile.name)
+                if (itemDefinition.exists()) {
+                    return
+                }
+
+                itemDefinitions.mkdirs()
+                def modelName = modelFile.name.substring(0, modelFile.name.length() - '.json'.length())
+                def definition = [
+                        model: [
+                                type : 'minecraft:model',
+                                model: "${namespaceDirectory.name}:item/${modelName}"
+                        ]
+                ]
+                itemDefinition.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(definition)) + System.lineSeparator()
+            }
+        }
+    }
+}

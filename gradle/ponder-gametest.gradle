@@ -1,0 +1,192 @@
+fabricApi {
+    configureTests {
+        createSourceSet = true
+        modId = 'aeronautics-gametest'
+        enableGameTests = true
+        enableClientGameTests = true
+        eula = true
+    }
+}
+
+// Fabric Loom wires runGameTest into check by default. Keep the in-game suite
+// available as an explicit task without launching Minecraft after a normal build.
+tasks.named('check').configure {
+    setDependsOn(dependsOn.findAll { dependency -> dependency != 'runGameTest' })
+}
+
+def ponderFixtures = [
+        [namespace: 'simulated', directory: rootProject.file('simulated/src/main/resources/assets/simulated/ponder')],
+        [namespace: 'offroad', directory: rootProject.file('offroad/src/main/resources/assets/offroad/ponder')],
+        [namespace: 'aeronautics', directory: rootProject.file('aeronautics/src/main/resources/assets/aeronautics/ponder')]
+]
+
+def ponderNbtFiles = files(ponderFixtures.collect { fixture ->
+    fileTree(fixture.directory) {
+        include '**/*.nbt'
+    }
+})
+
+def generatedPonderTestSources = layout.buildDirectory.dir('generated/sources/ponderGameTest/java')
+def generatedPonderTestResources = layout.buildDirectory.dir('generated/resources/ponderGameTest')
+
+def generatePonderGameTests = tasks.register('generatePonderGameTests') {
+    inputs.files(ponderNbtFiles)
+            .withPathSensitivity(PathSensitivity.RELATIVE)
+    outputs.dir(generatedPonderTestSources)
+
+    doLast {
+        def outputDirectory = generatedPonderTestSources.get().asFile
+        def packageDirectory = new File(outputDirectory, 'dev/eriksonn/aeronautics/gametest/generated')
+        packageDirectory.mkdirs()
+
+        def methods = []
+        ponderFixtures.each { fixture ->
+            fileTree(fixture.directory) {
+                include '**/*.nbt'
+            }.files.sort { left, right -> left.path <=> right.path }.each { nbtFile ->
+                def relativePath = fixture.directory.toPath().relativize(nbtFile.toPath()).toString()
+                        .replace(File.separatorChar, '/' as char)
+                        .replaceFirst(/\.nbt$/, '')
+                def methodName = "ponder_${fixture.namespace}_${relativePath}"
+                        .replaceAll(/[^A-Za-z0-9_]/, '_')
+
+                methods << """
+    @GameTest(structure = \"${fixture.namespace}:ponder/${relativePath}\", maxTicks = 20, skyAccess = true)
+    public void ${methodName}(final GameTestHelper helper) {
+        verifyPonderStructure(helper, \"${fixture.namespace}\", \"${relativePath}\");
+    }
+"""
+            }
+        }
+
+        new File(packageDirectory, 'GeneratedPonderGameTests.java').text = """package dev.eriksonn.aeronautics.gametest.generated;
+
+import dev.eriksonn.aeronautics.gametest.PonderStructureGameTest;
+import net.fabricmc.fabric.api.gametest.v1.GameTest;
+import net.minecraft.gametest.framework.GameTestHelper;
+
+/** Generated from every Ponder structure in the bundled mods. */
+@SuppressWarnings(\"UnstableApiUsage\")
+public final class GeneratedPonderGameTests extends PonderStructureGameTest {
+${methods.join(System.lineSeparator())}}
+"""
+    }
+}
+
+def syncPonderGameTestStructures = tasks.register('syncPonderGameTestStructures', Sync) {
+    inputs.files(ponderNbtFiles)
+            .withPathSensitivity(PathSensitivity.RELATIVE)
+    into(generatedPonderTestResources)
+
+    ponderFixtures.each { fixture ->
+        from(fixture.directory) {
+            include '**/*.nbt'
+            into "data/${fixture.namespace}/structure/ponder"
+        }
+    }
+}
+
+sourceSets.gametest.java.srcDir(generatedPonderTestSources)
+sourceSets.gametest.resources.srcDir(generatedPonderTestResources)
+
+tasks.named(sourceSets.gametest.compileJavaTaskName).configure {
+    dependsOn(generatePonderGameTests)
+}
+
+tasks.named(sourceSets.gametest.processResourcesTaskName).configure {
+    dependsOn(syncPonderGameTestStructures)
+
+    def properties = [
+            fabric_loader_version: fabric_loader_version,
+            minecraft_version    : minecraft_version
+    ]
+    inputs.properties(properties)
+    filesMatching('fabric.mod.json') {
+        expand(properties)
+    }
+}
+
+tasks.register('dumpPonderNbt', JavaExec) {
+    group = 'verification'
+    description = 'Prints palettes, block entities, and entities from a Ponder structure.'
+    dependsOn(tasks.named(sourceSets.gametest.classesTaskName))
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'dev.eriksonn.aeronautics.gametest.PonderNbtTool'
+    workingDir = rootProject.projectDir
+
+    doFirst {
+        if (!project.hasProperty('ponderNbtFile')) {
+            throw new GradleException('Pass -PponderNbtFile=<path>[,<path>...]')
+        }
+        args = project.property('ponderNbtFile').toString().split(',') as List
+    }
+}
+
+tasks.register('migratePonderNbtStatic', JavaExec) {
+    group = 'verification'
+    description = 'Writes statically migrated Ponder NBT copies under build/ponder-migration/static.'
+    dependsOn(tasks.named(sourceSets.gametest.classesTaskName))
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'dev.eriksonn.aeronautics.gametest.PonderNbtTool'
+    workingDir = rootProject.projectDir
+
+    doFirst {
+        args = [
+                'migrate-static',
+                layout.buildDirectory.dir('ponder-migration/static').get().asFile.absolutePath,
+                *ponderFixtures.collect { it.directory.absolutePath }
+        ]
+    }
+}
+
+tasks.register('mergePonderNbtRuntime', JavaExec) {
+    group = 'verification'
+    description = 'Merges current block-entity payloads into Ponder references without changing their layouts.'
+    dependsOn(tasks.named(sourceSets.gametest.classesTaskName))
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'dev.eriksonn.aeronautics.gametest.PonderNbtTool'
+    workingDir = rootProject.projectDir
+
+    doFirst {
+        args = [
+                'merge-runtime',
+                layout.buildDirectory.dir('ponder-migration/merged').get().asFile.absolutePath,
+                layout.buildDirectory.dir('ponder-migration/world').get().asFile.absolutePath,
+                *ponderFixtures.collect { it.directory.absolutePath }
+        ]
+    }
+}
+
+tasks.register('generatePonderRuntimeOverrides', JavaExec) {
+    group = 'verification'
+    description = 'Generates reviewed placement-state overrides for Ponder blocks consumed by live mechanics.'
+    dependsOn(tasks.named(sourceSets.gametest.classesTaskName))
+    classpath = sourceSets.gametest.runtimeClasspath
+    mainClass = 'dev.eriksonn.aeronautics.gametest.PonderNbtTool'
+    workingDir = rootProject.projectDir
+
+    doFirst {
+        args = [
+                'write-runtime-overrides',
+                layout.buildDirectory.file('ponder-migration/runtime-overrides.snbt').get().asFile.absolutePath,
+                project.file('src/gametest/resources/ponder-runtime-overrides.snbt').absolutePath,
+                layout.buildDirectory.dir('ponder-migration/world').get().asFile.absolutePath,
+                *ponderFixtures.collect { it.directory.absolutePath }
+        ]
+    }
+}
+
+tasks.named('runGameTest').configure {
+    if (project.hasProperty('updatePonderFixtures')) {
+        jvmArgs "-Daeronautics.ponderMigrationOutput=${layout.buildDirectory.dir('ponder-migration/world').get().asFile.absolutePath}"
+    }
+    if (project.hasProperty('ponderGameTestFilter')) {
+        jvmArgs "-Dfabric-api.gametest.filter=${project.property('ponderGameTestFilter')}"
+    }
+}
+
+tasks.named('runClientGameTest').configure {
+    // Sable has its own packet pipeline integration, which can make Fabric's
+    // optional in-flight packet counter lose synchronization between worlds.
+    jvmArgs '-Dfabric.client.gametest.disableNetworkSynchronizer=true'
+}

@@ -1,0 +1,116 @@
+base {
+    archivesName = "${mod_id}-fabric-${minecraft_version}"
+}
+
+apply from: rootProject.file('gradle/item-model-compat.gradle')
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(java_version)
+    withSourcesJar()
+}
+
+sourceSets {
+    main {
+        java {
+            exclude 'dev/simulated_team/simulated/mixin/creative_tab_sections/SpriteContentsMixin.java'
+            exclude 'dev/simulated_team/simulated/mixin/creative_tab_sections/SpriteContentsTickerMixin.java'
+            exclude 'dev/simulated_team/simulated/mixin_interface/SpriteContentsExtension.java'
+            exclude 'dev/simulated_team/simulated/mixin/diagram/VanillaSubLevelRenderDispatcherMixin.java'
+            exclude 'dev/simulated_team/simulated/mixin/end_sea/VanillaSubLevelRenderDispatcherMixin.java'
+            exclude 'dev/simulated_team/simulated/mixin/hold_interaction/LocalPlayerMixin.java'
+            exclude 'dev/simulated_team/simulated/mixin/lodestone_compat/CompassItemPropertyFunctionMixin.java'
+            exclude 'dev/eriksonn/aeronautics/mixin/levitite/VanillaChunkedSubLevelRenderDataMixin.java'
+            exclude 'dev/eriksonn/aeronautics/mixin/render/vanilla/LevelRendererMixin.java'
+            exclude 'dev/eriksonn/aeronautics/mixin/render/sodium/DefaultMaterialsMixin.java'
+            exclude 'dev/eriksonn/aeronautics/mixin/render/sodium/SodiumWorldRendererMixin.java'
+            exclude 'dev/eriksonn/aeronautics/mixin/render/iris/WorldRenderingPhaseMixin.java'
+        }
+        resources {
+            srcDir 'src/generated/resources'
+        }
+    }
+}
+
+loom {
+    mixin {
+        useLegacyMixinAp = true
+        defaultRefmapName = "${mod_id}.refmap.json"
+    }
+    def accessWidener = file("src/main/resources/${mod_id}.accesswidener")
+    if (accessWidener.exists()) {
+        accessWidenerPath = accessWidener
+    }
+    mods {
+        "${mod_id}" { sourceSet sourceSets.main }
+    }
+    runs {
+        client {
+            client()
+            name = "${mod_name} Fabric Client"
+            runDir = 'runs/client'
+        }
+        server {
+            server()
+            name = "${mod_name} Fabric Server"
+            runDir = 'runs/server'
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.layered { officialMojangMappings() }
+
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    modImplementation "maven.modrinth:create-fly:${create_fly_version}"
+    modImplementation "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${forgeconfigapiport_version}"
+    modImplementation "teamreborn:energy:${energy_version}"
+
+    compileOnly "dev.ryanhcode.sable-companion:sable-companion-common-1.21.1:${sable_companion_version}"
+    modCompileOnly "maven.modrinth:cc-tweaked:${computercraft_tweaked_version}"
+    compileOnly "com.google.code.findbugs:jsr305:3.0.2"
+    compileOnly "org.jspecify:jspecify:1.0.0"
+
+    modCompileOnly("foundry.veil:veil-fabric-1.21.1:${veil_version}") { transitive = false }
+    compileOnly "org.projectlombok:lombok:1.18.42"
+    annotationProcessor "org.projectlombok:lombok:1.18.42"
+    modCompileOnly "io.github.fabricators_of_create.Porting-Lib:tags:3.1.0-beta.39+1.21.1"
+    modCompileOnly "io.github.fabricators_of_create.Porting-Lib:models:3.1.0-beta.39+1.21.1"
+    modCompileOnly "io.github.fabricators_of_create.Porting-Lib:data:3.1.0-beta.39+1.21.1"
+    modCompileOnly "io.github.fabricators_of_create.Porting-Lib:lazy_registration:3.1.0-beta.39+1.21.1"
+    modCompileOnly "maven.modrinth:jei:${jei_version}"
+    modCompileOnly "maven.modrinth:natures-compass:${natures_compass_version}"
+    modCompileOnly "maven.modrinth:explorers-compass:${explorers_compass_version}"
+    modCompileOnly "maven.modrinth:sodium:${sodium_version}"
+}
+
+processResources {
+    def properties = [
+            version               : project.version,
+            mod_id                : mod_id,
+            mod_name              : mod_name,
+            mod_author            : mod_author,
+            description           : project.description,
+            license               : license,
+            java_version          : java_version,
+            minecraft_version     : minecraft_version,
+            fabric_loader_version : fabric_loader_version,
+            fabric_version        : fabric_version,
+            create_mod_version    : create_mod_version,
+            sable_mod_version_range: sable_mod_version_range,
+            energy_version        : energy_version
+    ]
+
+    filesMatching(['fabric.mod.json', '*.mixins.json']) { expand properties }
+    inputs.properties(properties)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = java_version as int
+    options.compilerArgs.addAll(['-Xmaxerrs', '1000'])
+}
+
+jar {
+    from(rootProject.file('LICENSE.md'))
+}
