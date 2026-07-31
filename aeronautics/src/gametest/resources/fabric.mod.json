@@ -10,6 +10,8 @@
       "dev.eriksonn.aeronautics.gametest.FunctionalGameTests"
     ],
     "fabric-client-gametest": [
+      "dev.eriksonn.aeronautics.gametest.ClientSkullRenderGameTest",
+      "dev.eriksonn.aeronautics.gametest.ClientPhysicsCollisionGameTest",
       "dev.eriksonn.aeronautics.gametest.ClientBeltGameTest"
     ]
   },

@@ -75,16 +75,16 @@ public class ClientRopeItemHandler {
                     color = new Color(inRange ? SimColors.PERCHANCE_ORANGE : SimColors.NUH_UH_RED);
                 }
 
-                Outliner.getInstance().chaseAABB("FirstRopeAttachmentPoint", new AABB(firstPoint, firstPoint))
+                final Vec3 globalFirstPoint = Sable.HELPER.projectOutOfSubLevel(level, firstPoint);
+                Vec3 globalTarget = Sable.HELPER.projectOutOfSubLevel(level, target);
+
+                Outliner.getInstance().chaseAABB("FirstRopeAttachmentPoint", new AABB(globalFirstPoint, globalFirstPoint))
                         .colored(color)
                         .lineWidth(1 / 3f)
                         .disableLineNormals();
 
-                final Vec3 globalFirstPoint = Sable.HELPER.projectOutOfSubLevel(level, firstPoint);
-                Vec3 globalTarget = Sable.HELPER.projectOutOfSubLevel(level, target);
-
                 if (valid) {
-                    Outliner.getInstance().chaseAABB("SecondRopeAttachmentPoint", new AABB(target, target))
+                    Outliner.getInstance().chaseAABB("SecondRopeAttachmentPoint", new AABB(globalTarget, globalTarget))
                             .colored(color)
                             .lineWidth(1 / 3f)
                             .disableLineNormals();

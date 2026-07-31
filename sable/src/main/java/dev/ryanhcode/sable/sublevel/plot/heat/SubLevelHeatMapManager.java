@@ -21,6 +21,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.SectionPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.FallingBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -80,14 +82,17 @@ public class SubLevelHeatMapManager {
      * Ticks the heatmap manager, performing {@link SableConfig#SUB_LEVEL_SPLITTING_HEATMAP_STEPS_PER_TICK} steps
      */
     public void tick() {
+        if (this.subLevel.isRemoved())
+            return;
+
         final int steps = SableConfig.SUB_LEVEL_SPLITTING_HEATMAP_STEPS_PER_TICK.getAsInt();
         for (int i = 0; i < steps; i++) {
-            if (this.step()) break;
+            if (this.subLevel.isRemoved() || this.step()) break;
         }
     }
 
     /**
-     * @return true if nothing left to do
+     * @return true if processing should stop for this tick
      */
     private boolean step() {
         if (this.state == HeatMapPropagationState.FILLING) {
@@ -114,8 +119,8 @@ public class SubLevelHeatMapManager {
                 this.state = HeatMapPropagationState.CLEARING;
 
                 // Split off separated regions!
-                if (!this.subLevelSplits.isEmpty())
-                    this.split();
+                if (!this.subLevelSplits.isEmpty() && !this.split())
+                    return true;
             }
         }
         if (this.state == HeatMapPropagationState.CLEARING) {
@@ -184,7 +189,8 @@ public class SubLevelHeatMapManager {
             } else if (!this.subLevelSplits.isEmpty()) {
                 this.splitComplete = true;
                 // Split off separated regions!
-                this.split();
+                if (!this.split())
+                    return true;
             } else {
                 this.splitComplete = true;
                 // Nothing left to do, stop looping
@@ -194,12 +200,24 @@ public class SubLevelHeatMapManager {
         return false;
     }
 
-    private void split() {
+    /**
+     * @return whether the split was completed
+     */
+    private boolean split() {
+        if (this.subLevel.isRemoved())
+            return false;
+
         final Int2ObjectMap<List<BlockPos>> newSubLevelBlocks = new Int2ObjectOpenHashMap<>();
         for (final long l : this.subLevelSplits.keySet()) {
             final int splitIndex = this.splitIndexMap.get(this.subLevelSplits.get(l));
             newSubLevelBlocks.computeIfAbsent(splitIndex, x -> new ObjectArrayList<>()).add(BlockPos.of(l));
         }
+
+        // Falling blocks schedule their physics a few ticks after losing support. Let that
+        // vanilla tick remove them before the heatmap turns the disconnected blocks into a
+        // persistent sub-level of their own.
+        if (this.hasPendingFallingBlockTick(newSubLevelBlocks.values()))
+            return false;
 
         final boolean splittingWholeSubLevel = newSubLevelBlocks.size() == 1 && this.solidCount == newSubLevelBlocks.values().stream().findFirst().orElseThrow().size();
         // in the case there is only a single split, and it is the entire sub-level, let's just clear the splits and
@@ -233,11 +251,17 @@ public class SubLevelHeatMapManager {
         final Level level = this.subLevel.getLevel();
 
         for (final List<BlockPos> blocks : newSubLevelBlocks.values()) {
+            if (this.subLevel.isRemoved())
+                return false;
+
             final BoundingBox3i bounds = Objects.requireNonNull(BoundingBox3i.from(blocks)).expand(1, 1, 1);
 
             for (final SplitListener listener : LISTENERS) {
                 listener.addBlocks(level, bounds, blocks);
             }
+
+            if (this.subLevel.isRemoved())
+                return false;
 
             final ServerSubLevel subLevel = SubLevelAssemblyHelper.assembleBlocks((ServerLevel) level, blocks.get(0), blocks, bounds);
 
@@ -249,6 +273,20 @@ public class SubLevelHeatMapManager {
                 container.removeSubLevel(subLevel, SubLevelRemovalReason.REMOVED);
             }
         }
+        return true;
+    }
+
+    private boolean hasPendingFallingBlockTick(final Collection<List<BlockPos>> splitRegions) {
+        final ServerLevel level = (ServerLevel) this.subLevel.getLevel();
+        for (final List<BlockPos> blocks : splitRegions) {
+            for (final BlockPos blockPos : blocks) {
+                final BlockState state = level.getBlockState(blockPos);
+                if (state.getBlock() instanceof FallingBlock
+                        && level.getBlockTicks().hasScheduledTick(blockPos, state.getBlock()))
+                    return true;
+            }
+        }
+        return false;
     }
 
     private void rebuildHeatmapFrom(final List<BlockPos> blocks) {

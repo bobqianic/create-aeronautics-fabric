@@ -6,6 +6,9 @@
   "mixins": [
     "GameTestBatchFactoryMixin"
   ],
+  "client": [
+    "LevelRendererAccessor"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

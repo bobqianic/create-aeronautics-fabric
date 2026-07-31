@@ -815,12 +815,20 @@ public class SimBlocks {
             return REGISTRATE.block(colorName + "_symmetric_sail", p -> SymmetricSailBlock.withCanvas(p, colour))
                     .initialProperties(SharedProperties::wooden)
                     .properties(p -> p.sound(SoundType.SCAFFOLDING))
-                    .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, blockState -> p.models()
-                            .withExistingParent(colorName + "_symmetric_sail",
-                                    p.modLoc("block/symmetric_sail/block"))
-                            .texture("0", ResourceLocation.fromNamespaceAndPath(Create.MOD_ID, "block/sail/canvas_" + colorName))
-                            .texture("1", p.modLoc("block/symmetric_sail/side_" + colorName))
-                            .texture("particle", ResourceLocation.fromNamespaceAndPath(Create.MOD_ID, "block/sail/canvas_" + colorName))))
+                    .blockstate((c, p) -> {
+                        final var model = p.models()
+                                .withExistingParent(colorName + "_symmetric_sail",
+                                        p.modLoc("block/symmetric_sail/block"))
+                                .texture("0", ResourceLocation.fromNamespaceAndPath(Create.MOD_ID, "block/sail/canvas_" + colorName))
+                                .texture("1", p.modLoc("block/symmetric_sail/side_" + colorName))
+                                .texture("particle", ResourceLocation.fromNamespaceAndPath(Create.MOD_ID, "block/sail/canvas_" + colorName));
+                        SimBlockStateService.INSTANCE.genericModelBuilder(
+                                c,
+                                p,
+                                SimBlockStateGen::xySymmetricSail,
+                                blockState -> model
+                        );
+                    })
                     .tag(BlockTags.MINEABLE_WITH_AXE, AllTags.AllBlockTags.WINDMILL_SAILS.tag, SimTags.Blocks.SYMMETRIC_SAILS)
                     .loot((p, b) -> p.dropOther(b, WHITE_SYMMETRIC_SAIL.asItem()))
                     .register();

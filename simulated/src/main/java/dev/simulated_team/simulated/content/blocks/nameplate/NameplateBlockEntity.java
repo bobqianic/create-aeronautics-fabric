@@ -12,7 +12,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtUtils;
 import net.minecraft.util.ARGB;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
@@ -226,11 +225,7 @@ public class NameplateBlockEntity extends SmartBlockEntity implements ClipboardC
         if (i == DyeColor.BLACK.getTextColor() && this.glowing) {
             return -988212;
         } else {
-            final double d = 0.4;
-            final int j = (int) ((double) ARGB.red(i) * 0.4);
-            final int k = (int) ((double) ARGB.green(i) * 0.4);
-            final int l = (int) ((double) ARGB.blue(i) * 0.4);
-            return ARGB.color(0, j, k, l);
+            return ARGB.scaleRGB(i, 0.4f);
         }
     }
 
@@ -326,7 +321,7 @@ public class NameplateBlockEntity extends SmartBlockEntity implements ClipboardC
         if (this.controller) {
             tag.putInt("Width", this.controllerWidth);
         } else {
-            tag.putInt("ControllerPosX", this.controllerPos.getX());
+            tag.store("ControllerPos", BlockPos.CODEC, this.controllerPos);
         }
     }
 
@@ -343,7 +338,7 @@ public class NameplateBlockEntity extends SmartBlockEntity implements ClipboardC
 
         if (tag.contains("ControllerPos")) {
             this.controller = false;
-            this.controllerPos = this.getBlockPos();
+            this.controllerPos = tag.read("ControllerPos", BlockPos.CODEC).orElse(this.getBlockPos());
         } else {
             this.controller = true;
             this.controllerPos = this.getBlockPos();

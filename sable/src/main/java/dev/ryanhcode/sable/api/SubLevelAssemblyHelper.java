@@ -438,7 +438,15 @@ public class SubLevelAssemblyHelper {
             try {
                 final LevelChunk levelchunk = resultingAccelerator.getChunk(SectionPos.blockToSectionCoord(pos.getX()), SectionPos.blockToSectionCoord(pos.getZ()));
                 final BlockState subLevelState = states.get(i);
-                SubLevelAssemblyHelper.markAndNotifyBlock(resultingLevel, pos, levelchunk, airState, subLevelState, 3, 512);
+                SubLevelAssemblyHelper.markAndNotifyBlock(
+                        resultingLevel,
+                        pos,
+                        levelchunk,
+                        airState,
+                        subLevelState,
+                        Block.UPDATE_ALL | Block.UPDATE_KNOWN_SHAPE,
+                        512
+                );
             } catch (final Exception e) {
                 Sable.LOGGER.error("Failed to mark & notify block {} (untransformed = {})", pos, untransformed, e);
             }

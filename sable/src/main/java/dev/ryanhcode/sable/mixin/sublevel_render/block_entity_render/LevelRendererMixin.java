@@ -5,7 +5,9 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import dev.ryanhcode.sable.Sable;
 import dev.ryanhcode.sable.api.sublevel.ClientSubLevelContainer;
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer;
+import dev.ryanhcode.sable.compatibility.entityculling.EntityCullingCompat;
 import dev.ryanhcode.sable.mixinterface.BlockEntityRenderDispatcherExtension;
+import dev.ryanhcode.sable.mixinterface.sublevel_render.SubLevelBlockEntityRenderExtension;
 import dev.ryanhcode.sable.sublevel.ClientSubLevel;
 import dev.ryanhcode.sable.sublevel.plot.PlotChunkHolder;
 import dev.ryanhcode.sable.sublevel.render.SubLevelRenderData;
@@ -41,7 +43,7 @@ import java.util.Map;
 import java.util.SortedSet;
 
 @Mixin(LevelRenderer.class)
-public class LevelRendererMixin {
+public class LevelRendererMixin implements SubLevelBlockEntityRenderExtension {
 
     @Shadow
     @Nullable
@@ -61,7 +63,21 @@ public class LevelRendererMixin {
     private Quaternionf sable$cameraOrientation;
 
     @Inject(method = "extractVisibleBlockEntities", at = @At("RETURN"))
-    private void sable$extractBlockEntities(final Camera camera, final float partialTick, final LevelRenderState levelRenderState, final CallbackInfo ci) {
+    private void sable$extractBlockEntities(
+            final Camera camera,
+            final float partialTick,
+            final LevelRenderState levelRenderState,
+            final CallbackInfo ci
+    ) {
+        this.sable$extractSubLevelBlockEntities(camera, partialTick, levelRenderState);
+    }
+
+    @Override
+    public void sable$extractSubLevelBlockEntities(
+            final Camera camera,
+            final float partialTick,
+            final LevelRenderState levelRenderState
+    ) {
         this.sable$blockEntityTransforms.clear();
         levelRenderState.blockEntityRenderStates.removeIf(state -> Sable.HELPER.getContainingClient(state.blockPos) != null);
 
@@ -77,49 +93,51 @@ public class LevelRendererMixin {
         final Vec3 cameraPosition = camera.getPosition();
         final BlockEntityRenderDispatcherExtension dispatcherExtension = (BlockEntityRenderDispatcherExtension) this.blockEntityRenderDispatcher;
 
-        for (final ClientSubLevel subLevel : container.getAllSubLevels()) {
-            final SubLevelRenderData renderData = subLevel.getRenderData();
-            if (renderData == null) {
-                continue;
-            }
-
-            final Vector3dc rotationPoint = subLevel.renderPose(partialTick).rotationPoint();
-            final Matrix4f transformation = renderData.getTransformation(cameraPosition.x, cameraPosition.y, cameraPosition.z);
-            final Vector3f localCamera = transformation.invert(new Matrix4f()).transformPosition(new Vector3f());
-
-            dispatcherExtension.sable$setCameraPosition(new Vec3(
-                    localCamera.x + rotationPoint.x(),
-                    localCamera.y + rotationPoint.y(),
-                    localCamera.z + rotationPoint.z()
-            ));
-
-            try {
-                for (final PlotChunkHolder holder : subLevel.getPlot().getLoadedChunks()) {
-                    for (final BlockEntity blockEntity : holder.getChunk().getBlockEntities().values()) {
-                        if (blockEntity.isRemoved()) {
-                            continue;
-                        }
-
-                        final BlockPos blockPos = blockEntity.getBlockPos();
-                        final CrumblingOverlay crumblingOverlay = this.sable$createCrumblingOverlay(blockPos, transformation, rotationPoint);
-                        final BlockEntityRenderState renderState = this.blockEntityRenderDispatcher.tryExtractRenderState(blockEntity, partialTick, crumblingOverlay);
-                        if (renderState == null) {
-                            continue;
-                        }
-
-                        final Vector3d physicalCenter = subLevel.renderPose(partialTick).transformPosition(
-                                new Vector3d(blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5)
-                        );
-                        renderState.lightCoords = LevelRenderer.getLightColor(
-                                this.level,
-                                BlockPos.containing(physicalCenter.x, physicalCenter.y, physicalCenter.z)
-                        );
-                        levelRenderState.blockEntityRenderStates.add(renderState);
-                        this.sable$blockEntityTransforms.put(renderState, new SableBlockEntityTransform(transformation, rotationPoint, new Quaternionf(subLevel.renderPose(partialTick).orientation())));
-                    }
+        try (final EntityCullingCompat.Scope ignored = EntityCullingCompat.suspendBlockEntityCulling()) {
+            for (final ClientSubLevel subLevel : container.getAllSubLevels()) {
+                final SubLevelRenderData renderData = subLevel.getRenderData();
+                if (renderData == null) {
+                    continue;
                 }
-            } finally {
-                dispatcherExtension.sable$setCameraPosition(null);
+
+                final Vector3dc rotationPoint = subLevel.renderPose(partialTick).rotationPoint();
+                final Matrix4f transformation = renderData.getTransformation(cameraPosition.x, cameraPosition.y, cameraPosition.z);
+                final Vector3f localCamera = transformation.invert(new Matrix4f()).transformPosition(new Vector3f());
+
+                dispatcherExtension.sable$setCameraPosition(new Vec3(
+                        localCamera.x + rotationPoint.x(),
+                        localCamera.y + rotationPoint.y(),
+                        localCamera.z + rotationPoint.z()
+                ));
+
+                try {
+                    for (final PlotChunkHolder holder : subLevel.getPlot().getLoadedChunks()) {
+                        for (final BlockEntity blockEntity : holder.getChunk().getBlockEntities().values()) {
+                            if (blockEntity.isRemoved()) {
+                                continue;
+                            }
+
+                            final BlockPos blockPos = blockEntity.getBlockPos();
+                            final CrumblingOverlay crumblingOverlay = this.sable$createCrumblingOverlay(blockPos, transformation, rotationPoint);
+                            final BlockEntityRenderState renderState = this.blockEntityRenderDispatcher.tryExtractRenderState(blockEntity, partialTick, crumblingOverlay);
+                            if (renderState == null) {
+                                continue;
+                            }
+
+                            final Vector3d physicalCenter = subLevel.renderPose(partialTick).transformPosition(
+                                    new Vector3d(blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5)
+                            );
+                            renderState.lightCoords = LevelRenderer.getLightColor(
+                                    this.level,
+                                    BlockPos.containing(physicalCenter.x, physicalCenter.y, physicalCenter.z)
+                            );
+                            levelRenderState.blockEntityRenderStates.add(renderState);
+                            this.sable$blockEntityTransforms.put(renderState, new SableBlockEntityTransform(transformation, rotationPoint, new Quaternionf(subLevel.renderPose(partialTick).orientation())));
+                        }
+                    }
+                } finally {
+                    dispatcherExtension.sable$setCameraPosition(null);
+                }
             }
         }
     }

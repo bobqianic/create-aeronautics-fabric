@@ -18,3 +18,33 @@ dependencies {
 }
 
 apply from: rootProject.file('gradle/ponder-gametest.gradle')
+
+def entityCullingBundle = configurations.detachedConfiguration(
+        dependencies.create('maven.modrinth:entityculling:2kbLrpzR')
+)
+entityCullingBundle.transitive = false
+
+def entityCullingGametestLibrariesDir =
+        layout.buildDirectory.dir('generated/entityculling-gametest-libraries')
+def extractEntityCullingGametestLibraries =
+        tasks.register('extractEntityCullingGametestLibraries', Sync) {
+            from({ entityCullingBundle.collect { zipTree(it) } }) {
+                include 'META-INF/jars/*.jar'
+                eachFile { details -> details.path = details.name }
+                includeEmptyDirs = false
+            }
+            into(entityCullingGametestLibrariesDir)
+        }
+def entityCullingGametestLibraries = files(
+        fileTree(entityCullingGametestLibrariesDir) {
+            include '*.jar'
+        }
+).builtBy(extractEntityCullingGametestLibraries)
+
+dependencies {
+    // Exercise the renderer stack used by the distribution in rendered-client coverage.
+    add('modGametestRuntimeOnly', "maven.modrinth:sodium:${sodium_version}")
+    add('modGametestRuntimeOnly', 'maven.modrinth:iris:1.9.7+1.21.10-fabric')
+    add('modGametestRuntimeOnly', 'maven.modrinth:entityculling:2kbLrpzR')
+    add('modGametestRuntimeOnly', entityCullingGametestLibraries)
+}

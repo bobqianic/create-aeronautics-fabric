@@ -207,6 +207,14 @@ public class SubLevelEntityCollision {
                 lastPose.lerp(logicalPose, (double) (i - 1) / substeps, lastSubLevelPose);
                 lastPose.lerp(logicalPose, (double) (i) / substeps, subLevelPose);
 
+                // The sink is shared by every entity collision in this level. Re-orient the
+                // entity box only after this sub-level's interpolated pose has been written,
+                // otherwise SAT can use a pose left behind by another substep or sub-level.
+                if (customEntityOrientation == null) {
+                    sink.entityBoxOrientation.identity().rotateY(getHitBoxYaw(subLevelPose));
+                    entityBoundsOBB.setOrientation(sink.entityBoxOrientation);
+                }
+
                 rotatedContextBounds.set(fullContextBounds);
                 if (customEntityOrientation != null) {
                     entityBoundsOBB.vertices(sink.a);
@@ -387,15 +395,30 @@ public class SubLevelEntityCollision {
                                 entity.setOnGround(true);
                                 collisionInfo.verticalCollisionBelow = true;
 
+                                // The custom collision result keeps the entity above the
+                                // sub-level, but vanilla cannot see the supporting shape when
+                                // it updates velocity. Clear the velocity into that support or
+                                // gravity accumulates invisibly while the entity is standing
+                                // still and is released as a high-speed fall at the edge.
+                                JOMLConversion.toJOML(entity.getDeltaMovement(), existingDeltaMovement);
+                                final double velocityIntoSupport = existingDeltaMovement.dot(entityUp);
+                                if (velocityIntoSupport < 0.0) {
+                                    existingDeltaMovement.fma(-velocityIntoSupport, entityUp);
+                                    entity.setDeltaMovement(JOMLConversion.toMojang(existingDeltaMovement));
+                                }
+
                                 if (collisionInfo.trackingSubLevel != subLevel && !swappedTrackingAlready) {
                                     swappedTrackingAlready = true;
                                     collisionInfo.trackingSubLevel = subLevel;
 //                                    collisionInfo.trackingLocalUpDirection = subLevelPose.transformNormalInverse(new Vector3d(0.0, 1.0, 0.0));
                                 }
-                            }
-                            if (dot > 0.8) {
-                                final double preLength = maxMTV.length();
-                                entityUp.mul(maxMTV.dot(entityUp), maxMTV).normalize(preLength);
+
+                                // A support collision must not retain the surface normal's
+                                // horizontal component. Doing so turns the entity's downward
+                                // gravity penetration into uphill movement and can push it off
+                                // narrow, rotated edges. Scale the vertical correction so its
+                                // projection onto the original normal still fully separates.
+                                entityUp.mul(maxMTV.length() / dot, maxMTV);
                             }
                         } else {
                             collisionInfo.subLevelHorizontalCollision |= !tryStepUp(entity,
@@ -409,6 +432,7 @@ public class SubLevelEntityCollision {
                                     cubeOBB,
                                     maxMTV,
                                     normalizedMtv,
+                                    steppingMotion,
                                     collisionMotion);
 
                             if (collisionInfo.subLevelHorizontalCollision) {
@@ -517,9 +541,18 @@ public class SubLevelEntityCollision {
                                      final OrientedBoundingBox3d cubeOBB,
                                      final Vector3dc maxMTV,
                                      final Vector3dc normalizedMTV,
+                                     final Vector3dc requestedMotion,
                                      final Vector3d collisionMotion) {
         if (!entity.onGround()) return false;
         if (collisionMotion.dot(normalizedMTV) > 0.0) return true;
+
+        // Vanilla stepping is a response to horizontal movement into an obstacle.
+        // A downward-only gravity move against a steep rotated face must not be
+        // converted into a step, or a stationary entity climbs the slope.
+        final double requestedVerticalMotion = requestedMotion.dot(sink.entityUpDirection);
+        final double requestedHorizontalMotionSquared =
+                requestedMotion.lengthSquared() - requestedVerticalMotion * requestedVerticalMotion;
+        if (requestedHorizontalMotionSquared <= 1.0E-8) return false;
 
         final double checkIncrement = 1.0 / 16.0;
         final double maxStepHeight = entity.maxUpStep();

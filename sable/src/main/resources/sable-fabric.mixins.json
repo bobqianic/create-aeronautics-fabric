@@ -7,6 +7,7 @@
   "client": [
     "block_outline_render.LevelRendererMixin",
     "camera_rotation.CameraMixin",
+    "compatibility.zume.ModernZumeMixin",
     "sound.MovingSoundInstanceDelegateMixin"
   ],
   "mixins": [

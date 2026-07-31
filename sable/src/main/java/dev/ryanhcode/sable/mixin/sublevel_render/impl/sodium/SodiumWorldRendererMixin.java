@@ -6,10 +6,12 @@ import dev.ryanhcode.sable.api.client.SubLevelBlockEntityRenderRegistry;
 import dev.ryanhcode.sable.api.sublevel.ClientSubLevelContainer;
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer;
 import dev.ryanhcode.sable.companion.math.Pose3dc;
+import dev.ryanhcode.sable.mixinterface.sublevel_render.SubLevelBlockEntityRenderExtension;
 import dev.ryanhcode.sable.sublevel.ClientSubLevel;
 import dev.ryanhcode.sable.sublevel.plot.LevelPlot;
 import dev.ryanhcode.sable.sublevel.render.SubLevelRenderData;
 import dev.ryanhcode.sable.sublevel.render.SubLevelLightVertexConsumerProvider;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import net.caffeinemc.mods.sodium.client.render.SodiumWorldRenderer;
 import net.caffeinemc.mods.sodium.client.render.chunk.ChunkRenderMatrices;
 import net.caffeinemc.mods.sodium.client.render.viewport.Viewport;
@@ -26,7 +28,9 @@ import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayerGroup;
 import net.minecraft.client.renderer.chunk.RenderRegionCache;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.state.LevelRenderState;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.BlockDestructionProgress;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -37,6 +41,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.SortedSet;
 
 /**
  * Bridges Sable sub-levels into Sodium's terrain render phases.
@@ -52,6 +58,22 @@ public abstract class SodiumWorldRendererMixin {
 
     @Shadow
     private @Nullable ClientLevel level;
+
+    // Sodium cancels LevelRenderer#extractVisibleBlockEntities at HEAD, which
+    // bypasses Sable's vanilla RETURN hook. Append transformed plot block
+    // entities after Sodium has extracted the ordinary world block entities.
+    @Inject(method = "extractBlockEntities", at = @At("TAIL"))
+    private void sable$extractSubLevelBlockEntities(
+            final Camera camera,
+            final float partialTick,
+            final Long2ObjectMap<SortedSet<BlockDestructionProgress>> destructionProgress,
+            final LevelRenderState levelRenderState,
+            final CallbackInfo ci
+    ) {
+        final LevelRenderer levelRenderer = Minecraft.getInstance().levelRenderer;
+        ((SubLevelBlockEntityRenderExtension) levelRenderer)
+                .sable$extractSubLevelBlockEntities(camera, partialTick, levelRenderState);
+    }
 
     @Inject(method = "setupTerrain", at = @At("TAIL"))
     private void sable$compileSubLevelSections(

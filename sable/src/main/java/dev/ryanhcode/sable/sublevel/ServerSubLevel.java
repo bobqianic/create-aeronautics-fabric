@@ -229,7 +229,15 @@ public class ServerSubLevel extends SubLevel implements PhysicsPipelineBody {
     @Override
     @ApiStatus.Internal
     public void tick() {
+        if (this.isRemoved()) {
+            return;
+        }
+
         super.tick();
+        if (this.isRemoved()) {
+            return;
+        }
+
         this.updateBoundingBox();
 
         final BoundingBox3dc bounds = this.boundingBox();

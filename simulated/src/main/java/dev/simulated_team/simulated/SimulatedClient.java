@@ -215,6 +215,7 @@ public class SimulatedClient {
             registerLegacySubLevelRenderer(register, rendererType, SimBlockEntityTypes.OPTICAL_SENSOR.get());
             registerLegacySubLevelRenderer(register, rendererType, SimBlockEntityTypes.ALTITUDE_SENSOR.get());
             registerLegacySubLevelRenderer(register, rendererType, SimBlockEntityTypes.VELOCITY_SENSOR.get());
+            registerLegacySubLevelRenderer(register, rendererType, SimBlockEntityTypes.NAMEPLATE.get());
             registerSableImmediateRenderer(register, rendererType, SimBlockEntityTypes.PORTABLE_ENGINE.get(),
                     (be, partialTick, poseStack, bufferSource, light, overlay) -> {
                         if (be.getBlockState().is(SimBlocks.RED_PORTABLE_ENGINE.get())) {
@@ -234,6 +235,7 @@ public class SimulatedClient {
                                     (dev.simulated_team.simulated.content.blocks.directional_gearshift.DirectionalGearshiftBlockEntity) be,
                                     partialTick, poseStack, bufferSource, light, overlay));
             registerLegacySubLevelRenderer(register, rendererType, SimBlockEntityTypes.ROPE_WINCH.get());
+            registerLegacySubLevelRenderer(register, rendererType, SimBlockEntityTypes.ROPE_CONNECTOR.get());
             registerLegacySubLevelRenderer(register, rendererType, SimBlockEntityTypes.SWIVEL_BEARING.get());
             registerLegacySubLevelRenderer(register, rendererType, SimBlockEntityTypes.DOCKING_CONNECTOR.get());
             registerLegacySubLevelRenderer(register, rendererType, SimBlockEntityTypes.MERGING_GLUE.get());
