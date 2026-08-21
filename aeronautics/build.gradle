@@ -87,7 +87,8 @@ tasks.register('runProductionClientSmoke', ClientProductionRunTask) {
     doLast {
         requireProductionSmokeMarker(delegate, 'AERONAUTICS_PRODUCTION_CLIENT_SMOKE_OK', [
                 'Failed to fetch user properties',
-                'Failed to fetch Realms feature flags'
+                'Failed to fetch Realms feature flags',
+                'Error while loading the narrator'
         ])
     }
 }
