@@ -15,9 +15,13 @@ import net.fabricmc.fabric.api.client.rendering.v1.world.WorldRenderEvents;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.resources.ResourceLocation;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public final class AeronauticsFabricClient implements ClientModInitializer {
+    private static final int PRODUCTION_SMOKE_REQUIRED_TICKS = 20;
     private static final ResourceLocation LEVITITE_BLEND_STILL = Aeronautics.path("fluid/levitite_blend_still");
     private static final ResourceLocation LEVITITE_BLEND_FLOW = Aeronautics.path("fluid/levitite_blend_flow");
+    private static final AtomicInteger PRODUCTION_SMOKE_TICKS = new AtomicInteger();
 
     @Override
     public void onInitializeClient() {
@@ -49,5 +53,12 @@ public final class AeronauticsFabricClient implements ClientModInitializer {
         );
         ClientTickEvents.START_CLIENT_TICK.register(client -> AeronauticsClientEvents.clientLevelTick(false));
         ClientTickEvents.END_CLIENT_TICK.register(client -> AeronauticsClientEvents.clientLevelTick(true));
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            if (Boolean.getBoolean("aeronautics.productionSmokeTest")
+                    && PRODUCTION_SMOKE_TICKS.incrementAndGet() == PRODUCTION_SMOKE_REQUIRED_TICKS) {
+                Aeronautics.LOGGER.info("AERONAUTICS_PRODUCTION_CLIENT_SMOKE_OK");
+                client.stop();
+            }
+        });
     }
 }
