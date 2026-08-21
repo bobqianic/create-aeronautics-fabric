@@ -1,0 +1,56 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 21
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+      - name: Make Gradle Wrapper Executable
+        run: chmod +x ./gradlew
+      - name: Compile and build distribution artifact
+        run: ./gradlew build build4In1Jar --stacktrace
+      - name: Smoke-test packaged artifact on a dedicated server
+        shell: bash
+        run: |
+          set -o pipefail
+          ./gradlew :aeronautics:runProductionServerSmoke --stacktrace 2>&1 | tee server-smoke.log
+          grep -F "AERONAUTICS_PRODUCTION_SERVER_SMOKE_OK" server-smoke.log
+      - name: Smoke-test packaged artifact in a client
+        shell: bash
+        run: |
+          set -o pipefail
+          ./gradlew :aeronautics:runProductionClientSmoke --stacktrace 2>&1 | tee client-smoke.log
+          grep -F "AERONAUTICS_PRODUCTION_CLIENT_SMOKE_OK" client-smoke.log
+      - name: Upload distribution and smoke-test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-artifacts
+          path: |
+            build/libs/create-aeronautics-4in1-*.jar
+            server-smoke.log
+            client-smoke.log
+            aeronautics/build/production-smoke/*/logs/*.log
+            aeronautics/build/production-smoke/*/crash-reports/**
+            aeronautics/build/reports/**
+          if-no-files-found: warn
