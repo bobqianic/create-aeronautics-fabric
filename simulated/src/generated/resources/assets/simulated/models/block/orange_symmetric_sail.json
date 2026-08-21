@@ -1,0 +1,8 @@
+{
+  "parent": "simulated:block/symmetric_sail/block",
+  "textures": {
+    "0": "create:block/sail/canvas_orange",
+    "1": "simulated:block/symmetric_sail/side_orange",
+    "particle": "create:block/sail/canvas_orange"
+  }
+}

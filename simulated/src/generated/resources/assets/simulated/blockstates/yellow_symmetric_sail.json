@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "simulated:block/yellow_symmetric_sail",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "simulated:block/yellow_symmetric_sail"
+    },
+    "axis=z": {
+      "model": "simulated:block/yellow_symmetric_sail",
+      "x": 90,
+      "y": 180
+    }
+  }
+}
